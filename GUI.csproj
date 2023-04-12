@@ -63,11 +63,11 @@
     <Compile Include="customControls\CustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="customControls\customTextbox.cs">
+    <Compile Include="customControls\CustomTask.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="customControls\customTextbox.Designer.cs">
-      <DependentUpon>customTextbox.cs</DependentUpon>
+    <Compile Include="customControls\CustomTask.Designer.cs">
+      <DependentUpon>CustomTask.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -101,8 +101,8 @@
     <EmbeddedResource Include="customControls\CustomButton.resx">
       <DependentUpon>CustomButton.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="customControls\customTextbox.resx">
-      <DependentUpon>customTextbox.cs</DependentUpon>
+    <EmbeddedResource Include="customControls\CustomTask.resx">
+      <DependentUpon>CustomTask.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

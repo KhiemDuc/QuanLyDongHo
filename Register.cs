@@ -122,6 +122,7 @@ namespace TodoApp
                 register.Dispose();
             });
         }
+        
         private void RegisterDone()
         {
             if (this.InvokeRequired)

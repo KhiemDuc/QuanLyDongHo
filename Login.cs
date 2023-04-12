@@ -130,9 +130,9 @@ namespace TodoApp
                     {
                         if (t.Result != null)
                         {
-                            BeginInvoke(new Action(() =>
+                            Invoke(new Action(() =>
                             {
-                                Form f = new TodoList(txtUsername.Text, t.Result);
+                                Form f = new TodoList(t.Result);
                                 f.Show(this);
                                 Hide();
                             }));
@@ -149,7 +149,7 @@ namespace TodoApp
                     finally
                     {
                         IsCancel = false;
-                        BeginInvoke(new Action(() =>
+                        Invoke(new Action(() =>
                         {
                             btnLogin.Text = "Đăng nhập";
                         }));
@@ -161,7 +161,7 @@ namespace TodoApp
         {
             if (this.InvokeRequired)
             {
-                BeginInvoke(new Action(() =>
+                Invoke(new Action(() =>
                 {
                     lblValidateLogin.Text = "Tài khoản hoặc mật khẩu không đúng";
                 }));
@@ -175,7 +175,7 @@ namespace TodoApp
         {
             if (this.InvokeRequired)
             {
-                BeginInvoke(new Action(() =>
+                Invoke(new Action(() =>
                 {
                     lblValidateLogin.Text = "Đăng nhập không thành công";
                 }));

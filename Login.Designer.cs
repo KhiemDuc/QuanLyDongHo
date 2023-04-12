@@ -35,12 +35,11 @@ namespace TodoApp
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TlpAction = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLogin = new TodoApp.Controls.CustomButton();
             this.panel7 = new System.Windows.Forms.Panel();
             this.btnRegister = new TodoApp.Controls.CustomButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.lblValidateLogin = new System.Windows.Forms.Label();
-            this.btnLogin = new TodoApp.Controls.CustomButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.llbForgot = new System.Windows.Forms.LinkLabel();
             this.hideAndShowPass = new System.Windows.Forms.PictureBox();
@@ -56,12 +55,13 @@ namespace TodoApp
             this.label2 = new System.Windows.Forms.Label();
             this.lblUnderUser = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblValidateLogin = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.TlpAction.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hideAndShowPass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -112,8 +112,8 @@ namespace TodoApp
             // 
             this.TlpAction.ColumnCount = 1;
             this.TlpAction.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.TlpAction.Controls.Add(this.panel1, 0, 3);
             this.TlpAction.Controls.Add(this.panel7, 0, 4);
-            this.TlpAction.Controls.Add(this.panel6, 0, 3);
             this.TlpAction.Controls.Add(this.panel5, 0, 2);
             this.TlpAction.Controls.Add(this.panel4, 0, 1);
             this.TlpAction.Controls.Add(this.label3, 0, 0);
@@ -127,8 +127,39 @@ namespace TodoApp
             this.TlpAction.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.03665F));
             this.TlpAction.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.88133F));
             this.TlpAction.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.49913F));
+            this.TlpAction.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.TlpAction.Size = new System.Drawing.Size(629, 665);
             this.TlpAction.TabIndex = 15;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lblValidateLogin);
+            this.panel1.Controls.Add(this.btnLogin);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 437);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(623, 100);
+            this.panel1.TabIndex = 22;
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnLogin.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnLogin.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnLogin.BorderRadius = 10;
+            this.btnLogin.BorderSize = 0;
+            this.btnLogin.FlatAppearance.BorderSize = 0;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.Location = new System.Drawing.Point(97, 49);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(422, 48);
+            this.btnLogin.TabIndex = 22;
+            this.btnLogin.Text = "Đăng Nhập";
+            this.btnLogin.TextColor = System.Drawing.Color.White;
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // panel7
             // 
@@ -144,25 +175,21 @@ namespace TodoApp
             // 
             // btnRegister
             // 
-            this.btnRegister.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegister.BackColor = System.Drawing.Color.Transparent;
-            this.btnRegister.BackgroundColor = System.Drawing.Color.Transparent;
-            this.btnRegister.BorderColor = System.Drawing.SystemColors.Highlight;
-            this.btnRegister.BorderRadius = 20;
+            this.btnRegister.BackColor = System.Drawing.Color.White;
+            this.btnRegister.BackgroundColor = System.Drawing.Color.White;
+            this.btnRegister.BorderColor = System.Drawing.Color.Orange;
+            this.btnRegister.BorderRadius = 0;
             this.btnRegister.BorderSize = 0;
-            this.btnRegister.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegister.FlatAppearance.BorderSize = 0;
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegister.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnRegister.ForeColor = System.Drawing.Color.DimGray;
-            this.btnRegister.Location = new System.Drawing.Point(67, 46);
-            this.btnRegister.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRegister.ForeColor = System.Drawing.Color.Gray;
+            this.btnRegister.Location = new System.Drawing.Point(123, 46);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(499, 53);
-            this.btnRegister.TabIndex = 12;
+            this.btnRegister.Size = new System.Drawing.Size(396, 40);
+            this.btnRegister.TabIndex = 21;
             this.btnRegister.Text = "Đăng Ký";
-            this.btnRegister.TextColor = System.Drawing.Color.DimGray;
+            this.btnRegister.TextColor = System.Drawing.Color.Gray;
             this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
@@ -180,55 +207,6 @@ namespace TodoApp
             this.label1.TabIndex = 14;
             this.label1.Text = "Nếu bạn chưa có tài khoản hãy";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel6
-            // 
-            this.panel6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel6.Controls.Add(this.lblValidateLogin);
-            this.panel6.Controls.Add(this.btnLogin);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(3, 436);
-            this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(623, 102);
-            this.panel6.TabIndex = 18;
-            // 
-            // lblValidateLogin
-            // 
-            this.lblValidateLogin.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblValidateLogin.AutoSize = true;
-            this.lblValidateLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblValidateLogin.ForeColor = System.Drawing.Color.Red;
-            this.lblValidateLogin.Location = new System.Drawing.Point(116, 0);
-            this.lblValidateLogin.Name = "lblValidateLogin";
-            this.lblValidateLogin.Size = new System.Drawing.Size(0, 18);
-            this.lblValidateLogin.TabIndex = 12;
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLogin.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnLogin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnLogin.BorderColor = System.Drawing.Color.Plum;
-            this.btnLogin.BorderRadius = 20;
-            this.btnLogin.BorderSize = 0;
-            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogin.Enabled = false;
-            this.btnLogin.FlatAppearance.BorderSize = 0;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(66, 36);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(499, 53);
-            this.btnLogin.TabIndex = 11;
-            this.btnLogin.Text = "Đăng Nhập";
-            this.btnLogin.TextColor = System.Drawing.Color.White;
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // panel5
             // 
@@ -423,6 +401,16 @@ namespace TodoApp
             this.label3.Text = "Đăng Nhập";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lblValidateLogin
+            // 
+            this.lblValidateLogin.AutoSize = true;
+            this.lblValidateLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblValidateLogin.ForeColor = System.Drawing.Color.Red;
+            this.lblValidateLogin.Location = new System.Drawing.Point(119, 11);
+            this.lblValidateLogin.Name = "lblValidateLogin";
+            this.lblValidateLogin.Size = new System.Drawing.Size(0, 20);
+            this.lblValidateLogin.TabIndex = 23;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -441,10 +429,10 @@ namespace TodoApp
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.TlpAction.ResumeLayout(false);
             this.TlpAction.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hideAndShowPass)).EndInit();
@@ -463,25 +451,25 @@ namespace TodoApp
         private System.Windows.Forms.TableLayoutPanel TlpAction;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel7;
-        private Controls.CustomButton btnRegister;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label4;
         private Label lblValidatePass;
         private Label lblValidateUserName;
-        private Label lblValidateLogin;
         private TextBox txtUsername;
         private Label lblUnderPassword;
         private TextBox txtPassword;
         private Label lblUnderUser;
         private PictureBox hideAndShowPass;
-        private Controls.CustomButton btnLogin;
         private LinkLabel llbForgot;
+        private Controls.CustomButton btnRegister;
+        private Panel panel1;
+        private Controls.CustomButton btnLogin;
+        private Label lblValidateLogin;
     }
 }
 

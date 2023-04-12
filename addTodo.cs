@@ -24,7 +24,7 @@ namespace TodoApp
         {
             _id = id;
         }
-        private async void btnAdd_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             if (txtTaskName.Text == "" || txtDes.Text == "" || dtpEnd.Text == "" || String.IsNullOrWhiteSpace(cmbDes.SelectedItem.ToString()))
             {
@@ -34,7 +34,7 @@ namespace TodoApp
             {
                 var dateEnd = dtpEnd.Value.ToString("MM/dd/yyyy");
                 var dateStart = dtpStart.Value.ToString("MM/dd/yyyy");
-                await Task.InsertTodo(txtTaskName.Text, txtDes.Text, dateStart, dateEnd, cmbDes.SelectedItem.ToString(), _id);
+                //await Task.InsertTodo(txtTaskName.Text, txtDes.Text, dateStart, dateEnd, cmbDes.SelectedItem.ToString(), _id);
                 lblValidate.Visible = false;
                 txtTaskName.Text = "";
                 txtDes.Text = "";
