@@ -197,9 +197,14 @@ namespace TodoApp
         {
             txtPassword.UseSystemPasswordChar = !txtPassword.UseSystemPasswordChar;
 
-            hideAndShowPass.Image = txtPassword.UseSystemPasswordChar ?
+            hideAndShowPass.Image = txtPassword.UseSystemPasswordChar ? 
                 Properties.Resources.icons8_hide_24 :
                 Properties.Resources.icons8_eye_24;
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

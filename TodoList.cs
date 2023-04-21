@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAL;
-using PagedList;
+using System.Threading;
 
 namespace TodoApp
 {
@@ -16,7 +16,9 @@ namespace TodoApp
     {
         private readonly string _id;
         private readonly Todo data = new Todo();
+        private readonly UserAccess user = new UserAccess();
         public DataTable cloneData;
+        private CancellationTokenSource cts = new CancellationTokenSource();
         public TodoList()
         {
             InitializeComponent();
@@ -25,9 +27,11 @@ namespace TodoApp
         public TodoList(string id) : this()
         {
             _id = id;
+            LoadUserNameAndMail(id);
             LoadData();
         }
 
+        // Load Data
         public void LoadData()
         {
             Task<DataTable> tableDatas = data.GetDataTableTodoAsync(_id);
@@ -49,16 +53,21 @@ namespace TodoApp
                 }
                 finally
                 {
-                    Invoke(new Action(() =>
-                    {
-                        ShowListTodo(cloneData);
-                    }));
+                    ShowListTodo(cloneData);
+                    LoadGroupName(_id);
                 }
             });
         }
         private void ShowListTodo(DataTable data)
         {
-            flowPanelListTask.Controls.Clear();
+            if (InvokeRequired)
+                Invoke(new Action(() =>
+                {
+                    flowPanelListTask.Controls.Clear();
+                }));
+            else
+                flowPanelListTask.Controls.Clear();
+
             for (int i = 0; i < data.Rows.Count; i++)
             {
                 customControls.CustomTask taskControl = new customControls.CustomTask();
@@ -66,18 +75,63 @@ namespace TodoApp
                 taskControl.TaskDescription = data.Rows[i]["task_des"].ToString();
                 taskControl.TaskState = data.Rows[i]["task_status"].ToString();
                 taskControl.TaskEndDate = data.Rows[i]["end_date"].ToString();
+                taskControl.TaskID = data.Rows[i]["task_id"].ToString();
+                taskControl.TaskGroup = data.Rows[i]["group_name"].ToString();
                 taskControl.DeleteTask_Click += btnDelete_Click;
-                flowPanelListTask.Controls.Add(taskControl);
+
+               if (InvokeRequired)
+                    Invoke((Action)(() =>
+                   {
+                        flowPanelListTask.Controls.Add(taskControl);
+                    }));
+                else
+                    flowPanelListTask.Controls.Add(taskControl);
             }
 
         }
 
-
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void LoadGroupName(string id)
         {
-            var addTodo = new addTodo(_id);
-            addTodo.eLoadData += new EventHandler(ob_LoadData);
-            addTodo.Show(this);
+
+            Task<DataTable> g = data.GetGroupNameAsync(id);
+            g.ContinueWith(t =>
+            {
+                if (g.Status == TaskStatus.Faulted)
+                {
+                    return;
+                }
+                else
+                {
+                    for(int i = 0; i < t.Result.Rows.Count ; i++)
+                    {
+                        if (InvokeRequired)
+                        {
+
+                            Invoke((Action)(() =>
+                            {
+                                cmbGroup.Items.Add(t.Result.Rows[i]["group_name"].ToString());
+                            }));
+                            
+                        }
+                        else
+                            cmbGroup.Items.Add(t.Result.Rows[i]["group_name"].ToString());
+                    }
+                }
+
+            });
+        }
+
+        public void LoadUserNameAndMail(string id) {
+            Task<List<string>> userAndEmail = user.GetUserNameAndEmail(id, cts.Token);
+            userAndEmail.ContinueWith(t =>
+            {
+                Invoke((Action)(() =>
+                {
+                    lblUserName.Text = "@" + t.Result[0];
+                }));
+
+            });
+
         }
 
         private void ob_LoadData(object sender, EventArgs e)
@@ -85,9 +139,62 @@ namespace TodoApp
             LoadData();
         }
 
-        private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
+
+        // Action Add and Delete
+        private void btnDelete_Click(object sender, MyEventArgs e)
         {
-            string selectedValue = comboBox1.SelectedItem.ToString();
+            DialogResult dialogResult 
+                = MessageBox.Show("Bạn có muốn xóa công việc này chứ", "Xác nhận",MessageBoxButtons.YesNo);
+            if(dialogResult == DialogResult.Yes)
+            {
+                string id_Task = e.Id.ToString();
+                Task delete = data.DeleteToDo(id_Task);
+                delete.ContinueWith(t =>
+                {
+                    LoadData();
+                });
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void btnAddTask_Click(object sender, EventArgs e)
+        {
+            var addTodo = new addTodo(_id);
+            addTodo.eLoadData += new EventHandler(ob_LoadData);
+            addTodo.Show(this);
+        }
+
+
+        // Filter and Search
+        private void cmbGroup_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedValue = cmbGroup.SelectedItem.ToString();
+            if (selectedValue == "All")
+            {
+                ShowListTodo(cloneData);
+                return;
+            }
+            else
+            {
+                var searchData = cloneData.Clone();
+                foreach (DataRow row in cloneData.Rows)
+                {
+                    if (row["group_name"].ToString() == selectedValue)
+                    {
+                        searchData.Rows.Add(row.ItemArray);
+                    }
+                }
+
+                ShowListTodo(searchData);
+            }
+        }
+
+        private void cmbFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedValue = cmbFilter.SelectedItem.ToString();
             if (selectedValue == "All")
             {
                 ShowListTodo(cloneData);
@@ -111,7 +218,7 @@ namespace TodoApp
         {
             if (txtSearch.Text == "")
             {
-
+                ShowListTodo(cloneData);
             }
             else
             {
@@ -123,32 +230,11 @@ namespace TodoApp
                         searchData.Rows.Add(row.ItemArray);
                     }
                 }
-
+                ShowListTodo(searchData);
             }
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Done Click");
-
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string selectedValue = comboBox2.SelectedItem.ToString();
-            var searchData = cloneData.Clone();
-            foreach (DataRow row in cloneData.Rows)
-            {
-                if (row["grop_name"].ToString() == selectedValue)
-                {
-                    searchData.Rows.Add(row.ItemArray);
-                }
-
-            }
-            cloneData = searchData.Copy();
-
-        }
-
+        // Close and Logout
         private void btnLogout_Click(object sender, EventArgs e)
         {
             if (Owner != null && !Owner.IsDisposed && !Owner.Disposing && !Owner.Visible)
@@ -162,8 +248,16 @@ namespace TodoApp
                 Owner.Show();
 
         }
+        
+        private void DisposeGarbage()
+        {
+            cts?.Dispose();
+            data.Dispose();
+            user.Dispose();
+            cloneData?.Dispose();
+        }
 
-        private void flowPanelListTask_Paint(object sender, PaintEventArgs e)
+        private void btnTaskBroad_Click(object sender, EventArgs e)
         {
 
         }

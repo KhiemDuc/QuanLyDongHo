@@ -17,16 +17,14 @@ namespace TodoApp.customControls
         private string taskDescription = "";
         private string taskState = "";
         private string taskEndDate = "";
-        private int borderSize = 1;
-        private int borderRadius = 5;
-        private Color borderColor = Color.Black;
-        public event EventHandler UpdateTask_Click;
-        public event EventHandler DeleteTask_Click;
+        private string taskID = "";
+        private string taskGroup = "";
+        public event EventHandler<MyEventArgs> UpdateTask_Click;
+        public event EventHandler<MyEventArgs> DeleteTask_Click;
 
         public CustomTask()
         {
             InitializeComponent();
-            this.AutoScaleMode = AutoScaleMode.Dpi;
         }
         public string TaskEndDate
         {
@@ -39,6 +37,16 @@ namespace TodoApp.customControls
                 this.Invalidate();
             }
         }
+        public string TaskID
+        {
+            get { return taskID; }
+
+            set
+            {
+                taskID = value;
+            }
+        }
+
         public string TaskName
         {
             get => taskName;
@@ -70,104 +78,54 @@ namespace TodoApp.customControls
                 taskState = value;
                 if(taskState == "In Progress") {
                     lblState.ForeColor = Color.Blue;
+                    lblState.BackColor = Color.FromArgb(225, 247, 254);
                 }
                 else if(taskState == "Not started")
                 {
                     lblState.ForeColor = Color.Red;
+                    lblState.BackColor = Color.FromArgb(253, 234, 240);
                 }
                 else
                 {
-                    lblState.ForeColor = Color.Turquoise;
+                    lblState.ForeColor = Color.FromArgb(120,206,28);
+                    lblState.BackColor = Color.FromArgb(236, 253, 230);
+
                 }
                 lblState.Text = taskState;
                 this.Invalidate();
             }
         }
-        public int BorderSize
-        {
-            get { return borderSize; }
-            set
-            {
-                borderSize = value;
+
+        public string TaskGroup { 
+            get => taskGroup; 
+            set 
+            { 
+                taskGroup = value;
+                lblGroup.Text = taskGroup;
                 this.Invalidate();
-            }
+            } 
         }
 
-        
-        public int BorderRadius
-        {
-            get { return borderRadius; }
-            set
-            {
-                borderRadius = value;
-                this.Invalidate();
-            }
-        }
-
-        
-        public Color BorderColor
-        {
-            get { return borderColor; }
-            set
-            {
-                borderColor = value;
-                this.Invalidate();
-            }
-        }
-        protected override void OnPaint(PaintEventArgs pevent)
-        {
-            base.OnPaint(pevent);
-
-
-            Rectangle rectSurface = this.ClientRectangle;
-            Rectangle rectBorder = Rectangle.Inflate(rectSurface, -borderSize, -borderSize);
-            int smoothSize = 2;
-            if (borderSize > 0)
-                smoothSize = borderSize;
-
-            if (borderRadius > 2)
-            {
-                using (GraphicsPath pathSurface = GetFigurePath(rectSurface, borderRadius))
-                using (GraphicsPath pathBorder = GetFigurePath(rectBorder, borderRadius - borderSize))
-                using (Pen penSurface = new Pen(this.Parent.BackColor, smoothSize))
-                using (Pen penBorder = new Pen(borderColor, borderSize))
-                {
-                    pevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                    //Button surface
-                    this.Region = new Region(pathSurface);
-                    //Draw surface border for HD result
-                    pevent.Graphics.DrawPath(penSurface, pathSurface);
-
-                    //Button border                    
-                    if (borderSize >= 1)
-                        //Draw control border
-                        pevent.Graphics.DrawPath(penBorder, pathBorder);
-                }
-            }
-
-        }
-        private GraphicsPath GetFigurePath(Rectangle rect, int radius)
-        {
-            GraphicsPath path = new GraphicsPath();
-            float curveSize = radius * 2F;
-
-            path.StartFigure();
-            path.AddArc(rect.X, rect.Y, curveSize, curveSize, 180, 90);
-            path.AddArc(rect.Right - curveSize, rect.Y, curveSize, curveSize, 270, 90);
-            path.AddArc(rect.Right - curveSize, rect.Bottom - curveSize, curveSize, curveSize, 0, 90);
-            path.AddArc(rect.X, rect.Bottom - curveSize, curveSize, curveSize, 90, 90);
-            path.CloseFigure();
-            return path;
-        }
+        //public int BorderSize
+        //{
+        //    get { return borderSize; }
+        //    set
+        //    {
+        //        borderSize = value;
+        //        this.Invalidate();
+        //    }
+        //}
 
         private void customButton1_Click(object sender, EventArgs e)
         {
-            UpdateTask_Click?.Invoke(this, e);
+            MyEventArgs arg = new MyEventArgs(taskID);
+            UpdateTask_Click?.Invoke(this, arg);
         }
 
         private void customButton2_Click(object sender, EventArgs e)
         {
-            DeleteTask_Click?.Invoke(this, e);
+            MyEventArgs arg = new MyEventArgs(taskID);
+            DeleteTask_Click?.Invoke(this, arg);
         }
     }
 }

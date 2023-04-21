@@ -36,6 +36,7 @@ namespace TodoApp
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TlpAction = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblValidateLogin = new System.Windows.Forms.Label();
             this.btnLogin = new TodoApp.Controls.CustomButton();
             this.panel7 = new System.Windows.Forms.Panel();
             this.btnRegister = new TodoApp.Controls.CustomButton();
@@ -55,7 +56,6 @@ namespace TodoApp
             this.label2 = new System.Windows.Forms.Label();
             this.lblUnderUser = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblValidateLogin = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -140,6 +140,16 @@ namespace TodoApp
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(623, 100);
             this.panel1.TabIndex = 22;
+            // 
+            // lblValidateLogin
+            // 
+            this.lblValidateLogin.AutoSize = true;
+            this.lblValidateLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblValidateLogin.ForeColor = System.Drawing.Color.Red;
+            this.lblValidateLogin.Location = new System.Drawing.Point(119, 11);
+            this.lblValidateLogin.Name = "lblValidateLogin";
+            this.lblValidateLogin.Size = new System.Drawing.Size(0, 20);
+            this.lblValidateLogin.TabIndex = 23;
             // 
             // btnLogin
             // 
@@ -336,6 +346,7 @@ namespace TodoApp
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(402, 25);
             this.txtUsername.TabIndex = 19;
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             this.txtUsername.Enter += new System.EventHandler(this.txtUsername_Enter);
             this.txtUsername.Leave += new System.EventHandler(this.txtUsername_Leave);
             // 
@@ -400,16 +411,6 @@ namespace TodoApp
             this.label3.TabIndex = 18;
             this.label3.Text = "Đăng Nhập";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblValidateLogin
-            // 
-            this.lblValidateLogin.AutoSize = true;
-            this.lblValidateLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblValidateLogin.ForeColor = System.Drawing.Color.Red;
-            this.lblValidateLogin.Location = new System.Drawing.Point(119, 11);
-            this.lblValidateLogin.Name = "lblValidateLogin";
-            this.lblValidateLogin.Size = new System.Drawing.Size(0, 20);
-            this.lblValidateLogin.TabIndex = 23;
             // 
             // Login
             // 
