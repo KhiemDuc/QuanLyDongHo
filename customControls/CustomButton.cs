@@ -18,7 +18,7 @@ namespace TodoApp.Controls
         private Color borderColor = Color.PaleVioletRed;
 
         //Properties
-        [Category("RJ Code Advance")]
+        
         public int BorderSize
         {
             get { return borderSize; }
@@ -29,7 +29,7 @@ namespace TodoApp.Controls
             }
         }
 
-        [Category("RJ Code Advance")]
+        
         public int BorderRadius
         {
             get { return borderRadius; }
@@ -40,7 +40,7 @@ namespace TodoApp.Controls
             }
         }
 
-        [Category("RJ Code Advance")]
+        
         public Color BorderColor
         {
             get { return borderColor; }
@@ -51,7 +51,7 @@ namespace TodoApp.Controls
             }
         }
 
-        [Category("RJ Code Advance")]
+        
         public Color BackgroundColor
         {
             get { return this.BackColor; }

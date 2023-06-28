@@ -33,16 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bunifu_UI_v1.5.3">
-      <HintPath>C:\Users\Admin\Downloads\Bunifu_UI_v1.5.3.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
-      <HintPath>packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,58 +49,209 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="addTodo.cs">
+    <Compile Include="AnhDongHo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="addTodo.Designer.cs">
-      <DependentUpon>addTodo.cs</DependentUpon>
+    <Compile Include="AnhDongHo.Designer.cs">
+      <DependentUpon>AnhDongHo.cs</DependentUpon>
     </Compile>
-    <Compile Include="customControls\CustomButton.cs">
+    <Compile Include="BieuDoBaoCaoChi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BieuDoBaoCaoChi.Designer.cs">
+      <DependentUpon>BieuDoBaoCaoChi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BieuDoBaoCaoThanhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BieuDoBaoCaoThanhVien.Designer.cs">
+      <DependentUpon>BieuDoBaoCaoThanhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BieuDoBaoCaoThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BieuDoBaoCaoThu.Designer.cs">
+      <DependentUpon>BieuDoBaoCaoThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaoCaoThuChi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCaoThuChi.Designer.cs">
+      <DependentUpon>BaoCaoThuChi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Caygiapha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caygiapha.Designer.cs">
+      <DependentUpon>Caygiapha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChiTietKhoanThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChiTietKhoanThu.Designer.cs">
+      <DependentUpon>ChiTietKhoanThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Danhsach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Danhsach.Designer.cs">
+      <DependentUpon>Danhsach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoiMatKhau.Designer.cs">
+      <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DongQuyenGop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DongQuyenGop.Designer.cs">
+      <DependentUpon>DongQuyenGop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyClass\MyMessageBoxError.cs" />
+    <Compile Include="MyClass\MyComboBoxItem.cs" />
+    <Compile Include="CustomControls\CustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="customControls\CustomTask.cs">
+    <Compile Include="CustomControls\CustomTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="customControls\CustomTask.Designer.cs">
-      <DependentUpon>CustomTask.cs</DependentUpon>
+    <Compile Include="CustomControls\CustomTextBox.Designer.cs">
+      <DependentUpon>CustomTextBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyClass\MyEventArgs.cs" />
+    <Compile Include="MyClass\MyValidateAllControl.cs" />
+    <Compile Include="PhanQuyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhanQuyen.Designer.cs">
+      <DependentUpon>PhanQuyen.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Register.cs">
+    <Compile Include="QuanLyChiTieu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Register.Designer.cs">
-      <DependentUpon>Register.cs</DependentUpon>
+    <Compile Include="QuanLyChiTieu.Designer.cs">
+      <DependentUpon>QuanLyChiTieu.cs</DependentUpon>
     </Compile>
-    <Compile Include="TodoList.cs">
+    <Compile Include="QuanLySuKien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TodoList.Designer.cs">
-      <DependentUpon>TodoList.cs</DependentUpon>
+    <Compile Include="QuanLySuKien.Designer.cs">
+      <DependentUpon>QuanLySuKien.cs</DependentUpon>
     </Compile>
-    <Compile Include="updateTodo.cs">
+    <Compile Include="QuanLyTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="updateTodo.Designer.cs">
-      <DependentUpon>updateTodo.cs</DependentUpon>
+    <Compile Include="QuanLyTaiKhoan.Designer.cs">
+      <DependentUpon>QuanLyTaiKhoan.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="addTodo.resx">
-      <DependentUpon>addTodo.cs</DependentUpon>
+    <Compile Include="QuanLyThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyThu.Designer.cs">
+      <DependentUpon>QuanLyThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemLoaiChi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemLoaiChi.Designer.cs">
+      <DependentUpon>ThemLoaiChi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemSuaSuKien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemSuaSuKien.Designer.cs">
+      <DependentUpon>ThemSuaSuKien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemSuaTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemSuaTaiKhoan.Designer.cs">
+      <DependentUpon>ThemSuaTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemThanhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemThanhVien.Designer.cs">
+      <DependentUpon>ThemThanhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemSuaKhoanChi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemSuaKhoanChi.Designer.cs">
+      <DependentUpon>ThemSuaKhoanChi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemSuaKhoanThuThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemSuaKhoanThuThu.Designer.cs">
+      <DependentUpon>ThemSuaKhoanThuThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongTinCaNhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongTinCaNhan.Designer.cs">
+      <DependentUpon>ThongTinCaNhan.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AnhDongHo.resx">
+      <DependentUpon>AnhDongHo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="customControls\CustomButton.resx">
+    <EmbeddedResource Include="BieuDoBaoCaoChi.resx">
+      <DependentUpon>BieuDoBaoCaoChi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BieuDoBaoCaoThanhVien.resx">
+      <DependentUpon>BieuDoBaoCaoThanhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BieuDoBaoCaoThu.resx">
+      <DependentUpon>BieuDoBaoCaoThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCaoThuChi.resx">
+      <DependentUpon>BaoCaoThuChi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Caygiapha.resx">
+      <DependentUpon>Caygiapha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChiTietKhoanThu.resx">
+      <DependentUpon>ChiTietKhoanThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\CustomButton.resx">
       <DependentUpon>CustomButton.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="customControls\CustomTask.resx">
-      <DependentUpon>CustomTask.cs</DependentUpon>
+    <EmbeddedResource Include="CustomControls\customTextBox.resx">
+      <DependentUpon>CustomTextBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="Danhsach.resx">
+      <DependentUpon>Danhsach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoiMatKhau.resx">
+      <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DongQuyenGop.resx">
+      <DependentUpon>DongQuyenGop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhanQuyen.resx">
+      <DependentUpon>PhanQuyen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -117,11 +263,38 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Register.resx">
-      <DependentUpon>Register.cs</DependentUpon>
+    <EmbeddedResource Include="QuanLyChiTieu.resx">
+      <DependentUpon>QuanLyChiTieu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TodoList.resx">
-      <DependentUpon>TodoList.cs</DependentUpon>
+    <EmbeddedResource Include="QuanLySuKien.resx">
+      <DependentUpon>QuanLySuKien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyTaiKhoan.resx">
+      <DependentUpon>QuanLyTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyThu.resx">
+      <DependentUpon>QuanLyThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemLoaiChi.resx">
+      <DependentUpon>ThemLoaiChi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemSuaSuKien.resx">
+      <DependentUpon>ThemSuaSuKien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemSuaTaiKhoan.resx">
+      <DependentUpon>ThemSuaTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemThanhVien.resx">
+      <DependentUpon>ThemThanhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemSuaKhoanChi.resx">
+      <DependentUpon>ThemSuaKhoanChi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemSuaKhoanThuThu.resx">
+      <DependentUpon>ThemSuaKhoanThuThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongTinCaNhan.resx">
+      <DependentUpon>ThongTinCaNhan.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -137,12 +310,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{29FB7CF1-ED84-4276-976F-88BC6AE16212}</Project>
-      <Name>DAL</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icons8-eye-24.png" />
   </ItemGroup>
   <ItemGroup>
@@ -150,6 +317,126 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-logout-rounded-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search-641.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-user-482.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-password-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-user-483.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search-642.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-task-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-clipboard-241.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-clipboard-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-baby-calendar-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-task-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-baby-calendar-321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-task-64 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-clipboard-242.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-task-32 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-baby-calendar-322.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-task-32 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-logout-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-logout-rounded-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-logout-321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-day-off-242.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-questionnaire-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-filter-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-filter-241.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-expired-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-settings-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-info-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-delete-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-tree-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-bullet-list-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-analytics-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-grandfather-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NguyenDuc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nha_tho1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DALL\DAL.csproj">
+      <Project>{9aa7bccb-5b14-47b7-b3d3-f9a1a0d833b2}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-money-box-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-dollar-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu-4-xxl.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
