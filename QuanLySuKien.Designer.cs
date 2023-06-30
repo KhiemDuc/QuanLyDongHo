@@ -34,18 +34,16 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvDanhSachThu = new System.Windows.Forms.DataGridView();
-            this.MaSuKien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenSuKien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayToChuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NguoiToChuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sua = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Xoa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnThietLapChi = new System.Windows.Forms.Button();
+            this.MaSuKien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSuKien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayToChuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sua = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Xoa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachThu)).BeginInit();
@@ -93,9 +91,7 @@
             this.MaSuKien,
             this.TenSuKien,
             this.NgayToChuc,
-            this.SoTien,
             this.MoTa,
-            this.NguoiToChuc,
             this.Sua,
             this.Xoa});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -122,70 +118,6 @@
             this.dgvDanhSachThu.Size = new System.Drawing.Size(1319, 335);
             this.dgvDanhSachThu.TabIndex = 1;
             this.dgvDanhSachThu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachThu_CellContentClick);
-            // 
-            // MaSuKien
-            // 
-            this.MaSuKien.HeaderText = "Mã Sự Kiện";
-            this.MaSuKien.MinimumWidth = 6;
-            this.MaSuKien.Name = "MaSuKien";
-            this.MaSuKien.Width = 125;
-            // 
-            // TenSuKien
-            // 
-            this.TenSuKien.HeaderText = "Tên Sự Kiện";
-            this.TenSuKien.MinimumWidth = 6;
-            this.TenSuKien.Name = "TenSuKien";
-            this.TenSuKien.Width = 150;
-            // 
-            // NgayToChuc
-            // 
-            this.NgayToChuc.HeaderText = "Ngày Tổ Chức";
-            this.NgayToChuc.MinimumWidth = 6;
-            this.NgayToChuc.Name = "NgayToChuc";
-            this.NgayToChuc.Width = 200;
-            // 
-            // SoTien
-            // 
-            this.SoTien.HeaderText = "Số Tiền";
-            this.SoTien.MinimumWidth = 6;
-            this.SoTien.Name = "SoTien";
-            this.SoTien.Width = 125;
-            // 
-            // MoTa
-            // 
-            this.MoTa.HeaderText = "Mô tả";
-            this.MoTa.MinimumWidth = 6;
-            this.MoTa.Name = "MoTa";
-            this.MoTa.Width = 250;
-            // 
-            // NguoiToChuc
-            // 
-            this.NguoiToChuc.HeaderText = "Người chủ trì";
-            this.NguoiToChuc.MinimumWidth = 6;
-            this.NguoiToChuc.Name = "NguoiToChuc";
-            this.NguoiToChuc.Width = 200;
-            // 
-            // Sua
-            // 
-            this.Sua.HeaderText = "Sửa";
-            this.Sua.MinimumWidth = 6;
-            this.Sua.Name = "Sua";
-            this.Sua.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Sua.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Sua.Text = "Sửa";
-            this.Sua.UseColumnTextForButtonValue = true;
-            this.Sua.Width = 125;
-            // 
-            // Xoa
-            // 
-            this.Xoa.HeaderText = "Xóa";
-            this.Xoa.MinimumWidth = 6;
-            this.Xoa.Name = "Xoa";
-            this.Xoa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Xoa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Xoa.Text = "Xóa";
-            this.Xoa.UseColumnTextForButtonValue = true;
-            this.Xoa.Width = 125;
             // 
             // panel2
             // 
@@ -230,6 +162,56 @@
             this.btnThietLapChi.UseVisualStyleBackColor = true;
             this.btnThietLapChi.Click += new System.EventHandler(this.btnThietLapChi_Click);
             // 
+            // MaSuKien
+            // 
+            this.MaSuKien.HeaderText = "Mã Sự Kiện";
+            this.MaSuKien.MinimumWidth = 6;
+            this.MaSuKien.Name = "MaSuKien";
+            this.MaSuKien.Width = 125;
+            // 
+            // TenSuKien
+            // 
+            this.TenSuKien.HeaderText = "Tên Sự Kiện";
+            this.TenSuKien.MinimumWidth = 6;
+            this.TenSuKien.Name = "TenSuKien";
+            this.TenSuKien.Width = 150;
+            // 
+            // NgayToChuc
+            // 
+            this.NgayToChuc.HeaderText = "Ngày Tổ Chức";
+            this.NgayToChuc.MinimumWidth = 6;
+            this.NgayToChuc.Name = "NgayToChuc";
+            this.NgayToChuc.Width = 200;
+            // 
+            // MoTa
+            // 
+            this.MoTa.HeaderText = "Mô tả";
+            this.MoTa.MinimumWidth = 6;
+            this.MoTa.Name = "MoTa";
+            this.MoTa.Width = 250;
+            // 
+            // Sua
+            // 
+            this.Sua.HeaderText = "Sửa";
+            this.Sua.MinimumWidth = 6;
+            this.Sua.Name = "Sua";
+            this.Sua.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Sua.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Sua.Text = "Sửa";
+            this.Sua.UseColumnTextForButtonValue = true;
+            this.Sua.Width = 125;
+            // 
+            // Xoa
+            // 
+            this.Xoa.HeaderText = "Xóa";
+            this.Xoa.MinimumWidth = 6;
+            this.Xoa.Name = "Xoa";
+            this.Xoa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Xoa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Xoa.Text = "Xóa";
+            this.Xoa.UseColumnTextForButtonValue = true;
+            this.Xoa.Width = 125;
+            // 
             // QuanLySuKien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -260,9 +242,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSuKien;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenSuKien;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayToChuc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoTien;
         private System.Windows.Forms.DataGridViewTextBoxColumn MoTa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NguoiToChuc;
         private System.Windows.Forms.DataGridViewButtonColumn Sua;
         private System.Windows.Forms.DataGridViewButtonColumn Xoa;
     }

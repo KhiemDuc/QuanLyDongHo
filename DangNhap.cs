@@ -11,10 +11,10 @@ using System.Data;
 
 namespace TodoApp
 {
-    public partial class LoginForm : Form
+    public partial class DangNhap : Form
     {
         private LoginDAL Login = new LoginDAL();
-        public LoginForm()
+        public DangNhap()
         {
             InitializeComponent();
         }

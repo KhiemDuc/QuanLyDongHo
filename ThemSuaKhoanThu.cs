@@ -11,16 +11,16 @@ using System.Windows.Forms;
 using DAL;
 namespace TodoApp
 {
-    public partial class ThemSuaKhoanThuThu : Form
+    public partial class ThemSuaKhoanThu : Form
     {
         ThuDAL thu = new ThuDAL();
         private string _type;
         private string _maThu;
-        public ThemSuaKhoanThuThu()
+        public ThemSuaKhoanThu()
         {
             InitializeComponent();
         }
-        public ThemSuaKhoanThuThu(string type = "add",string maThu = ""):this()
+        public ThemSuaKhoanThu(string type = "add",string maThu = ""):this()
         {
             _type = type;
             _maThu = maThu;
