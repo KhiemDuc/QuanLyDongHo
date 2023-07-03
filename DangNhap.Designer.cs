@@ -2,7 +2,7 @@
 
 namespace TodoApp
 {
-    partial class LoginForm
+    partial class DangNhap
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@ namespace TodoApp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangNhap));
             this.panel3 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();

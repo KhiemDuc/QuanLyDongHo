@@ -94,6 +94,12 @@
     <Compile Include="Caygiapha.Designer.cs">
       <DependentUpon>Caygiapha.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChiTietKhoanChi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChiTietKhoanChi.Designer.cs">
+      <DependentUpon>ChiTietKhoanChi.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChiTietKhoanThu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,11 +141,11 @@
     <Compile Include="CustomControls\CustomTextBox.Designer.cs">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <Compile Include="DangNhap.Designer.cs">
+      <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="MyClass\MyEventArgs.cs" />
     <Compile Include="MyClass\MyValidateAllControl.cs" />
@@ -205,11 +211,11 @@
     <Compile Include="ThemSuaKhoanChi.Designer.cs">
       <DependentUpon>ThemSuaKhoanChi.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThemSuaKhoanThuThu.cs">
+    <Compile Include="ThemSuaKhoanThu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ThemSuaKhoanThuThu.Designer.cs">
-      <DependentUpon>ThemSuaKhoanThuThu.cs</DependentUpon>
+    <Compile Include="ThemSuaKhoanThu.Designer.cs">
+      <DependentUpon>ThemSuaKhoanThu.cs</DependentUpon>
     </Compile>
     <Compile Include="ThongTinCaNhan.cs">
       <SubType>Form</SubType>
@@ -235,6 +241,9 @@
     <EmbeddedResource Include="Caygiapha.resx">
       <DependentUpon>Caygiapha.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChiTietKhoanChi.resx">
+      <DependentUpon>ChiTietKhoanChi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChiTietKhoanThu.resx">
       <DependentUpon>ChiTietKhoanThu.cs</DependentUpon>
     </EmbeddedResource>
@@ -256,8 +265,8 @@
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <EmbeddedResource Include="DangNhap.resx">
+      <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PhanQuyen.resx">
       <DependentUpon>PhanQuyen.cs</DependentUpon>
@@ -299,8 +308,8 @@
     <EmbeddedResource Include="ThemSuaKhoanChi.resx">
       <DependentUpon>ThemSuaKhoanChi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThemSuaKhoanThuThu.resx">
-      <DependentUpon>ThemSuaKhoanThuThu.cs</DependentUpon>
+    <EmbeddedResource Include="ThemSuaKhoanThu.resx">
+      <DependentUpon>ThemSuaKhoanThu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThongTinCaNhan.resx">
       <DependentUpon>ThongTinCaNhan.cs</DependentUpon>

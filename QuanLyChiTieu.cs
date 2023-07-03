@@ -33,18 +33,25 @@ namespace TodoApp
 
         private void dgvDanhSachThu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dgvDanhSachThu.Columns["Sua"].Index && e.RowIndex >= 0)
+            if(e.RowIndex >= 0)
             {
                 string MaThu = dgvDanhSachThu.Rows[e.RowIndex].Cells["MaChi"].Value.ToString();
-                var sua = new ThemSuaKhoanChi("update", MaThu);
-                sua.ShowDialog();
-            }
-            if (e.ColumnIndex == dgvDanhSachThu.Columns["Xoa"].Index && e.RowIndex >= 0)
-            {
-                string MaThu = dgvDanhSachThu.Rows[e.RowIndex].Cells["MaChi"].Value.ToString();
-                var sua = new ThemSuaKhoanChi("update", MaThu);
-                sua.ShowDialog();
-            }
+                if (e.ColumnIndex == dgvDanhSachThu.Columns["Sua"].Index)
+                {
+                    var sua = new ThemSuaKhoanChi("update", MaThu);
+                    sua.ShowDialog();
+                }
+                if (e.ColumnIndex == dgvDanhSachThu.Columns["Xoa"].Index)
+                {
+                    var sua = new ThemSuaKhoanChi("update", MaThu);
+                    sua.ShowDialog();
+                }
+                if (e.ColumnIndex == dgvDanhSachThu.Columns["ChiTiet"].Index)
+                {
+                    var sua = new ChiTietKhoanChi();
+                    sua.ShowDialog();
+                }
+            }    
         }
 
         private void QuanLyChiTieu_Load(object sender, EventArgs e)
@@ -57,13 +64,6 @@ namespace TodoApp
 
             }
             LoadDanhSachChi();
-            foreach (DataGridViewColumn column in dgvDanhSachThu.Columns)
-            {
-                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            }
-
-            // Đặt FillMode của Control đang chứa DataGridView thành DataGridViewAutoSizeColumnsMode.Fill
-            dgvDanhSachThu.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
         }
         void LoadDanhSachChi()
@@ -85,10 +85,10 @@ namespace TodoApp
             foreach (DataRow row in dt.Rows)
             {
                 int rowIndex = dgvDanhSachThu.Rows.Add();
-                dgvDanhSachThu.Rows[rowIndex].Cells["MaChi"].Value = row["MaChi"];
-                dgvDanhSachThu.Rows[rowIndex].Cells["TenKhoanChi"].Value = row["TenChiTieu"];
-                dgvDanhSachThu.Rows[rowIndex].Cells["NgayChi"].Value = ((DateTime)row["NgayChi"]).ToString("dd-MM-yyyy");
-                dgvDanhSachThu.Rows[rowIndex].Cells["SoTien"].Value = row["SoTien"];
+                dgvDanhSachThu.Rows[rowIndex].Cells["MaChi"].Value = row["MaChiTieu"];
+                dgvDanhSachThu.Rows[rowIndex].Cells["TenKhoanChi"].Value = row["TenKhoanChi"];
+               /* dgvDanhSachThu.Rows[rowIndex].Cells["NgayChi"].Value = ((DateTime)row["NgayChi"]).ToString("dd-MM-yyyy");*/
+                /*dgvDanhSachThu.Rows[rowIndex].Cells["SoTien"].Value = row["SoTien"];*/
                 dgvDanhSachThu.Rows[rowIndex].Cells["MoTa"].Value = row["MoTa"];
 
 

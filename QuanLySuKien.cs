@@ -13,7 +13,7 @@ namespace TodoApp
 {
     public partial class QuanLySuKien : Form
     {
-        ChiDAL chi = new ChiDAL();
+        SuKienDAL chi = new SuKienDAL();
         DataTable dt = new DataTable();
         private string _role;
         public QuanLySuKien()
@@ -70,29 +70,19 @@ namespace TodoApp
             }
             dt = await chi.DanhSachSuKien();
             Showdata(dt);
-            foreach (DataGridViewColumn column in dgvDanhSachThu.Columns)
-            {
-                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            }
-
-            // Đặt FillMode của Control đang chứa DataGridView thành DataGridViewAutoSizeColumnsMode.Fill
-            dgvDanhSachThu.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         void Showdata(DataTable dt)
         {
             dgvDanhSachThu.Rows.Clear();
             foreach (DataRow row in dt.Rows)
             {
+                int Sotien = 100000;
                 int rowIndex = dgvDanhSachThu.Rows.Add();
-                dgvDanhSachThu.Rows[rowIndex].Cells["MaSuKien"].Value = row["MaGiaoDich"];
-                dgvDanhSachThu.Rows[rowIndex].Cells["TenSuKien"].Value = row["TenChiTieu"];
-                dgvDanhSachThu.Rows[rowIndex].Cells["NgayToChuc"].Value = ((DateTime)row["NgayChi"]).ToString("dd-MM-yyyy");
-                dgvDanhSachThu.Rows[rowIndex].Cells["SoTien"].Value = row["SoTien"];
+                dgvDanhSachThu.Rows[rowIndex].Cells["MaSuKien"].Value = row["MaSuKien"];
+                dgvDanhSachThu.Rows[rowIndex].Cells["TenSuKien"].Value = row["TenSuKien"];
+                dgvDanhSachThu.Rows[rowIndex].Cells["NgayToChuc"].Value = ((DateTime)row["NgayToChuc"]).ToString("dd-MM-yyyy");
+                dgvDanhSachThu.Rows[rowIndex].Cells["SoTien"].Value = Sotien.ToString("NO");
                 dgvDanhSachThu.Rows[rowIndex].Cells["MoTa"].Value = row["MoTa"];
-                dgvDanhSachThu.Rows[rowIndex].Cells["NguoiToChuc"].Value = row["Ten"];
-
-
-
             }
             dgvDanhSachThu.Columns["MaSuKien"].Visible = false;
         }

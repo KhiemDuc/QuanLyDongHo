@@ -1,6 +1,6 @@
 ﻿namespace TodoApp
 {
-    partial class ThemSuaKhoanThuThu
+    partial class ThemSuaKhoanThu
     {
         /// <summary>
         /// Required designer variable.

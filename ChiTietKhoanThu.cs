@@ -43,7 +43,7 @@ namespace TodoApp
             }
             dgvDanhSachThu.Columns["MaThanhVien"].Visible = false;
             dgvDanhSachThu.Columns["TenKhoanThu"].HeaderText = "Tên thành viên";
-            dgvDanhSachThu.Columns["DanhMuc"].Visible = false;
+            dgvDanhSachThu.Columns["DanhMuc"].Visible = true;
             dgvDanhSachThu.Columns["DinhMuc"].HeaderText = "Số tiền";
             dgvDanhSachThu.Columns["MoTa"].HeaderText = "Tên loại thu";
             dgvDanhSachThu.Columns["NgayBatDauThu"].HeaderText = "Ngày thu tiền";

@@ -28,7 +28,7 @@ namespace TodoApp
 
         private void btnThietLapThu_Click(object sender, EventArgs e)
         {
-            var thieplapthu = new ThemSuaKhoanThuThu("add");
+            var thieplapthu = new ThemSuaKhoanThu("add");
             thieplapthu.ShowDialog();
         }
 
@@ -80,7 +80,7 @@ namespace TodoApp
             if (e.ColumnIndex == dgvDanhSachThu.Columns["Sua"].Index && e.RowIndex >= 0)
             {
                 string MaThu = dgvDanhSachThu.Rows[e.RowIndex].Cells["MaThu"].Value.ToString();
-                var sua = new ThemSuaKhoanThuThu("update", MaThu);
+                var sua = new ThemSuaKhoanThu("update", MaThu);
                 sua.ShowDialog();
             }
             if (e.ColumnIndex == dgvDanhSachThu.Columns["DongTien"].Index && e.RowIndex >= 0)
