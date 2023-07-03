@@ -99,7 +99,7 @@
             this.btnHome.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnHome.ForeColor = System.Drawing.Color.White;
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.Location = new System.Drawing.Point(3, 3);
@@ -126,10 +126,10 @@
             // lblHeader
             // 
             this.lblHeader.AutoSize = true;
-            this.lblHeader.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblHeader.Location = new System.Drawing.Point(16, 16);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(489, 66);
+            this.lblHeader.Size = new System.Drawing.Size(516, 46);
             this.lblHeader.TabIndex = 16;
             this.lblHeader.Text = "Dòng Họ Nhà Nguyễn Đức";
             // 
@@ -168,7 +168,7 @@
             // lblUserName
             // 
             this.lblUserName.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblUserName.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserName.Location = new System.Drawing.Point(30, 10);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -237,7 +237,7 @@
             this.btnQLTK.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnQLTK.FlatAppearance.BorderSize = 0;
             this.btnQLTK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQLTK.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnQLTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnQLTK.ForeColor = System.Drawing.Color.White;
             this.btnQLTK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQLTK.Location = new System.Drawing.Point(0, 383);
@@ -281,7 +281,7 @@
             this.customButton1.Dock = System.Windows.Forms.DockStyle.Top;
             this.customButton1.FlatAppearance.BorderSize = 0;
             this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton1.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.customButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.customButton1.ForeColor = System.Drawing.Color.White;
             this.customButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.customButton1.Location = new System.Drawing.Point(0, 0);
@@ -304,7 +304,7 @@
             this.btnThongke.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnThongke.FlatAppearance.BorderSize = 0;
             this.btnThongke.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThongke.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThongke.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnThongke.ForeColor = System.Drawing.Color.White;
             this.btnThongke.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThongke.Location = new System.Drawing.Point(0, 64);
@@ -328,7 +328,7 @@
             this.btnQuanLySuKien.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnQuanLySuKien.FlatAppearance.BorderSize = 0;
             this.btnQuanLySuKien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuanLySuKien.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnQuanLySuKien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnQuanLySuKien.ForeColor = System.Drawing.Color.White;
             this.btnQuanLySuKien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQuanLySuKien.Location = new System.Drawing.Point(0, 0);
@@ -364,7 +364,7 @@
             this.btnThuChi.BorderSize = 0;
             this.btnThuChi.FlatAppearance.BorderSize = 0;
             this.btnThuChi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThuChi.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThuChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnThuChi.ForeColor = System.Drawing.Color.Transparent;
             this.btnThuChi.Location = new System.Drawing.Point(3, 3);
             this.btnThuChi.Name = "btnThuChi";
@@ -386,7 +386,7 @@
             this.btnThu.BorderSize = 0;
             this.btnThu.FlatAppearance.BorderSize = 0;
             this.btnThu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThu.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnThu.ForeColor = System.Drawing.Color.Transparent;
             this.btnThu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThu.Location = new System.Drawing.Point(3, 73);
@@ -409,7 +409,7 @@
             this.btnChi.BorderSize = 0;
             this.btnChi.FlatAppearance.BorderSize = 0;
             this.btnChi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChi.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnChi.ForeColor = System.Drawing.Color.Transparent;
             this.btnChi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnChi.Location = new System.Drawing.Point(3, 129);
@@ -447,7 +447,7 @@
             this.btnThanhVien.BorderSize = 0;
             this.btnThanhVien.FlatAppearance.BorderSize = 0;
             this.btnThanhVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThanhVien.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThanhVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnThanhVien.ForeColor = System.Drawing.Color.White;
             this.btnThanhVien.Location = new System.Drawing.Point(3, 3);
             this.btnThanhVien.Name = "btnThanhVien";
@@ -469,7 +469,7 @@
             this.btnThem.BorderSize = 0;
             this.btnThem.FlatAppearance.BorderSize = 0;
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThem.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThem.Location = new System.Drawing.Point(3, 73);
@@ -492,7 +492,7 @@
             this.btnTaoCuTo.BorderSize = 0;
             this.btnTaoCuTo.FlatAppearance.BorderSize = 0;
             this.btnTaoCuTo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTaoCuTo.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnTaoCuTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnTaoCuTo.ForeColor = System.Drawing.Color.White;
             this.btnTaoCuTo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTaoCuTo.Location = new System.Drawing.Point(3, 129);
@@ -515,7 +515,7 @@
             this.btnDanhsach.BorderSize = 0;
             this.btnDanhsach.FlatAppearance.BorderSize = 0;
             this.btnDanhsach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDanhsach.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnDanhsach.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnDanhsach.ForeColor = System.Drawing.Color.Transparent;
             this.btnDanhsach.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDanhsach.Location = new System.Drawing.Point(3, 185);
@@ -538,7 +538,7 @@
             this.btnCaygiapha.BorderSize = 0;
             this.btnCaygiapha.FlatAppearance.BorderSize = 0;
             this.btnCaygiapha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCaygiapha.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnCaygiapha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnCaygiapha.ForeColor = System.Drawing.Color.White;
             this.btnCaygiapha.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCaygiapha.Location = new System.Drawing.Point(3, 241);

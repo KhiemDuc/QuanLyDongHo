@@ -113,7 +113,7 @@ namespace TodoApp
 
         private void btnThongke_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new BaoCaoThuChi());
+            OpenChildForm(new BaoCaoTC());
             lblHeader.Text = btnThongke.Text;
 
         }
@@ -176,5 +176,7 @@ namespace TodoApp
             var f = new ThongTinCaNhan(_id);
             f.ShowDialog();
         }
+
+        
     }
 }

@@ -40,10 +40,6 @@ namespace TodoApp
                 dgvDanhSachThu.Rows[rowIndex].Cells["DinhMuc"].Value = row["SoTien"];
                 dgvDanhSachThu.Rows[rowIndex].Cells["MoTa"].Value = row["TenThu"];
                 dgvDanhSachThu.Rows[rowIndex].Cells["NgayBatDauThu"].Value = (row["NgayThu"] != DBNull.Value) ? ((DateTime)row["NgayThu"]).ToString("dd-MM-yyyy") : "N/A";
-
-
-
-
             }
             dgvDanhSachThu.Columns["MaThanhVien"].Visible = false;
             dgvDanhSachThu.Columns["TenKhoanThu"].HeaderText = "Tên thành viên";
@@ -51,7 +47,6 @@ namespace TodoApp
             dgvDanhSachThu.Columns["DinhMuc"].HeaderText = "Số tiền";
             dgvDanhSachThu.Columns["MoTa"].HeaderText = "Tên loại thu";
             dgvDanhSachThu.Columns["NgayBatDauThu"].HeaderText = "Ngày thu tiền";
-
         }
 
         private void ChiTietKhoanThu_Load(object sender, EventArgs e)
