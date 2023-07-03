@@ -33,6 +33,11 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.DanhSachTaiKhoan = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.cmbFilter = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,11 +46,6 @@
             this.PhanQuyen = new System.Windows.Forms.DataGridViewButtonColumn();
             this.CapTK = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.cmbFilter = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DanhSachTaiKhoan)).BeginInit();
@@ -118,77 +118,6 @@
             this.DanhSachTaiKhoan.TabIndex = 0;
             this.DanhSachTaiKhoan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DanhSachThanhVien_CellContentClick);
             // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 125;
-            // 
-            // HoTen
-            // 
-            this.HoTen.HeaderText = "Họ Và Tên";
-            this.HoTen.MinimumWidth = 6;
-            this.HoTen.Name = "HoTen";
-            this.HoTen.ReadOnly = true;
-            this.HoTen.Width = 200;
-            // 
-            // TaiKhoan
-            // 
-            this.TaiKhoan.HeaderText = "Tài Khoản";
-            this.TaiKhoan.MinimumWidth = 6;
-            this.TaiKhoan.Name = "TaiKhoan";
-            this.TaiKhoan.ReadOnly = true;
-            this.TaiKhoan.Width = 155;
-            // 
-            // MatKhau
-            // 
-            this.MatKhau.HeaderText = "Mật Khẩu";
-            this.MatKhau.MinimumWidth = 6;
-            this.MatKhau.Name = "MatKhau";
-            this.MatKhau.ReadOnly = true;
-            this.MatKhau.Width = 155;
-            // 
-            // ChucVu
-            // 
-            this.ChucVu.HeaderText = "Chức Vụ";
-            this.ChucVu.MinimumWidth = 6;
-            this.ChucVu.Name = "ChucVu";
-            this.ChucVu.ReadOnly = true;
-            this.ChucVu.Width = 155;
-            // 
-            // PhanQuyen
-            // 
-            this.PhanQuyen.HeaderText = "Phân Quyền";
-            this.PhanQuyen.MinimumWidth = 6;
-            this.PhanQuyen.Name = "PhanQuyen";
-            this.PhanQuyen.ReadOnly = true;
-            this.PhanQuyen.Text = "Phân Quyền";
-            this.PhanQuyen.UseColumnTextForButtonValue = true;
-            this.PhanQuyen.Width = 155;
-            // 
-            // CapTK
-            // 
-            this.CapTK.HeaderText = "Cấp Tài Khoản";
-            this.CapTK.MinimumWidth = 6;
-            this.CapTK.Name = "CapTK";
-            this.CapTK.ReadOnly = true;
-            this.CapTK.Text = "Cấp Tài Khoản";
-            this.CapTK.UseColumnTextForButtonValue = true;
-            this.CapTK.Width = 155;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Xóa";
-            this.Delete.MinimumWidth = 6;
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Text = "Xóa";
-            this.Delete.ToolTipText = "Xóa";
-            this.Delete.UseColumnTextForButtonValue = true;
-            this.Delete.Width = 125;
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.btnSearch);
@@ -255,6 +184,77 @@
             this.label3.TabIndex = 23;
             this.label3.Text = "Filter     ";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 125;
+            // 
+            // HoTen
+            // 
+            this.HoTen.HeaderText = "Họ Và Tên";
+            this.HoTen.MinimumWidth = 6;
+            this.HoTen.Name = "HoTen";
+            this.HoTen.ReadOnly = true;
+            this.HoTen.Width = 250;
+            // 
+            // TaiKhoan
+            // 
+            this.TaiKhoan.HeaderText = "Tài Khoản";
+            this.TaiKhoan.MinimumWidth = 6;
+            this.TaiKhoan.Name = "TaiKhoan";
+            this.TaiKhoan.ReadOnly = true;
+            this.TaiKhoan.Width = 155;
+            // 
+            // MatKhau
+            // 
+            this.MatKhau.HeaderText = "Mật Khẩu";
+            this.MatKhau.MinimumWidth = 6;
+            this.MatKhau.Name = "MatKhau";
+            this.MatKhau.ReadOnly = true;
+            this.MatKhau.Width = 155;
+            // 
+            // ChucVu
+            // 
+            this.ChucVu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ChucVu.HeaderText = "Chức Vụ";
+            this.ChucVu.MinimumWidth = 6;
+            this.ChucVu.Name = "ChucVu";
+            this.ChucVu.ReadOnly = true;
+            // 
+            // PhanQuyen
+            // 
+            this.PhanQuyen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PhanQuyen.HeaderText = "Phân Quyền";
+            this.PhanQuyen.MinimumWidth = 6;
+            this.PhanQuyen.Name = "PhanQuyen";
+            this.PhanQuyen.ReadOnly = true;
+            this.PhanQuyen.Text = "Phân Quyền";
+            this.PhanQuyen.UseColumnTextForButtonValue = true;
+            // 
+            // CapTK
+            // 
+            this.CapTK.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CapTK.HeaderText = "Cấp Tài Khoản";
+            this.CapTK.MinimumWidth = 6;
+            this.CapTK.Name = "CapTK";
+            this.CapTK.ReadOnly = true;
+            this.CapTK.Text = "Cấp Tài Khoản";
+            this.CapTK.UseColumnTextForButtonValue = true;
+            // 
+            // Delete
+            // 
+            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Delete.HeaderText = "Xóa";
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "Xóa";
+            this.Delete.ToolTipText = "Xóa";
+            this.Delete.UseColumnTextForButtonValue = true;
             // 
             // QuanLyTaiKhoan
             // 

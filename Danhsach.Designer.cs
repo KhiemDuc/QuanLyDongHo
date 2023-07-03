@@ -258,6 +258,7 @@
             // 
             // ChiTiet
             // 
+            this.ChiTiet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ChiTiet.HeaderText = "Thông Tin Chi Tiết";
             this.ChiTiet.MinimumWidth = 6;
             this.ChiTiet.Name = "ChiTiet";
@@ -265,10 +266,10 @@
             this.ChiTiet.Text = "Thông Tin Chi Tiết";
             this.ChiTiet.ToolTipText = "Thông Tin Chi Tiết";
             this.ChiTiet.UseColumnTextForButtonValue = true;
-            this.ChiTiet.Width = 125;
             // 
             // Delete
             // 
+            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Delete.HeaderText = "Xóa";
             this.Delete.MinimumWidth = 6;
             this.Delete.Name = "Delete";
@@ -276,7 +277,6 @@
             this.Delete.Text = "Xóa";
             this.Delete.ToolTipText = "Xóa";
             this.Delete.UseColumnTextForButtonValue = true;
-            this.Delete.Width = 125;
             // 
             // Danhsach
             // 

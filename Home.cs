@@ -127,7 +127,7 @@ namespace TodoApp
 
         private void lblUserName_Click(object sender, EventArgs e)
         {
-            var f = new ThongTinCaNhan();
+            var f = new ThongTinCaNhan(_id);
             f.ShowDialog();
         }
 

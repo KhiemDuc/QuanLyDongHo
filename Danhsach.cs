@@ -80,6 +80,26 @@ namespace TodoApp
         {
             if (e.ColumnIndex == DanhSachThanhVien.Columns["Delete"].Index && e.RowIndex >= 0)
             {
+                string MaThanhVien = DanhSachThanhVien.Rows[e.RowIndex].Cells["ID"].Value.ToString();
+                DialogResult result = ShowYesNoDialog("Bạn có muốn xóa thành viên này không?");
+
+                if (result == DialogResult.Yes)
+                {
+                    Task<bool> xoaThu = thanhvien.XoaThanhVien(MaThanhVien);
+                    xoaThu.ContinueWith(x =>
+                    {
+                        if (x.IsFaulted)
+                            MessageBox.Show("Có Lỗi");
+                        if (x.Result)
+                            MessageBox.Show("Xóa Thành Viên Thành Công");
+                    });
+                }
+                else if (result == DialogResult.No)
+                {
+                    Console.WriteLine("Bạn đã chọn 'Không'");
+                }
+        
+
             }
             if (e.ColumnIndex == DanhSachThanhVien.Columns["ChiTiet"].Index && e.RowIndex >= 0)
             {
@@ -87,6 +107,10 @@ namespace TodoApp
                 var sua = new ThemThanhVien("update", _role, MaThanhVien);
                 sua.ShowDialog();
             }
+        }
+        static DialogResult ShowYesNoDialog(string message)
+        {
+            return MessageBox.Show(message, "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
 
         private void cmbFilter_SelectedIndexChanged(object sender, EventArgs e)

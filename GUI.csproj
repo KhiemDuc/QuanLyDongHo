@@ -85,6 +85,12 @@
     <Compile Include="Caygiapha.Designer.cs">
       <DependentUpon>Caygiapha.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChiTietKhoanChi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChiTietKhoanChi.Designer.cs">
+      <DependentUpon>ChiTietKhoanChi.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChiTietKhoanThu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,6 +231,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Caygiapha.resx">
       <DependentUpon>Caygiapha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChiTietKhoanChi.resx">
+      <DependentUpon>ChiTietKhoanChi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChiTietKhoanThu.resx">
       <DependentUpon>ChiTietKhoanThu.cs</DependentUpon>

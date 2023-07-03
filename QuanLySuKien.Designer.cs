@@ -41,7 +41,9 @@
             this.MaSuKien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenSuKien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayToChuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChiTiet = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Sua = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Xoa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
@@ -91,7 +93,9 @@
             this.MaSuKien,
             this.TenSuKien,
             this.NgayToChuc,
+            this.SoTien,
             this.MoTa,
+            this.ChiTiet,
             this.Sua,
             this.Xoa});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -174,14 +178,21 @@
             this.TenSuKien.HeaderText = "Tên Sự Kiện";
             this.TenSuKien.MinimumWidth = 6;
             this.TenSuKien.Name = "TenSuKien";
-            this.TenSuKien.Width = 150;
+            this.TenSuKien.Width = 250;
             // 
             // NgayToChuc
             // 
+            this.NgayToChuc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.NgayToChuc.HeaderText = "Ngày Tổ Chức";
             this.NgayToChuc.MinimumWidth = 6;
             this.NgayToChuc.Name = "NgayToChuc";
-            this.NgayToChuc.Width = 200;
+            // 
+            // SoTien
+            // 
+            this.SoTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SoTien.HeaderText = "Chi Tiêu";
+            this.SoTien.MinimumWidth = 6;
+            this.SoTien.Name = "SoTien";
             // 
             // MoTa
             // 
@@ -190,8 +201,20 @@
             this.MoTa.Name = "MoTa";
             this.MoTa.Width = 250;
             // 
+            // ChiTiet
+            // 
+            this.ChiTiet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ChiTiet.HeaderText = "Chi Tiết";
+            this.ChiTiet.MinimumWidth = 6;
+            this.ChiTiet.Name = "ChiTiet";
+            this.ChiTiet.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ChiTiet.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ChiTiet.Text = "Chi Tiết";
+            this.ChiTiet.UseColumnTextForButtonValue = true;
+            // 
             // Sua
             // 
+            this.Sua.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Sua.HeaderText = "Sửa";
             this.Sua.MinimumWidth = 6;
             this.Sua.Name = "Sua";
@@ -199,10 +222,10 @@
             this.Sua.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Sua.Text = "Sửa";
             this.Sua.UseColumnTextForButtonValue = true;
-            this.Sua.Width = 125;
             // 
             // Xoa
             // 
+            this.Xoa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Xoa.HeaderText = "Xóa";
             this.Xoa.MinimumWidth = 6;
             this.Xoa.Name = "Xoa";
@@ -210,7 +233,6 @@
             this.Xoa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Xoa.Text = "Xóa";
             this.Xoa.UseColumnTextForButtonValue = true;
-            this.Xoa.Width = 125;
             // 
             // QuanLySuKien
             // 
@@ -242,7 +264,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSuKien;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenSuKien;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayToChuc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoTien;
         private System.Windows.Forms.DataGridViewTextBoxColumn MoTa;
+        private System.Windows.Forms.DataGridViewButtonColumn ChiTiet;
         private System.Windows.Forms.DataGridViewButtonColumn Sua;
         private System.Windows.Forms.DataGridViewButtonColumn Xoa;
     }

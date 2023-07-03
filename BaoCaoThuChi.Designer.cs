@@ -40,14 +40,14 @@
             this.lblUser = new System.Windows.Forms.Label();
             this.panelContent = new System.Windows.Forms.Panel();
             this.dgvBaoCaoThuChi = new System.Windows.Forms.DataGridView();
+            this.lblTongThu = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.customButton3 = new TodoApp.Controls.CustomButton();
             this.MaSuKien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenSuKien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayToChuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ChiTiet = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Xoa = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.lblTongThu = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.customButton3 = new TodoApp.Controls.CustomButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelContent.SuspendLayout();
@@ -190,49 +190,6 @@
             this.dgvBaoCaoThuChi.Size = new System.Drawing.Size(1392, 412);
             this.dgvBaoCaoThuChi.TabIndex = 16;
             // 
-            // MaSuKien
-            // 
-            this.MaSuKien.HeaderText = "STT";
-            this.MaSuKien.MinimumWidth = 6;
-            this.MaSuKien.Name = "MaSuKien";
-            this.MaSuKien.Width = 125;
-            // 
-            // TenSuKien
-            // 
-            this.TenSuKien.HeaderText = "Tên Khoản";
-            this.TenSuKien.MinimumWidth = 6;
-            this.TenSuKien.Name = "TenSuKien";
-            this.TenSuKien.Width = 300;
-            // 
-            // NgayToChuc
-            // 
-            this.NgayToChuc.HeaderText = "Số Tiền";
-            this.NgayToChuc.MinimumWidth = 6;
-            this.NgayToChuc.Name = "NgayToChuc";
-            this.NgayToChuc.Width = 200;
-            // 
-            // ChiTiet
-            // 
-            this.ChiTiet.HeaderText = "Thông Tin Chi Tiết";
-            this.ChiTiet.MinimumWidth = 6;
-            this.ChiTiet.Name = "ChiTiet";
-            this.ChiTiet.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ChiTiet.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ChiTiet.Text = "Thông Tin Chi Tiết";
-            this.ChiTiet.UseColumnTextForButtonValue = true;
-            this.ChiTiet.Width = 125;
-            // 
-            // Xoa
-            // 
-            this.Xoa.HeaderText = "Xóa";
-            this.Xoa.MinimumWidth = 6;
-            this.Xoa.Name = "Xoa";
-            this.Xoa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Xoa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Xoa.Text = "Xóa";
-            this.Xoa.UseColumnTextForButtonValue = true;
-            this.Xoa.Width = 125;
-            // 
             // lblTongThu
             // 
             this.lblTongThu.AutoSize = true;
@@ -271,6 +228,49 @@
             this.customButton3.Text = "Xuất File PDF";
             this.customButton3.TextColor = System.Drawing.Color.White;
             this.customButton3.UseVisualStyleBackColor = false;
+            // 
+            // MaSuKien
+            // 
+            this.MaSuKien.HeaderText = "STT";
+            this.MaSuKien.MinimumWidth = 6;
+            this.MaSuKien.Name = "MaSuKien";
+            this.MaSuKien.Width = 125;
+            // 
+            // TenSuKien
+            // 
+            this.TenSuKien.HeaderText = "Tên Khoản";
+            this.TenSuKien.MinimumWidth = 6;
+            this.TenSuKien.Name = "TenSuKien";
+            this.TenSuKien.Width = 300;
+            // 
+            // NgayToChuc
+            // 
+            this.NgayToChuc.HeaderText = "Số Tiền";
+            this.NgayToChuc.MinimumWidth = 6;
+            this.NgayToChuc.Name = "NgayToChuc";
+            this.NgayToChuc.Width = 200;
+            // 
+            // ChiTiet
+            // 
+            this.ChiTiet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ChiTiet.HeaderText = "";
+            this.ChiTiet.MinimumWidth = 6;
+            this.ChiTiet.Name = "ChiTiet";
+            this.ChiTiet.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ChiTiet.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ChiTiet.Text = "Thông Tin Chi Tiết";
+            this.ChiTiet.UseColumnTextForButtonValue = true;
+            // 
+            // Xoa
+            // 
+            this.Xoa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Xoa.HeaderText = "";
+            this.Xoa.MinimumWidth = 6;
+            this.Xoa.Name = "Xoa";
+            this.Xoa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Xoa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Xoa.Text = "Xóa";
+            this.Xoa.UseColumnTextForButtonValue = true;
             // 
             // BaoCaoThuChi
             // 
