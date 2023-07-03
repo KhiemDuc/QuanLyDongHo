@@ -73,12 +73,6 @@
     <Compile Include="BieuDoBaoCaoThu.Designer.cs">
       <DependentUpon>BieuDoBaoCaoThu.cs</DependentUpon>
     </Compile>
-    <Compile Include="BaoCaoThuChi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaoCaoThuChi.Designer.cs">
-      <DependentUpon>BaoCaoThuChi.cs</DependentUpon>
-    </Compile>
     <Compile Include="Caygiapha.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,9 +219,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BieuDoBaoCaoThu.resx">
       <DependentUpon>BieuDoBaoCaoThu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BaoCaoThuChi.resx">
-      <DependentUpon>BaoCaoThuChi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Caygiapha.resx">
       <DependentUpon>Caygiapha.cs</DependentUpon>
