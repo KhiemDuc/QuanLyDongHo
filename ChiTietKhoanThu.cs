@@ -47,7 +47,6 @@ namespace TodoApp
             dgvDanhSachThu.Columns["DinhMuc"].HeaderText = "Số tiền";
             dgvDanhSachThu.Columns["MoTa"].HeaderText = "Tên loại thu";
             dgvDanhSachThu.Columns["NgayBatDauThu"].HeaderText = "Ngày thu tiền";
-
         }
 
         private void ChiTietKhoanThu_Load(object sender, EventArgs e)
