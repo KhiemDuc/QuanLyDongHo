@@ -34,7 +34,15 @@ namespace TodoApp
 
         private void QuanLyThu_Load(object sender, EventArgs e)
         {
-            if(_role == "User")
+            Task<float> tongThuDm = thu.TongDaThu(dtpNgayBatDau.Value, dtpNgayKetThuc.Value, 1);
+            tongThuDm.ContinueWith(t =>
+            {
+                Invoke(new Action(() =>
+                {
+                    lblThuDinhMuc.Text += t.Result.ToString() + " VND";
+                }));
+            });
+            if (_role == "User")
             {
                 btnThietLapThu.Visible = false;
                 btnQuyenGop.Visible = false;
@@ -86,7 +94,7 @@ namespace TodoApp
             if (e.ColumnIndex == dgvDanhSachThu.Columns["DongTien"].Index && e.RowIndex >= 0)
             {
                 string MaThu = dgvDanhSachThu.Rows[e.RowIndex].Cells["MaThu"].Value.ToString();
-                var f = new ChiTietKhoanThu(MaThu);
+                var f = new ChiTietKhoanThu(MaThu,_role);
                 f.ShowDialog();
             }
             if (e.ColumnIndex == dgvDanhSachThu.Columns["Xoa"].Index && e.RowIndex >= 0)
@@ -118,7 +126,7 @@ namespace TodoApp
 
         private void btnQuyenGop_Click(object sender, EventArgs e)
         {
-            var quyenGop = new DongQuyenGop();
+            var quyenGop = new DongQuyenGop("add",_role);
             quyenGop.ShowDialog();
         }
 

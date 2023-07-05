@@ -34,6 +34,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvDanhSachThu = new System.Windows.Forms.DataGridView();
+            this.TenKhoanThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayBatDauThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DinhMuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DanhMuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DongTien = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Sua = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Xoa = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.MaThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.dtpNgayBatDau = new System.Windows.Forms.DateTimePicker();
@@ -48,17 +57,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblThuDinhMuc = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.TenKhoanThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayBatDauThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DinhMuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DanhMuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DongTien = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Sua = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Xoa = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.MaThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachThu)).BeginInit();
             this.panel1.SuspendLayout();
@@ -68,7 +68,7 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.dgvDanhSachThu, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 2);
@@ -128,6 +128,77 @@
             this.dgvDanhSachThu.TabIndex = 0;
             this.dgvDanhSachThu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachThu_CellContentClick);
             // 
+            // TenKhoanThu
+            // 
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.TenKhoanThu.DefaultCellStyle = dataGridViewCellStyle6;
+            this.TenKhoanThu.HeaderText = "Tên Khoản Thu";
+            this.TenKhoanThu.MinimumWidth = 6;
+            this.TenKhoanThu.Name = "TenKhoanThu";
+            this.TenKhoanThu.Width = 300;
+            // 
+            // NgayBatDauThu
+            // 
+            this.NgayBatDauThu.HeaderText = "Ngày Bắt Đầu Thu";
+            this.NgayBatDauThu.MinimumWidth = 6;
+            this.NgayBatDauThu.Name = "NgayBatDauThu";
+            this.NgayBatDauThu.Width = 200;
+            // 
+            // DinhMuc
+            // 
+            this.DinhMuc.HeaderText = "Định Mức (VND)";
+            this.DinhMuc.MinimumWidth = 6;
+            this.DinhMuc.Name = "DinhMuc";
+            this.DinhMuc.Width = 190;
+            // 
+            // DanhMuc
+            // 
+            this.DanhMuc.HeaderText = "Danh Mục";
+            this.DanhMuc.MinimumWidth = 6;
+            this.DanhMuc.Name = "DanhMuc";
+            this.DanhMuc.Width = 125;
+            // 
+            // MoTa
+            // 
+            this.MoTa.HeaderText = "Mô Tả";
+            this.MoTa.MinimumWidth = 6;
+            this.MoTa.Name = "MoTa";
+            this.MoTa.Width = 200;
+            // 
+            // DongTien
+            // 
+            this.DongTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DongTien.HeaderText = "Chi Tiết";
+            this.DongTien.MinimumWidth = 6;
+            this.DongTien.Name = "DongTien";
+            this.DongTien.Text = "Chi Tiết";
+            this.DongTien.UseColumnTextForButtonValue = true;
+            // 
+            // Sua
+            // 
+            this.Sua.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Sua.HeaderText = "Sửa";
+            this.Sua.MinimumWidth = 6;
+            this.Sua.Name = "Sua";
+            this.Sua.Text = "Sửa";
+            this.Sua.UseColumnTextForButtonValue = true;
+            // 
+            // Xoa
+            // 
+            this.Xoa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Xoa.HeaderText = "Xóa";
+            this.Xoa.MinimumWidth = 6;
+            this.Xoa.Name = "Xoa";
+            this.Xoa.Text = "Xóa";
+            this.Xoa.UseColumnTextForButtonValue = true;
+            // 
+            // MaThu
+            // 
+            this.MaThu.HeaderText = "Mã Thu";
+            this.MaThu.MinimumWidth = 6;
+            this.MaThu.Name = "MaThu";
+            this.MaThu.Width = 125;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnTimKiem);
@@ -167,6 +238,7 @@
             this.dtpNgayBatDau.Name = "dtpNgayBatDau";
             this.dtpNgayBatDau.Size = new System.Drawing.Size(165, 37);
             this.dtpNgayBatDau.TabIndex = 48;
+            this.dtpNgayBatDau.Value = new System.DateTime(2000, 1, 1, 0, 2, 0, 0);
             this.dtpNgayBatDau.ValueChanged += new System.EventHandler(this.dtpNgayBatDau_ValueChanged);
             // 
             // dtpNgayKetThuc
@@ -254,7 +326,7 @@
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.lblThuDinhMuc);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 564);
@@ -292,15 +364,15 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Tổng Quyên Góp Là: 200000VND";
             // 
-            // label2
+            // lblThuDinhMuc
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(80, 34);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(336, 34);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Tổng Thu Định Mức Là: 200000VND";
+            this.lblThuDinhMuc.AutoSize = true;
+            this.lblThuDinhMuc.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblThuDinhMuc.Location = new System.Drawing.Point(80, 34);
+            this.lblThuDinhMuc.Name = "lblThuDinhMuc";
+            this.lblThuDinhMuc.Size = new System.Drawing.Size(221, 34);
+            this.lblThuDinhMuc.TabIndex = 1;
+            this.lblThuDinhMuc.Text = "Tổng Thu Định Mức Là: ";
             // 
             // label1
             // 
@@ -311,77 +383,6 @@
             this.label1.Size = new System.Drawing.Size(248, 34);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tổng Thu Là: 200000VND";
-            // 
-            // TenKhoanThu
-            // 
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.TenKhoanThu.DefaultCellStyle = dataGridViewCellStyle6;
-            this.TenKhoanThu.HeaderText = "Tên Khoản Thu";
-            this.TenKhoanThu.MinimumWidth = 6;
-            this.TenKhoanThu.Name = "TenKhoanThu";
-            this.TenKhoanThu.Width = 300;
-            // 
-            // NgayBatDauThu
-            // 
-            this.NgayBatDauThu.HeaderText = "Ngày Bắt Đầu Thu";
-            this.NgayBatDauThu.MinimumWidth = 6;
-            this.NgayBatDauThu.Name = "NgayBatDauThu";
-            this.NgayBatDauThu.Width = 200;
-            // 
-            // DinhMuc
-            // 
-            this.DinhMuc.HeaderText = "Định Mức (VND)";
-            this.DinhMuc.MinimumWidth = 6;
-            this.DinhMuc.Name = "DinhMuc";
-            this.DinhMuc.Width = 190;
-            // 
-            // DanhMuc
-            // 
-            this.DanhMuc.HeaderText = "Danh Mục";
-            this.DanhMuc.MinimumWidth = 6;
-            this.DanhMuc.Name = "DanhMuc";
-            this.DanhMuc.Width = 125;
-            // 
-            // MoTa
-            // 
-            this.MoTa.HeaderText = "Mô Tả";
-            this.MoTa.MinimumWidth = 6;
-            this.MoTa.Name = "MoTa";
-            this.MoTa.Width = 200;
-            // 
-            // DongTien
-            // 
-            this.DongTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DongTien.HeaderText = "Chi Tiết";
-            this.DongTien.MinimumWidth = 6;
-            this.DongTien.Name = "DongTien";
-            this.DongTien.Text = "Chi Tiết";
-            this.DongTien.UseColumnTextForButtonValue = true;
-            // 
-            // Sua
-            // 
-            this.Sua.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Sua.HeaderText = "Sửa";
-            this.Sua.MinimumWidth = 6;
-            this.Sua.Name = "Sua";
-            this.Sua.Text = "Sửa";
-            this.Sua.UseColumnTextForButtonValue = true;
-            // 
-            // Xoa
-            // 
-            this.Xoa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Xoa.HeaderText = "Xóa";
-            this.Xoa.MinimumWidth = 6;
-            this.Xoa.Name = "Xoa";
-            this.Xoa.Text = "Xóa";
-            this.Xoa.UseColumnTextForButtonValue = true;
-            // 
-            // MaThu
-            // 
-            this.MaThu.HeaderText = "Mã Thu";
-            this.MaThu.MinimumWidth = 6;
-            this.MaThu.Name = "MaThu";
-            this.MaThu.Width = 125;
             // 
             // QuanLyThu
             // 
@@ -419,7 +420,7 @@
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblThuDinhMuc;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenKhoanThu;

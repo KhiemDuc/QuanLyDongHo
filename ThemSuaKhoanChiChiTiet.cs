@@ -12,28 +12,27 @@ using DAL;
 namespace TodoApp
 {
     
-    public partial class ThemSuaKhoanChi : Form
+    public partial class ThemSuaKhoanChiChiTiet : Form
     {
         ChiDAL chi = new ChiDAL();
         ThanhVienDAL thanhvien = new ThanhVienDAL();
         private string _type;
-        private string _maChi;
-        public ThemSuaKhoanChi()
+        private string _maGiaoDich;
+        public ThemSuaKhoanChiChiTiet()
         {
             InitializeComponent();
         }
-        public ThemSuaKhoanChi(string type = "add", string machi = ""):this()
+        public ThemSuaKhoanChiChiTiet(string type = "add", string maGiaoDich = ""):this()
         {
             _type = type; ;
-            _maChi = machi;
+            _maGiaoDich = maGiaoDich;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
             if (_type == "add")
             {
-                Task<bool> thietLapThu = chi.ThietLapKhoanChi(cmbThanhVien.Text, dtpBatDau.Value, txtSoTien.Text,
-                   txtMota.Text);
+               /* Task<bool> thietLapThu = chi.ThietLapKhoanChi(cmbThanhVien.Text, dtpNgayChi.Value, txtSoTien.Text, "");
                 thietLapThu.ContinueWith(t =>
                 {
                     if (t.IsFaulted)
@@ -47,11 +46,11 @@ namespace TodoApp
                     else
                         MessageBox.Show("Thêm không thành công");
 
-                });
+                });*/
             }
             else if (_type == "update")
             {
-                Task<bool> suathietLapThu = chi.SuaThietLapKhoanChi(_maChi, cmbThanhVien.Text, dtpBatDau.Value, txtSoTien.Text,
+                /*Task<bool> suathietLapThu = chi.SuaThietLapKhoanChi(_maChi, cmbThanhVien.Text, dtpBatDau.Value, txtSoTien.Text,
                     txtMota.Text);
                 suathietLapThu.ContinueWith(t =>
                 {
@@ -66,7 +65,7 @@ namespace TodoApp
                     else
                         MessageBox.Show("Sửa không thành công");
 
-                });
+                });*/
             }
         }
 
@@ -80,16 +79,6 @@ namespace TodoApp
                     cmbThanhVien.ValueMember = "MaThanhVien";
                     cmbThanhVien.DisplayMember = "Ten";
                     cmbThanhVien.DataSource = t.Result;
-                }));
-            });
-            Task<DataTable> tenLoaiChi = chi.DanhSachLoaiChi();
-            tenLoaiChi.ContinueWith(g =>
-            {
-                Invoke(new Action(() =>
-                {
-                    cmbLoaiChi.ValueMember = "MaChi";
-                    cmbLoaiChi.DisplayMember = "LoaiChi";
-                    cmbLoaiChi.DataSource = g.Result;
                 }));
             });
 
@@ -113,13 +102,13 @@ namespace TodoApp
                             {
                                 Invoke(new Action(() =>
                                 {
-                                    txtKhoanChi.Text = reader.GetString(reader.GetOrdinal("TenChiTieu"));
+                                    txtKhoanChi.Text = reader.GetString(reader.GetOrdinal("TenKhoanChi"));
                                     txtSoTien.Text = reader.GetInt32(reader.GetOrdinal("SoTien")).ToString();
-                                    txtMota.Text = reader.IsDBNull(reader.GetOrdinal("MoTa")) ? "" :
-                                                                        reader.GetString(reader.GetOrdinal("MoTa")).ToString(); ;
-                                    dtpBatDau.Value = reader.GetDateTime(reader.GetOrdinal("NgayChi"));
+                                    /*txtMota.Text = reader.IsDBNull(reader.GetOrdinal("MoTa")) ? "" :
+                                                                        reader.GetString(reader.GetOrdinal("MoTa")).ToString(); ;*/
+                                    dtpNgayChi.Value = reader.GetDateTime(reader.GetOrdinal("NgayChi"));
                                     cmbThanhVien.SelectedValue = reader.GetInt32(reader.GetOrdinal("MaThanhVien")).ToString();
-                                    cmbLoaiChi.SelectedValue = reader.GetInt32(reader.GetOrdinal("MaChi")).ToString();
+                                    /*cmbLoaiChi.SelectedValue = reader.GetInt32(reader.GetOrdinal("MaChi")).ToString();*/
                                 }));
                             }
                         }
@@ -133,17 +122,6 @@ namespace TodoApp
         private void cmbThanhVien_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnThemLoai_Click(object sender, EventArgs e)
-        {
-            var f = new ThemLoaiChi();
-            f.ShowDialog();
         }
     }
 }

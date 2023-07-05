@@ -32,19 +32,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dgvDanhSachThu = new System.Windows.Forms.DataGridView();
-            this.TenKhoanThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayBatDauThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DinhMuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DanhMuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvDanhSachThuChiTiet = new System.Windows.Forms.DataGridView();
+            this.TenThanhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sua = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Xoa = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.MaThanhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachThu)).BeginInit();
+            this.MaGiaoDichThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachThuChiTiet)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvDanhSachThu
+            // dgvDanhSachThuChiTiet
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -53,17 +52,16 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDanhSachThu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvDanhSachThu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDanhSachThu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TenKhoanThu,
-            this.NgayBatDauThu,
-            this.DinhMuc,
-            this.DanhMuc,
-            this.MoTa,
+            this.dgvDanhSachThuChiTiet.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDanhSachThuChiTiet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDanhSachThuChiTiet.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TenThanhVien,
+            this.NgayThu,
+            this.SoTien,
+            this.TrangThai,
+            this.TenThu,
             this.Sua,
-            this.Xoa,
-            this.MaThanhVien});
+            this.MaGiaoDichThu});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -71,10 +69,10 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDanhSachThu.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvDanhSachThu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDanhSachThu.Location = new System.Drawing.Point(0, 0);
-            this.dgvDanhSachThu.Name = "dgvDanhSachThu";
+            this.dgvDanhSachThuChiTiet.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvDanhSachThuChiTiet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDanhSachThuChiTiet.Location = new System.Drawing.Point(0, 0);
+            this.dgvDanhSachThuChiTiet.Name = "dgvDanhSachThuChiTiet";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -82,49 +80,49 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDanhSachThu.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvDanhSachThu.RowHeadersWidth = 51;
-            this.dgvDanhSachThu.RowTemplate.Height = 24;
-            this.dgvDanhSachThu.Size = new System.Drawing.Size(1409, 529);
-            this.dgvDanhSachThu.TabIndex = 1;
-            this.dgvDanhSachThu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachThu_CellContentClick);
+            this.dgvDanhSachThuChiTiet.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvDanhSachThuChiTiet.RowHeadersWidth = 51;
+            this.dgvDanhSachThuChiTiet.RowTemplate.Height = 24;
+            this.dgvDanhSachThuChiTiet.Size = new System.Drawing.Size(1375, 529);
+            this.dgvDanhSachThuChiTiet.TabIndex = 1;
+            this.dgvDanhSachThuChiTiet.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachThu_CellContentClick);
             // 
-            // TenKhoanThu
+            // TenThanhVien
             // 
             dataGridViewCellStyle2.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.TenKhoanThu.DefaultCellStyle = dataGridViewCellStyle2;
-            this.TenKhoanThu.HeaderText = "Tên Khoản Thu";
-            this.TenKhoanThu.MinimumWidth = 6;
-            this.TenKhoanThu.Name = "TenKhoanThu";
-            this.TenKhoanThu.Width = 250;
+            this.TenThanhVien.DefaultCellStyle = dataGridViewCellStyle2;
+            this.TenThanhVien.HeaderText = "Tên Thành Viên";
+            this.TenThanhVien.MinimumWidth = 6;
+            this.TenThanhVien.Name = "TenThanhVien";
+            this.TenThanhVien.Width = 250;
             // 
-            // NgayBatDauThu
+            // NgayThu
             // 
-            this.NgayBatDauThu.HeaderText = "Ngày Bắt Đầu Thu";
-            this.NgayBatDauThu.MinimumWidth = 6;
-            this.NgayBatDauThu.Name = "NgayBatDauThu";
-            this.NgayBatDauThu.Width = 180;
+            this.NgayThu.HeaderText = "Ngày Thu";
+            this.NgayThu.MinimumWidth = 6;
+            this.NgayThu.Name = "NgayThu";
+            this.NgayThu.Width = 180;
             // 
-            // DinhMuc
+            // SoTien
             // 
-            this.DinhMuc.HeaderText = "Định Mức";
-            this.DinhMuc.MinimumWidth = 6;
-            this.DinhMuc.Name = "DinhMuc";
-            this.DinhMuc.Width = 125;
+            this.SoTien.HeaderText = "Số Tiền";
+            this.SoTien.MinimumWidth = 6;
+            this.SoTien.Name = "SoTien";
+            this.SoTien.Width = 125;
             // 
-            // DanhMuc
+            // TrangThai
             // 
-            this.DanhMuc.HeaderText = "Trạng Thái";
-            this.DanhMuc.MinimumWidth = 6;
-            this.DanhMuc.Name = "DanhMuc";
-            this.DanhMuc.Width = 125;
+            this.TrangThai.HeaderText = "Trạng Thái";
+            this.TrangThai.MinimumWidth = 6;
+            this.TrangThai.Name = "TrangThai";
+            this.TrangThai.Width = 125;
             // 
-            // MoTa
+            // TenThu
             // 
-            this.MoTa.HeaderText = "Mô Tả";
-            this.MoTa.MinimumWidth = 6;
-            this.MoTa.Name = "MoTa";
-            this.MoTa.Width = 300;
+            this.TenThu.HeaderText = "Tên Thu";
+            this.TenThu.MinimumWidth = 6;
+            this.TenThu.Name = "TenThu";
+            this.TenThu.Width = 200;
             // 
             // Sua
             // 
@@ -135,46 +133,36 @@
             this.Sua.Text = "Sửa";
             this.Sua.UseColumnTextForButtonValue = true;
             // 
-            // Xoa
+            // MaGiaoDichThu
             // 
-            this.Xoa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Xoa.HeaderText = "Xóa";
-            this.Xoa.MinimumWidth = 6;
-            this.Xoa.Name = "Xoa";
-            this.Xoa.Text = "Xóa";
-            this.Xoa.UseColumnTextForButtonValue = true;
-            // 
-            // MaThanhVien
-            // 
-            this.MaThanhVien.HeaderText = "Mã Thành Viên";
-            this.MaThanhVien.MinimumWidth = 6;
-            this.MaThanhVien.Name = "MaThanhVien";
-            this.MaThanhVien.Width = 125;
+            this.MaGiaoDichThu.HeaderText = "Mã Giao Dịch";
+            this.MaGiaoDichThu.MinimumWidth = 6;
+            this.MaGiaoDichThu.Name = "MaGiaoDichThu";
+            this.MaGiaoDichThu.Width = 125;
             // 
             // ChiTietKhoanThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1409, 529);
-            this.Controls.Add(this.dgvDanhSachThu);
+            this.ClientSize = new System.Drawing.Size(1375, 529);
+            this.Controls.Add(this.dgvDanhSachThuChiTiet);
             this.Name = "ChiTietKhoanThu";
             this.Text = "Chi Tiết Khoản Thu";
             this.Load += new System.EventHandler(this.ChiTietKhoanThu_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachThu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachThuChiTiet)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvDanhSachThu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenKhoanThu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayBatDauThu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DinhMuc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DanhMuc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MoTa;
+        private System.Windows.Forms.DataGridView dgvDanhSachThuChiTiet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenThanhVien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayThu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoTien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenThu;
         private System.Windows.Forms.DataGridViewButtonColumn Sua;
-        private System.Windows.Forms.DataGridViewButtonColumn Xoa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaThanhVien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaGiaoDichThu;
     }
 }

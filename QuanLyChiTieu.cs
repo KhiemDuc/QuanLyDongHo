@@ -27,7 +27,7 @@ namespace TodoApp
 
         private void btnThietLapChi_Click(object sender, EventArgs e)
         {
-            var f = new ThemSuaKhoanChi("add");
+            var f = new ThemKhoaChiTongQuat("add",_role);
             f.ShowDialog();
         }
 
@@ -35,21 +35,20 @@ namespace TodoApp
         {
             if(e.RowIndex >= 0)
             {
-                string MaThu = dgvDanhSachThu.Rows[e.RowIndex].Cells["MaChi"].Value.ToString();
-                if (e.ColumnIndex == dgvDanhSachThu.Columns["Sua"].Index)
+                string MaChi = dgvDanhSachChiTieu.Rows[e.RowIndex].Cells["MaChi"].Value.ToString();
+                if (e.ColumnIndex == dgvDanhSachChiTieu.Columns["Sua"].Index)
                 {
-                    var sua = new ThemSuaKhoanChi("update", MaThu);
+                    var sua = new ThemKhoaChiTongQuat("update", _role, MaChi);
                     sua.ShowDialog();
                 }
-                if (e.ColumnIndex == dgvDanhSachThu.Columns["Xoa"].Index)
+                if (e.ColumnIndex == dgvDanhSachChiTieu.Columns["Xoa"].Index)
                 {
-                    var sua = new ThemSuaKhoanChi("update", MaThu);
-                    sua.ShowDialog();
+
                 }
-                if (e.ColumnIndex == dgvDanhSachThu.Columns["ChiTiet"].Index)
+                if (e.ColumnIndex == dgvDanhSachChiTieu.Columns["ChiTiet"].Index)
                 {
-                    var sua = new ChiTietKhoanChi();
-                    sua.ShowDialog();
+                    var chitiet = new ChiTietKhoanChi(MaChi);
+                    chitiet.ShowDialog();
                 }
             }    
         }
@@ -59,8 +58,8 @@ namespace TodoApp
             if(_role == "User")
             {
                 btnThietLapChi.Visible = false;
-                dgvDanhSachThu.Columns["Sua"].Visible = false;
-                dgvDanhSachThu.Columns["Xoa"].Visible = false;
+                dgvDanhSachChiTieu.Columns["Sua"].Visible = false;
+                dgvDanhSachChiTieu.Columns["Xoa"].Visible = false;
 
             }
             LoadDanhSachChi();
@@ -81,44 +80,27 @@ namespace TodoApp
         }
         void Showdata(DataTable dt)
         {
-            dgvDanhSachThu.Rows.Clear();
+            dgvDanhSachChiTieu.Rows.Clear();
             foreach (DataRow row in dt.Rows)
             {
-                int rowIndex = dgvDanhSachThu.Rows.Add();
-                dgvDanhSachThu.Rows[rowIndex].Cells["MaChi"].Value = row["MaChiTieu"];
-                dgvDanhSachThu.Rows[rowIndex].Cells["TenKhoanChi"].Value = row["TenKhoanChi"];
-               /* dgvDanhSachThu.Rows[rowIndex].Cells["NgayChi"].Value = ((DateTime)row["NgayChi"]).ToString("dd-MM-yyyy");*/
-                /*dgvDanhSachThu.Rows[rowIndex].Cells["SoTien"].Value = row["SoTien"];*/
-                dgvDanhSachThu.Rows[rowIndex].Cells["MoTa"].Value = row["MoTa"];
+                int rowIndex = dgvDanhSachChiTieu.Rows.Add();
+                dgvDanhSachChiTieu.Rows[rowIndex].Cells["MaChi"].Value = row["MaChiTieu"];
+                dgvDanhSachChiTieu.Rows[rowIndex].Cells["TenKhoanChi"].Value = row["TenKhoanChi"];
 
+                object ngayBatDauValue = row["NgayBatDau"];
+                string ngayBatDauString = (ngayBatDauValue != DBNull.Value) ? ((DateTime)ngayBatDauValue).ToString("dd-MM-yyyy") : string.Empty;
+                dgvDanhSachChiTieu.Rows[rowIndex].Cells["NgayBatDau"].Value = ngayBatDauString;
+
+                object ngayKetThucValue = row["NgayKetThuc"];
+                string ngayKetThucString = (ngayKetThucValue != DBNull.Value) ? ((DateTime)ngayKetThucValue).ToString("dd-MM-yyyy") : "";
+                dgvDanhSachChiTieu.Rows[rowIndex].Cells["NgayKetThuc"].Value = ngayKetThucString;
+
+                object tongSoTienValue = row["TongSoTien"];
+                string tongSoTienString = (tongSoTienValue != DBNull.Value) ? Convert.ToString(tongSoTienValue) : "";
+                dgvDanhSachChiTieu.Rows[rowIndex].Cells["SoTien"].Value = tongSoTienString;
 
             }
-            dgvDanhSachThu.Columns["MaChi"].Visible = false;
-        }
-
-        /*private void btnSearch_Click(object sender, EventArgs e)
-        {
-            string selectedValue = txtSearch.Text;
-            var filteredData = dt.Clone();
-            foreach (DataRow row in dt.Rows)
-            {
-
-                if (row["TenKhoanChi"].ToString().Contains(selectedValue))
-                {
-                    filteredData.Rows.Add(row.ItemArray);
-                }
-            }
-            Showdata(filteredData);
-        }*/
-
-        private void cmbDanhMuc_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-
+            dgvDanhSachChiTieu.Columns["MaChi"].Visible = false;
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)

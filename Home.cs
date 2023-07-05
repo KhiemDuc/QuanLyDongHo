@@ -42,6 +42,7 @@ namespace TodoApp
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.BringToFront();
+            childForm.AutoScaleMode = AutoScaleMode.None;
             childForm.Dock = DockStyle.Fill;
             childForm.Show();
             panelContent.Controls.Add(childForm);

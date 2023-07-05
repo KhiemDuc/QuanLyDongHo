@@ -43,14 +43,16 @@
             // 
             this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnThem.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnThem.ForeColor = System.Drawing.Color.White;
+            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnThem.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThem.ForeColor = System.Drawing.Color.Transparent;
             this.btnThem.Location = new System.Drawing.Point(247, 384);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(302, 49);
             this.btnThem.TabIndex = 30;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // label3
             // 
@@ -110,7 +112,7 @@
             this.cmbQuyenGop.FormattingEnabled = true;
             this.cmbQuyenGop.Location = new System.Drawing.Point(386, 145);
             this.cmbQuyenGop.Name = "cmbQuyenGop";
-            this.cmbQuyenGop.Size = new System.Drawing.Size(203, 39);
+            this.cmbQuyenGop.Size = new System.Drawing.Size(240, 39);
             this.cmbQuyenGop.TabIndex = 31;
             // 
             // cmbThanhVien
@@ -119,7 +121,7 @@
             this.cmbThanhVien.FormattingEnabled = true;
             this.cmbThanhVien.Location = new System.Drawing.Point(386, 71);
             this.cmbThanhVien.Name = "cmbThanhVien";
-            this.cmbThanhVien.Size = new System.Drawing.Size(203, 39);
+            this.cmbThanhVien.Size = new System.Drawing.Size(240, 39);
             this.cmbThanhVien.TabIndex = 33;
             this.cmbThanhVien.SelectedIndexChanged += new System.EventHandler(this.cmbThanhVien_SelectedIndexChanged);
             // 

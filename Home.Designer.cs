@@ -30,27 +30,27 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnHome = new TodoApp.Controls.CustomButton();
             this.panelFilter = new System.Windows.Forms.Panel();
             this.lblHeader = new System.Windows.Forms.Label();
             this.panelUser = new System.Windows.Forms.Panel();
             this.btnSetting = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblUserName = new System.Windows.Forms.Label();
-            this.btnLogout = new TodoApp.Controls.CustomButton();
-            this.panelContent = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnQLTK = new TodoApp.Controls.CustomButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panelContent = new System.Windows.Forms.Panel();
+            this.btnHome = new TodoApp.Controls.CustomButton();
+            this.btnLogout = new TodoApp.Controls.CustomButton();
+            this.btnQLTK = new TodoApp.Controls.CustomButton();
             this.customButton1 = new TodoApp.Controls.CustomButton();
             this.btnThongke = new TodoApp.Controls.CustomButton();
             this.btnQuanLySuKien = new TodoApp.Controls.CustomButton();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnThuChi = new TodoApp.Controls.CustomButton();
             this.btnThu = new TodoApp.Controls.CustomButton();
             this.btnChi = new TodoApp.Controls.CustomButton();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnThanhVien = new TodoApp.Controls.CustomButton();
             this.btnThem = new TodoApp.Controls.CustomButton();
             this.btnTaoCuTo = new TodoApp.Controls.CustomButton();
@@ -76,9 +76,10 @@
             this.tableLayoutPanel1.Controls.Add(this.btnHome, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panelFilter, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnLogout, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.panelContent, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panelContent, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.tableLayoutPanel1.ImeMode = System.Windows.Forms.ImeMode.On;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -88,28 +89,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1482, 753);
             this.tableLayoutPanel1.TabIndex = 1;
-            // 
-            // btnHome
-            // 
-            this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnHome.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnHome.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnHome.BorderRadius = 0;
-            this.btnHome.BorderSize = 0;
-            this.btnHome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnHome.FlatAppearance.BorderSize = 0;
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnHome.ForeColor = System.Drawing.Color.White;
-            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.Location = new System.Drawing.Point(3, 3);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(344, 114);
-            this.btnHome.TabIndex = 2;
-            this.btnHome.Text = "Home";
-            this.btnHome.TextColor = System.Drawing.Color.White;
-            this.btnHome.UseVisualStyleBackColor = false;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // panelFilter
             // 
@@ -126,10 +105,10 @@
             // lblHeader
             // 
             this.lblHeader.AutoSize = true;
-            this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblHeader.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblHeader.Location = new System.Drawing.Point(16, 16);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(516, 46);
+            this.lblHeader.Size = new System.Drawing.Size(489, 66);
             this.lblHeader.TabIndex = 16;
             this.lblHeader.Text = "Dòng Họ Nhà Nguyễn Đức";
             // 
@@ -140,7 +119,7 @@
             this.panelUser.Controls.Add(this.btnSetting);
             this.panelUser.Controls.Add(this.pictureBox2);
             this.panelUser.Controls.Add(this.lblUserName);
-            this.panelUser.Location = new System.Drawing.Point(820, 9);
+            this.panelUser.Location = new System.Drawing.Point(821, 9);
             this.panelUser.Name = "panelUser";
             this.panelUser.Size = new System.Drawing.Size(272, 56);
             this.panelUser.TabIndex = 8;
@@ -168,15 +147,108 @@
             // lblUserName
             // 
             this.lblUserName.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblUserName.Location = new System.Drawing.Point(30, 10);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.lblUserName.Size = new System.Drawing.Size(228, 31);
+            this.lblUserName.Size = new System.Drawing.Size(229, 31);
             this.lblUserName.TabIndex = 5;
             this.lblUserName.Text = "UserName";
             this.lblUserName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblUserName.Click += new System.EventHandler(this.lblUserName_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.AutoScroll = true;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel2.Controls.Add(this.btnQLTK);
+            this.panel2.Controls.Add(this.panel1);
+            this.panel2.Controls.Add(this.flowLayoutPanel2);
+            this.panel2.Controls.Add(this.flowLayoutPanel1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 123);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(344, 562);
+            this.panel2.TabIndex = 17;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.btnThongke);
+            this.panel1.Controls.Add(this.btnQuanLySuKien);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 467);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(323, 138);
+            this.panel1.TabIndex = 14;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.customButton1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 128);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(323, 138);
+            this.panel3.TabIndex = 15;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.btnThuChi);
+            this.flowLayoutPanel2.Controls.Add(this.btnThu);
+            this.flowLayoutPanel2.Controls.Add(this.btnChi);
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 286);
+            this.flowLayoutPanel2.MaximumSize = new System.Drawing.Size(344, 181);
+            this.flowLayoutPanel2.MinimumSize = new System.Drawing.Size(344, 64);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(344, 181);
+            this.flowLayoutPanel2.TabIndex = 20;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.btnThanhVien);
+            this.flowLayoutPanel1.Controls.Add(this.btnThem);
+            this.flowLayoutPanel1.Controls.Add(this.btnTaoCuTo);
+            this.flowLayoutPanel1.Controls.Add(this.btnDanhsach);
+            this.flowLayoutPanel1.Controls.Add(this.btnCaygiapha);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.MaximumSize = new System.Drawing.Size(344, 286);
+            this.flowLayoutPanel1.MinimumSize = new System.Drawing.Size(344, 64);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(344, 286);
+            this.flowLayoutPanel1.TabIndex = 17;
+            // 
+            // panelContent
+            // 
+            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContent.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.panelContent.Location = new System.Drawing.Point(353, 123);
+            this.panelContent.Name = "panelContent";
+            this.panelContent.Size = new System.Drawing.Size(1126, 562);
+            this.panelContent.TabIndex = 18;
+            // 
+            // btnHome
+            // 
+            this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnHome.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnHome.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnHome.BorderRadius = 0;
+            this.btnHome.BorderSize = 0;
+            this.btnHome.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnHome.FlatAppearance.BorderSize = 0;
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnHome.ForeColor = System.Drawing.Color.White;
+            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHome.Location = new System.Drawing.Point(3, 3);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(344, 114);
+            this.btnHome.TabIndex = 2;
+            this.btnHome.Text = "Home";
+            this.btnHome.TextColor = System.Drawing.Color.White;
+            this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // btnLogout
             // 
@@ -202,30 +274,6 @@
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // panelContent
-            // 
-            this.panelContent.BackColor = System.Drawing.Color.Transparent;
-            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContent.ForeColor = System.Drawing.Color.Black;
-            this.panelContent.Location = new System.Drawing.Point(353, 123);
-            this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(1126, 562);
-            this.panelContent.TabIndex = 20;
-            // 
-            // panel2
-            // 
-            this.panel2.AutoScroll = true;
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel2.Controls.Add(this.btnQLTK);
-            this.panel2.Controls.Add(this.panel1);
-            this.panel2.Controls.Add(this.flowLayoutPanel2);
-            this.panel2.Controls.Add(this.flowLayoutPanel1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 123);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(344, 562);
-            this.panel2.TabIndex = 17;
-            // 
             // btnQLTK
             // 
             this.btnQLTK.BackColor = System.Drawing.Color.Transparent;
@@ -237,38 +285,18 @@
             this.btnQLTK.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnQLTK.FlatAppearance.BorderSize = 0;
             this.btnQLTK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQLTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnQLTK.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnQLTK.ForeColor = System.Drawing.Color.White;
             this.btnQLTK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLTK.Location = new System.Drawing.Point(0, 383);
+            this.btnQLTK.Location = new System.Drawing.Point(0, 605);
             this.btnQLTK.Name = "btnQLTK";
             this.btnQLTK.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnQLTK.Size = new System.Drawing.Size(344, 64);
+            this.btnQLTK.Size = new System.Drawing.Size(323, 64);
             this.btnQLTK.TabIndex = 21;
             this.btnQLTK.Text = "Quản Lý Tài Khoản";
             this.btnQLTK.TextColor = System.Drawing.Color.White;
             this.btnQLTK.UseVisualStyleBackColor = false;
             this.btnQLTK.Click += new System.EventHandler(this.btnQLTK_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.btnThongke);
-            this.panel1.Controls.Add(this.btnQuanLySuKien);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 245);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(344, 138);
-            this.panel1.TabIndex = 14;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.customButton1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 128);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(344, 138);
-            this.panel3.TabIndex = 15;
             // 
             // customButton1
             // 
@@ -287,7 +315,7 @@
             this.customButton1.Location = new System.Drawing.Point(0, 0);
             this.customButton1.Name = "customButton1";
             this.customButton1.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.customButton1.Size = new System.Drawing.Size(344, 64);
+            this.customButton1.Size = new System.Drawing.Size(323, 64);
             this.customButton1.TabIndex = 12;
             this.customButton1.Text = "Báo Cáo";
             this.customButton1.TextColor = System.Drawing.Color.White;
@@ -304,13 +332,13 @@
             this.btnThongke.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnThongke.FlatAppearance.BorderSize = 0;
             this.btnThongke.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThongke.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThongke.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnThongke.ForeColor = System.Drawing.Color.White;
             this.btnThongke.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThongke.Location = new System.Drawing.Point(0, 64);
             this.btnThongke.Name = "btnThongke";
             this.btnThongke.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnThongke.Size = new System.Drawing.Size(344, 64);
+            this.btnThongke.Size = new System.Drawing.Size(323, 64);
             this.btnThongke.TabIndex = 12;
             this.btnThongke.Text = "Báo Cáo";
             this.btnThongke.TextColor = System.Drawing.Color.White;
@@ -328,31 +356,18 @@
             this.btnQuanLySuKien.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnQuanLySuKien.FlatAppearance.BorderSize = 0;
             this.btnQuanLySuKien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuanLySuKien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnQuanLySuKien.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnQuanLySuKien.ForeColor = System.Drawing.Color.White;
             this.btnQuanLySuKien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQuanLySuKien.Location = new System.Drawing.Point(0, 0);
             this.btnQuanLySuKien.Name = "btnQuanLySuKien";
             this.btnQuanLySuKien.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnQuanLySuKien.Size = new System.Drawing.Size(344, 64);
+            this.btnQuanLySuKien.Size = new System.Drawing.Size(323, 64);
             this.btnQuanLySuKien.TabIndex = 13;
             this.btnQuanLySuKien.Text = "Quản Lý Sự Kiên";
             this.btnQuanLySuKien.TextColor = System.Drawing.Color.White;
             this.btnQuanLySuKien.UseVisualStyleBackColor = false;
             this.btnQuanLySuKien.Click += new System.EventHandler(this.btnQuanLySuKien_Click);
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Controls.Add(this.btnThuChi);
-            this.flowLayoutPanel2.Controls.Add(this.btnThu);
-            this.flowLayoutPanel2.Controls.Add(this.btnChi);
-            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 64);
-            this.flowLayoutPanel2.MaximumSize = new System.Drawing.Size(344, 181);
-            this.flowLayoutPanel2.MinimumSize = new System.Drawing.Size(344, 64);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(344, 181);
-            this.flowLayoutPanel2.TabIndex = 20;
             // 
             // btnThuChi
             // 
@@ -364,7 +379,7 @@
             this.btnThuChi.BorderSize = 0;
             this.btnThuChi.FlatAppearance.BorderSize = 0;
             this.btnThuChi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThuChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThuChi.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnThuChi.ForeColor = System.Drawing.Color.Transparent;
             this.btnThuChi.Location = new System.Drawing.Point(3, 3);
             this.btnThuChi.Name = "btnThuChi";
@@ -386,7 +401,7 @@
             this.btnThu.BorderSize = 0;
             this.btnThu.FlatAppearance.BorderSize = 0;
             this.btnThu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThu.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnThu.ForeColor = System.Drawing.Color.Transparent;
             this.btnThu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThu.Location = new System.Drawing.Point(3, 73);
@@ -409,7 +424,7 @@
             this.btnChi.BorderSize = 0;
             this.btnChi.FlatAppearance.BorderSize = 0;
             this.btnChi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnChi.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnChi.ForeColor = System.Drawing.Color.Transparent;
             this.btnChi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnChi.Location = new System.Drawing.Point(3, 129);
@@ -422,21 +437,6 @@
             this.btnChi.UseVisualStyleBackColor = false;
             this.btnChi.Click += new System.EventHandler(this.btnChi_Click);
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.btnThanhVien);
-            this.flowLayoutPanel1.Controls.Add(this.btnThem);
-            this.flowLayoutPanel1.Controls.Add(this.btnTaoCuTo);
-            this.flowLayoutPanel1.Controls.Add(this.btnDanhsach);
-            this.flowLayoutPanel1.Controls.Add(this.btnCaygiapha);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.MaximumSize = new System.Drawing.Size(344, 286);
-            this.flowLayoutPanel1.MinimumSize = new System.Drawing.Size(344, 64);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(344, 64);
-            this.flowLayoutPanel1.TabIndex = 17;
-            // 
             // btnThanhVien
             // 
             this.btnThanhVien.BackColor = System.Drawing.Color.Transparent;
@@ -447,12 +447,12 @@
             this.btnThanhVien.BorderSize = 0;
             this.btnThanhVien.FlatAppearance.BorderSize = 0;
             this.btnThanhVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThanhVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThanhVien.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnThanhVien.ForeColor = System.Drawing.Color.White;
             this.btnThanhVien.Location = new System.Drawing.Point(3, 3);
             this.btnThanhVien.Name = "btnThanhVien";
             this.btnThanhVien.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnThanhVien.Size = new System.Drawing.Size(338, 64);
+            this.btnThanhVien.Size = new System.Drawing.Size(338, 60);
             this.btnThanhVien.TabIndex = 16;
             this.btnThanhVien.Text = "Quản Lý Thành Viên";
             this.btnThanhVien.TextColor = System.Drawing.Color.White;
@@ -467,12 +467,13 @@
             this.btnThem.BorderColor = System.Drawing.Color.OrangeRed;
             this.btnThem.BorderRadius = 0;
             this.btnThem.BorderSize = 0;
+            this.btnThem.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnThem.FlatAppearance.BorderSize = 0;
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThem.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(3, 73);
+            this.btnThem.Location = new System.Drawing.Point(3, 69);
             this.btnThem.Name = "btnThem";
             this.btnThem.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.btnThem.Size = new System.Drawing.Size(338, 50);
@@ -490,12 +491,13 @@
             this.btnTaoCuTo.BorderColor = System.Drawing.Color.OrangeRed;
             this.btnTaoCuTo.BorderRadius = 0;
             this.btnTaoCuTo.BorderSize = 0;
+            this.btnTaoCuTo.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTaoCuTo.FlatAppearance.BorderSize = 0;
             this.btnTaoCuTo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTaoCuTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnTaoCuTo.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnTaoCuTo.ForeColor = System.Drawing.Color.White;
             this.btnTaoCuTo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTaoCuTo.Location = new System.Drawing.Point(3, 129);
+            this.btnTaoCuTo.Location = new System.Drawing.Point(3, 125);
             this.btnTaoCuTo.Name = "btnTaoCuTo";
             this.btnTaoCuTo.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.btnTaoCuTo.Size = new System.Drawing.Size(338, 50);
@@ -513,12 +515,13 @@
             this.btnDanhsach.BorderColor = System.Drawing.Color.OrangeRed;
             this.btnDanhsach.BorderRadius = 0;
             this.btnDanhsach.BorderSize = 0;
+            this.btnDanhsach.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDanhsach.FlatAppearance.BorderSize = 0;
             this.btnDanhsach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDanhsach.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnDanhsach.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnDanhsach.ForeColor = System.Drawing.Color.Transparent;
             this.btnDanhsach.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDanhsach.Location = new System.Drawing.Point(3, 185);
+            this.btnDanhsach.Location = new System.Drawing.Point(3, 181);
             this.btnDanhsach.Name = "btnDanhsach";
             this.btnDanhsach.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.btnDanhsach.Size = new System.Drawing.Size(338, 50);
@@ -536,12 +539,13 @@
             this.btnCaygiapha.BorderColor = System.Drawing.Color.OrangeRed;
             this.btnCaygiapha.BorderRadius = 0;
             this.btnCaygiapha.BorderSize = 0;
+            this.btnCaygiapha.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCaygiapha.FlatAppearance.BorderSize = 0;
             this.btnCaygiapha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCaygiapha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnCaygiapha.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnCaygiapha.ForeColor = System.Drawing.Color.White;
             this.btnCaygiapha.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCaygiapha.Location = new System.Drawing.Point(3, 241);
+            this.btnCaygiapha.Location = new System.Drawing.Point(3, 237);
             this.btnCaygiapha.Name = "btnCaygiapha";
             this.btnCaygiapha.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.btnCaygiapha.Size = new System.Drawing.Size(338, 50);
@@ -553,12 +557,12 @@
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1482, 753);
             this.Controls.Add(this.tableLayoutPanel1);
             this.DoubleBuffered = true;
-            this.MinimumSize = new System.Drawing.Size(1500, 800);
+            this.MinimumSize = new System.Drawing.Size(1500, 753);
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trang chủ";
@@ -594,7 +598,6 @@
         private Controls.CustomButton btnThanhVien;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private Controls.CustomButton btnLogout;
-        private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private Controls.CustomButton btnThuChi;
         private Controls.CustomButton btnThu;
@@ -607,5 +610,6 @@
         private Controls.CustomButton customButton1;
         private Controls.CustomButton btnThongke;
         private System.Windows.Forms.Button btnSetting;
+        private System.Windows.Forms.Panel panelContent;
     }
 }

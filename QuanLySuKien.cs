@@ -51,12 +51,14 @@ namespace TodoApp
 
         private void dgvDanhSachThu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string MaSuKien = dgvDanhSachThu.Rows[e.RowIndex].Cells["MaSuKien"].Value.ToString();
-
-            if (e.ColumnIndex == dgvDanhSachThu.Columns["Sua"].Index && e.RowIndex >= 0)
+            if(e.RowIndex >= 0)
             {
-                var sua = new ThemSuaSuKien("update", MaSuKien);
-                sua.ShowDialog();
+                string MaSuKien = dgvDanhSachSuKien.Rows[e.RowIndex].Cells["MaSuKien"].Value.ToString();
+                if (e.ColumnIndex == dgvDanhSachSuKien.Columns["Sua"].Index)
+                {
+                    var sua = new ThemSuaSuKien("update", MaSuKien);
+                    sua.ShowDialog();
+                }
             }
         }
 
@@ -64,8 +66,8 @@ namespace TodoApp
         {
             if(_role == "User")
             {
-                dgvDanhSachThu.Columns["Sua"].Visible = false;
-                dgvDanhSachThu.Columns["Xoa"].Visible = false;
+                dgvDanhSachSuKien.Columns["Sua"].Visible = false;
+                dgvDanhSachSuKien.Columns["Xoa"].Visible = false;
                 btnThietLapChi.Visible = false;
             }
             dt = await chi.DanhSachSuKien();
@@ -73,18 +75,17 @@ namespace TodoApp
         }
         void Showdata(DataTable dt)
         {
-            dgvDanhSachThu.Rows.Clear();
+            dgvDanhSachSuKien.Rows.Clear();
             foreach (DataRow row in dt.Rows)
             {
                 int Sotien = 100000;
-                int rowIndex = dgvDanhSachThu.Rows.Add();
-                dgvDanhSachThu.Rows[rowIndex].Cells["MaSuKien"].Value = row["MaSuKien"];
-                dgvDanhSachThu.Rows[rowIndex].Cells["TenSuKien"].Value = row["TenSuKien"];
-                dgvDanhSachThu.Rows[rowIndex].Cells["NgayToChuc"].Value = ((DateTime)row["NgayToChuc"]).ToString("dd-MM-yyyy");
-                dgvDanhSachThu.Rows[rowIndex].Cells["SoTien"].Value = Sotien.ToString("NO");
-                dgvDanhSachThu.Rows[rowIndex].Cells["MoTa"].Value = row["MoTa"];
+                int rowIndex = dgvDanhSachSuKien.Rows.Add();
+                dgvDanhSachSuKien.Rows[rowIndex].Cells["MaSuKien"].Value = row["MaSuKien"];
+                dgvDanhSachSuKien.Rows[rowIndex].Cells["TenSuKien"].Value = row["TenSuKien"];
+                dgvDanhSachSuKien.Rows[rowIndex].Cells["NgayToChuc"].Value = ((DateTime)row["NgayToChuc"]).ToString("dd-MM-yyyy");
+                dgvDanhSachSuKien.Rows[rowIndex].Cells["SoTien"].Value = Sotien.ToString("NO");
             }
-            dgvDanhSachThu.Columns["MaSuKien"].Visible = false;
+            dgvDanhSachSuKien.Columns["MaSuKien"].Visible = false;
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)

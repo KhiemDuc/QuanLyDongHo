@@ -14,44 +14,51 @@ namespace TodoApp
     public partial class ChiTietKhoanThu : Form
     {
         private string _idThu;
+        private string _role;
+
         ThanhVien_ThuDAL thanhvienthu = new ThanhVien_ThuDAL();
         DataTable dt = new DataTable();
         public ChiTietKhoanThu()
         {
             InitializeComponent();
         }
-        public ChiTietKhoanThu(string idThu):this()
+        public ChiTietKhoanThu(string idThu, string role = "User"):this()
         {
             _idThu = idThu;
+            _role = role;
         }
 
         private void dgvDanhSachThu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex >= 0)
+            {
+                string MaGiaoDich = dgvDanhSachThuChiTiet.Rows[e.RowIndex].Cells["MaGiaoDich"].Value.ToString();
+                if (e.ColumnIndex == dgvDanhSachThuChiTiet.Columns["Sua"].Index)
+                {
+                    var sua = new ThemSuaKhoanThuChiTiet(_role, MaGiaoDich,"update");
+                    sua.ShowDialog();
+                }
+            }
         }
         void ShowDataThu(DataTable dt)
         {
-            dgvDanhSachThu.Rows.Clear();
+            dgvDanhSachThuChiTiet.Rows.Clear();
             foreach (DataRow row in dt.Rows)
             {
-                int rowIndex = dgvDanhSachThu.Rows.Add();
-                dgvDanhSachThu.Rows[rowIndex].Cells["MaThanhVien"].Value = row["MaThanhVien"];
-                dgvDanhSachThu.Rows[rowIndex].Cells["TenKhoanThu"].Value = row["Ten"];
-                dgvDanhSachThu.Rows[rowIndex].Cells["DanhMuc"].Value = (bool)row["TrangThai"] ? "Đã nộp" : "Chưa nộp";
-                dgvDanhSachThu.Rows[rowIndex].Cells["DinhMuc"].Value = row["SoTien"];
-                dgvDanhSachThu.Rows[rowIndex].Cells["MoTa"].Value = row["TenThu"];
-                dgvDanhSachThu.Rows[rowIndex].Cells["NgayBatDauThu"].Value = (row["NgayThu"] != DBNull.Value) ? ((DateTime)row["NgayThu"]).ToString("dd-MM-yyyy") : "N/A";
+                int rowIndex = dgvDanhSachThuChiTiet.Rows.Add();
+                dgvDanhSachThuChiTiet.Rows[rowIndex].Cells["MaGiaoDichThu"].Value = row["MaGiaoDichThu"];
+                dgvDanhSachThuChiTiet.Rows[rowIndex].Cells["TenThanhVien"].Value = row["Ten"];
+                dgvDanhSachThuChiTiet.Rows[rowIndex].Cells["TrangThai"].Value = (bool)row["TrangThai"] ? "Đã nộp" : "Chưa nộp";
+                dgvDanhSachThuChiTiet.Rows[rowIndex].Cells["SoTien"].Value = row["SoTien"];
+                dgvDanhSachThuChiTiet.Rows[rowIndex].Cells["TenThu"].Value = row["TenThu"];
+                dgvDanhSachThuChiTiet.Rows[rowIndex].Cells["NgayThu"].Value = (row["NgayThu"] != DBNull.Value) ? ((DateTime)row["NgayThu"]).ToString("dd-MM-yyyy") : "N/A";
             }
-            dgvDanhSachThu.Columns["MaThanhVien"].Visible = false;
-            dgvDanhSachThu.Columns["TenKhoanThu"].HeaderText = "Tên thành viên";
-            dgvDanhSachThu.Columns["DanhMuc"].Visible = true;
-            dgvDanhSachThu.Columns["DinhMuc"].HeaderText = "Số tiền";
-            dgvDanhSachThu.Columns["MoTa"].HeaderText = "Tên loại thu";
-            dgvDanhSachThu.Columns["NgayBatDauThu"].HeaderText = "Ngày thu tiền";
+            dgvDanhSachThuChiTiet.Columns["MaGiaoDichThu"].Visible = false;
         }
 
         private void ChiTietKhoanThu_Load(object sender, EventArgs e)
         {
-            Task<DataTable> danhsachnoptien = thanhvienthu.DanhSachThanhVienThu(_idThu);
+            Task<DataTable> danhsachnoptien = thanhvienthu.DanhSachChiTietKhoanThu(_idThu);
             danhsachnoptien.ContinueWith(t =>
             {
                 dt = t.Result;

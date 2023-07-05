@@ -181,11 +181,17 @@
     <Compile Include="QuanLyThu.Designer.cs">
       <DependentUpon>QuanLyThu.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThemLoaiChi.cs">
+    <Compile Include="ThemKhoaChiTongQuat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ThemLoaiChi.Designer.cs">
-      <DependentUpon>ThemLoaiChi.cs</DependentUpon>
+    <Compile Include="ThemKhoaChiTongQuat.Designer.cs">
+      <DependentUpon>ThemKhoaChiTongQuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemSuaKhoanThuChiTiet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemSuaKhoanThuChiTiet.Designer.cs">
+      <DependentUpon>ThemSuaKhoanThuChiTiet.cs</DependentUpon>
     </Compile>
     <Compile Include="ThemSuaSuKien.cs">
       <SubType>Form</SubType>
@@ -205,11 +211,11 @@
     <Compile Include="ThemThanhVien.Designer.cs">
       <DependentUpon>ThemThanhVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThemSuaKhoanChi.cs">
+    <Compile Include="ThemSuaKhoanChiChiTiet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ThemSuaKhoanChi.Designer.cs">
-      <DependentUpon>ThemSuaKhoanChi.cs</DependentUpon>
+    <Compile Include="ThemSuaKhoanChiChiTiet.Designer.cs">
+      <DependentUpon>ThemSuaKhoanChiChiTiet.cs</DependentUpon>
     </Compile>
     <Compile Include="ThemSuaKhoanThu.cs">
       <SubType>Form</SubType>
@@ -293,8 +299,11 @@
     <EmbeddedResource Include="QuanLyThu.resx">
       <DependentUpon>QuanLyThu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThemLoaiChi.resx">
-      <DependentUpon>ThemLoaiChi.cs</DependentUpon>
+    <EmbeddedResource Include="ThemKhoaChiTongQuat.resx">
+      <DependentUpon>ThemKhoaChiTongQuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemSuaKhoanThuChiTiet.resx">
+      <DependentUpon>ThemSuaKhoanThuChiTiet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThemSuaSuKien.resx">
       <DependentUpon>ThemSuaSuKien.cs</DependentUpon>
@@ -305,8 +314,8 @@
     <EmbeddedResource Include="ThemThanhVien.resx">
       <DependentUpon>ThemThanhVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThemSuaKhoanChi.resx">
-      <DependentUpon>ThemSuaKhoanChi.cs</DependentUpon>
+    <EmbeddedResource Include="ThemSuaKhoanChiChiTiet.resx">
+      <DependentUpon>ThemSuaKhoanChiChiTiet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThemSuaKhoanThu.resx">
       <DependentUpon>ThemSuaKhoanThu.cs</DependentUpon>

@@ -86,7 +86,7 @@
             this.dtpBatDau.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtpBatDau.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dtpBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpBatDau.Location = new System.Drawing.Point(339, 205);
+            this.dtpBatDau.Location = new System.Drawing.Point(339, 201);
             this.dtpBatDau.Name = "dtpBatDau";
             this.dtpBatDau.Size = new System.Drawing.Size(274, 37);
             this.dtpBatDau.TabIndex = 4;
@@ -96,7 +96,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(102, 202);
+            this.label3.Location = new System.Drawing.Point(102, 198);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(136, 34);
             this.label3.TabIndex = 5;
@@ -107,7 +107,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(102, 261);
+            this.label4.Location = new System.Drawing.Point(102, 271);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(90, 34);
             this.label4.TabIndex = 6;
@@ -119,9 +119,9 @@
             this.cmbLoaiThu.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cmbLoaiThu.FormattingEnabled = true;
             this.cmbLoaiThu.Items.AddRange(new object[] {
-            "Bắt Buộc",
-            "Không Bắt Buộc"});
-            this.cmbLoaiThu.Location = new System.Drawing.Point(339, 264);
+            "Định Mức",
+            "Tài Trợ"});
+            this.cmbLoaiThu.Location = new System.Drawing.Point(339, 274);
             this.cmbLoaiThu.Name = "cmbLoaiThu";
             this.cmbLoaiThu.Size = new System.Drawing.Size(183, 39);
             this.cmbLoaiThu.TabIndex = 7;
@@ -132,7 +132,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(102, 326);
+            this.label5.Location = new System.Drawing.Point(102, 353);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 34);
             this.label5.TabIndex = 9;
@@ -142,7 +142,7 @@
             // 
             this.txtMota.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtMota.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtMota.Location = new System.Drawing.Point(339, 326);
+            this.txtMota.Location = new System.Drawing.Point(339, 353);
             this.txtMota.Multiline = true;
             this.txtMota.Name = "txtMota";
             this.txtMota.Size = new System.Drawing.Size(274, 104);
@@ -152,9 +152,10 @@
             // 
             this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnThem.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThem.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.Location = new System.Drawing.Point(212, 491);
+            this.btnThem.Location = new System.Drawing.Point(212, 504);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(302, 49);
             this.btnThem.TabIndex = 10;
@@ -162,11 +163,11 @@
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // ThemSuaKhoanThuThu
+            // ThemSuaKhoanThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(706, 567);
+            this.ClientSize = new System.Drawing.Size(706, 580);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtMota);
@@ -178,7 +179,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDinhMuc);
             this.Controls.Add(this.txtTenKhoanThu);
-            this.Name = "ThemSuaKhoanThuThu";
+            this.Name = "ThemSuaKhoanThu";
             this.Text = "ThuChi";
             this.Load += new System.EventHandler(this.ThuChi_Load);
             this.ResumeLayout(false);
