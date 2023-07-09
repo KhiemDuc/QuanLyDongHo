@@ -59,8 +59,8 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.79167F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75.20834F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.125F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.875F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1407, 480);
             this.tableLayoutPanel1.TabIndex = 1;
@@ -94,7 +94,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDanhSachChiChiTiet.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDanhSachChiChiTiet.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDanhSachChiChiTiet.Location = new System.Drawing.Point(3, 122);
+            this.dgvDanhSachChiChiTiet.Location = new System.Drawing.Point(3, 114);
             this.dgvDanhSachChiChiTiet.Name = "dgvDanhSachChiChiTiet";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
@@ -106,7 +106,7 @@
             this.dgvDanhSachChiChiTiet.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDanhSachChiChiTiet.RowHeadersWidth = 51;
             this.dgvDanhSachChiChiTiet.RowTemplate.Height = 24;
-            this.dgvDanhSachChiChiTiet.Size = new System.Drawing.Size(1401, 355);
+            this.dgvDanhSachChiChiTiet.Size = new System.Drawing.Size(1401, 363);
             this.dgvDanhSachChiChiTiet.TabIndex = 1;
             this.dgvDanhSachChiChiTiet.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachThu_CellContentClick);
             // 
@@ -180,7 +180,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1401, 113);
+            this.panel1.Size = new System.Drawing.Size(1401, 105);
             this.panel1.TabIndex = 0;
             // 
             // btnThietLapChi

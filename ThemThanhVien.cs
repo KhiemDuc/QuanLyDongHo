@@ -39,7 +39,7 @@ namespace TodoApp
         {
             if(_role == "User")
             {
-                btnThem1.Enabled = false;
+                btnThem1.Visible = false;
             }
 
             if (_type == "add")
@@ -56,6 +56,7 @@ namespace TodoApp
                 panelUpdate.Visible= true;
                 lblSDT.Visible = true;
                 txtSDT.Visible = true;
+             
                 if (_updateforID != "")
                 {
                     Task<SqlDataReader> chitiet = thanhvien.HienThiThanhVien(_updateforID);
@@ -83,7 +84,7 @@ namespace TodoApp
                                             cmbDoi.Items.Add("1");
                                             cmbDoi.SelectedItem="1";
                                         }
-                                        if(reader.GetString(reader.GetOrdinal("TenCha")) != "Không Rõ")    
+                                        if(!reader.IsDBNull(reader.GetOrdinal("TenCha")))    
                                             cmbHoTenBo.SelectedItem = reader.GetString(reader.GetOrdinal("TenCha"));
                                         else
                                         {
@@ -134,7 +135,7 @@ namespace TodoApp
                             {
                                 Console.WriteLine("Không tìm thấy dữ liệu.");
                             }
-                            reader.Close();
+                            reader?.Close();
                         }
                         else if (c.Status == TaskStatus.Faulted)
                         {
@@ -161,6 +162,7 @@ namespace TodoApp
                 cmbGioiTinh.Enabled = false;
                 lblSDT.Visible = false;
                 txtSDT.Visible = false;
+
             }
             
 
@@ -169,6 +171,10 @@ namespace TodoApp
         {
             using (MemoryStream m = new MemoryStream())
             {
+                if (img == null)
+                {
+                    return null;
+                }
                 img.Save(m, System.Drawing.Imaging.ImageFormat.Png);
                 return m.ToArray();
             }
@@ -194,21 +200,20 @@ namespace TodoApp
             byte[] anhThanhVien = ImageToByte(pbAnhDaiDien.Image);
             if (_type == "add")
             {
-                Task<bool> themthanhvien = thanhvien.ThemThanhVien(txtHoten.Text, dtpNgaySinh.Value, cmbHoTenBo.SelectedValue.ToString(),
-                    txtHoTenMe.Text, cmbDoi.SelectedItem.ToString(), (byte)cmbGioiTinh.SelectedIndex, txtDiaChi.Text, anhThanhVien);
+                Task<bool> themthanhvien = thanhvien.ThemThanhVien(txtHoten.Text, dtpNgaySinh.Value, cmbHoTenBo.SelectedValue.ToString() ?? "",
+                    txtHoTenMe.Text, cmbDoi.SelectedItem.ToString() ?? "", (byte)cmbGioiTinh.SelectedIndex, txtDiaChi.Text, anhThanhVien);
                 themthanhvien.ContinueWith(t =>
                 {
                     if (t.IsFaulted)
                     {
                         MessageBox.Show("Thêm mới không thành công");
-
                     }
                     else
                     {
                         if (t.Result)
                             MessageBox.Show("Thêm mới thành công");
                         else
-                            return;
+                            MessageBox.Show("Thêm mới không thành công");
                     }
                 });
             }
@@ -218,8 +223,10 @@ namespace TodoApp
                 {
                     lblSDT.Visible = false;
                     txtSDT.Visible = false;
+                    cmbHoTenBo.Enabled = false;
+                    cmbDoi.Enabled = false;
                 }
-                string value = cmbHoTenBo.SelectedValue != null ? cmbHoTenBo.SelectedValue.ToString() : "Không Rõ";
+                string value = cmbHoTenBo.SelectedValue != null ? cmbHoTenBo.SelectedValue.ToString() : null;
                 Task<bool> suathanhvien = thanhvien.SuaThanhVien(_updateforID, txtHoten.Text, dtpNgaySinh.Value, value,
                     txtHoTenMe.Text, cmbDoi.SelectedItem.ToString(), (byte)cmbGioiTinh.SelectedIndex, txtDiaChi.Text,
                     (byte)cmbHonNhan.SelectedIndex, txtVoChong.Text, txtSDT.Text, txtHocvan.Text,

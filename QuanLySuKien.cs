@@ -137,5 +137,35 @@ namespace TodoApp
                 btnThietLapChi.Visible = false;
             }
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string selectedValue = txtSearch.Text;
+            var filteredData = dt.Clone();
+            foreach (DataRow row in dt.Rows)
+            {
+
+                if (row["TenSuKien"].ToString().Contains(selectedValue))
+                {
+                    filteredData.Rows.Add(row.ItemArray);
+                }
+            }
+            Showdata(filteredData);
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string selectedValue = txtSearch.Text;
+            var filteredData = dt.Clone();
+            foreach (DataRow row in dt.Rows)
+            {
+
+                if (row["TenSuKien"].ToString().Contains(selectedValue))
+                {
+                    filteredData.Rows.Add(row.ItemArray);
+                }
+            }
+            Showdata(filteredData);
+        }
     }
 }

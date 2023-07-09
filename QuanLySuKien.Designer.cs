@@ -35,15 +35,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvDanhSachSuKien = new System.Windows.Forms.DataGridView();
-            this.MaSuKien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenSuKien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayToChuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaDiem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenChiTieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ChiTietChiTieu = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Sua = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Xoa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.dtpNgayBatDau = new System.Windows.Forms.DateTimePicker();
@@ -53,6 +44,15 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnThietLapChi = new System.Windows.Forms.Button();
+            this.MaSuKien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSuKien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayToChuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaDiem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenChiTieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChiTietChiTieu = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Sua = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Xoa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachSuKien)).BeginInit();
@@ -85,8 +85,11 @@
             // 
             // dgvDanhSachSuKien
             // 
+            this.dgvDanhSachSuKien.AllowUserToAddRows = false;
+            this.dgvDanhSachSuKien.AllowUserToDeleteRows = false;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dgvDanhSachSuKien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvDanhSachSuKien.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle10.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -132,82 +135,6 @@
             this.dgvDanhSachSuKien.TabIndex = 1;
             this.dgvDanhSachSuKien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachSuKien_CellContentClick);
             this.dgvDanhSachSuKien.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDanhSachSuKien_CellFormatting);
-            // 
-            // MaSuKien
-            // 
-            this.MaSuKien.HeaderText = "Mã Sự Kiện";
-            this.MaSuKien.MinimumWidth = 6;
-            this.MaSuKien.Name = "MaSuKien";
-            this.MaSuKien.Width = 125;
-            // 
-            // TenSuKien
-            // 
-            this.TenSuKien.HeaderText = "Tên Sự Kiện";
-            this.TenSuKien.MinimumWidth = 6;
-            this.TenSuKien.Name = "TenSuKien";
-            this.TenSuKien.Width = 250;
-            // 
-            // NgayToChuc
-            // 
-            this.NgayToChuc.HeaderText = "Ngày Tổ Chức";
-            this.NgayToChuc.MinimumWidth = 6;
-            this.NgayToChuc.Name = "NgayToChuc";
-            this.NgayToChuc.Width = 160;
-            // 
-            // MaChi
-            // 
-            this.MaChi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.MaChi.HeaderText = "Mã Chi";
-            this.MaChi.MinimumWidth = 6;
-            this.MaChi.Name = "MaChi";
-            this.MaChi.Visible = false;
-            // 
-            // DiaDiem
-            // 
-            this.DiaDiem.HeaderText = "Địa Điểm";
-            this.DiaDiem.MinimumWidth = 6;
-            this.DiaDiem.Name = "DiaDiem";
-            this.DiaDiem.Width = 200;
-            // 
-            // TenChiTieu
-            // 
-            this.TenChiTieu.HeaderText = "Tên Chi Tiêu";
-            this.TenChiTieu.MinimumWidth = 6;
-            this.TenChiTieu.Name = "TenChiTieu";
-            this.TenChiTieu.Width = 200;
-            // 
-            // ChiTietChiTieu
-            // 
-            this.ChiTietChiTieu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ChiTietChiTieu.HeaderText = "Chi Tiết Chi Tiêu";
-            this.ChiTietChiTieu.MinimumWidth = 6;
-            this.ChiTietChiTieu.Name = "ChiTietChiTieu";
-            this.ChiTietChiTieu.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ChiTietChiTieu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ChiTietChiTieu.Text = "Chi Tiết";
-            this.ChiTietChiTieu.UseColumnTextForButtonValue = true;
-            // 
-            // Sua
-            // 
-            this.Sua.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Sua.HeaderText = "Chi Tiết Sự Kiện";
-            this.Sua.MinimumWidth = 6;
-            this.Sua.Name = "Sua";
-            this.Sua.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Sua.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Sua.Text = "Chi Tiết";
-            this.Sua.UseColumnTextForButtonValue = true;
-            // 
-            // Xoa
-            // 
-            this.Xoa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Xoa.HeaderText = "Xóa";
-            this.Xoa.MinimumWidth = 6;
-            this.Xoa.Name = "Xoa";
-            this.Xoa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Xoa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Xoa.Text = "Xóa";
-            this.Xoa.UseColumnTextForButtonValue = true;
             // 
             // panel2
             // 
@@ -292,6 +219,7 @@
             this.btnSearch.Size = new System.Drawing.Size(42, 39);
             this.btnSearch.TabIndex = 37;
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
             // 
@@ -302,6 +230,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(255, 34);
             this.txtSearch.TabIndex = 36;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // btnThietLapChi
             // 
@@ -313,6 +242,83 @@
             this.btnThietLapChi.Text = "Thêm Sự Kiện";
             this.btnThietLapChi.UseVisualStyleBackColor = true;
             this.btnThietLapChi.Click += new System.EventHandler(this.btnThietLapChi_Click);
+            // 
+            // MaSuKien
+            // 
+            this.MaSuKien.HeaderText = "Mã Sự Kiện";
+            this.MaSuKien.MinimumWidth = 6;
+            this.MaSuKien.Name = "MaSuKien";
+            this.MaSuKien.Width = 125;
+            // 
+            // TenSuKien
+            // 
+            this.TenSuKien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TenSuKien.HeaderText = "Tên Sự Kiện";
+            this.TenSuKien.MinimumWidth = 6;
+            this.TenSuKien.Name = "TenSuKien";
+            // 
+            // NgayToChuc
+            // 
+            this.NgayToChuc.HeaderText = "Ngày Tổ Chức";
+            this.NgayToChuc.MinimumWidth = 6;
+            this.NgayToChuc.Name = "NgayToChuc";
+            this.NgayToChuc.Width = 170;
+            // 
+            // MaChi
+            // 
+            this.MaChi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MaChi.HeaderText = "Mã Chi";
+            this.MaChi.MinimumWidth = 6;
+            this.MaChi.Name = "MaChi";
+            this.MaChi.Visible = false;
+            // 
+            // DiaDiem
+            // 
+            this.DiaDiem.HeaderText = "Địa Điểm";
+            this.DiaDiem.MinimumWidth = 6;
+            this.DiaDiem.Name = "DiaDiem";
+            this.DiaDiem.Width = 200;
+            // 
+            // TenChiTieu
+            // 
+            this.TenChiTieu.HeaderText = "Tên Chi Tiêu";
+            this.TenChiTieu.MinimumWidth = 6;
+            this.TenChiTieu.Name = "TenChiTieu";
+            this.TenChiTieu.Width = 200;
+            // 
+            // ChiTietChiTieu
+            // 
+            this.ChiTietChiTieu.HeaderText = "Chi Tiết Chi Tiêu";
+            this.ChiTietChiTieu.MinimumWidth = 6;
+            this.ChiTietChiTieu.Name = "ChiTietChiTieu";
+            this.ChiTietChiTieu.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ChiTietChiTieu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ChiTietChiTieu.Text = "Chi Tiết";
+            this.ChiTietChiTieu.UseColumnTextForButtonValue = true;
+            this.ChiTietChiTieu.Width = 150;
+            // 
+            // Sua
+            // 
+            this.Sua.HeaderText = "Chi Tiết Sự Kiện";
+            this.Sua.MinimumWidth = 6;
+            this.Sua.Name = "Sua";
+            this.Sua.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Sua.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Sua.Text = "Chi Tiết";
+            this.Sua.UseColumnTextForButtonValue = true;
+            this.Sua.Width = 150;
+            // 
+            // Xoa
+            // 
+            this.Xoa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Xoa.HeaderText = "Xóa";
+            this.Xoa.MinimumWidth = 6;
+            this.Xoa.Name = "Xoa";
+            this.Xoa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Xoa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Xoa.Text = "Xóa";
+            this.Xoa.UseColumnTextForButtonValue = true;
+            this.Xoa.Width = 79;
             // 
             // QuanLySuKien
             // 

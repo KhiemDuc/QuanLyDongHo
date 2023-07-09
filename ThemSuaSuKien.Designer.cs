@@ -71,11 +71,12 @@
             // dtpNgayToChuc
             // 
             this.dtpNgayToChuc.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dtpNgayToChuc.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dtpNgayToChuc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayToChuc.CustomFormat = "  dd/ MM/ yyyy";
+            this.dtpNgayToChuc.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpNgayToChuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayToChuc.Location = new System.Drawing.Point(412, 139);
             this.dtpNgayToChuc.Name = "dtpNgayToChuc";
-            this.dtpNgayToChuc.Size = new System.Drawing.Size(274, 37);
+            this.dtpNgayToChuc.Size = new System.Drawing.Size(201, 28);
             this.dtpNgayToChuc.TabIndex = 37;
             // 
             // label2

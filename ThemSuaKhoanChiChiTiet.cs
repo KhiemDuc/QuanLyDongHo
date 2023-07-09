@@ -37,45 +37,59 @@ namespace TodoApp
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (_type == "add")
-            {
-                Task<bool> thietLapChiChiTiet = chi.ThietLapKhoanChiChiTiet(txtKhoanChi.Text,_maChi,
-                    cmbThanhVien.SelectedValue.ToString(),dtpNgayChi.Value, txtSoTien.Text);
-                thietLapChiChiTiet.ContinueWith(t =>
-                {
-                    if (t.IsFaulted)
-                    {
-                        MessageBox.Show("Thêm không thành công");
-                    }
-                    if (t.Result)
-                    {
-                        MessageBox.Show("Thêm thành công");
-                    }
-                    else
-                        MessageBox.Show("Thêm không thành công");
+            string input = txtSoTien.Text;
+            long soTien;
 
-                });
-            }
-            else if (_type == "update")
-            {
-                Task<bool> suathietLapThu = chi.SuaThietLapKhoanChiChiTiet(txtKhoanChi.Text, cmbThanhVien.SelectedValue.ToString(),
-                    _maChi,dtpNgayChi.Value, txtSoTien.Text,_maGiaoDich);
-                suathietLapThu.ContinueWith(t =>
-                {
-                    if (t.IsFaulted)
-                    {
-                        MessageBox.Show("Sửa không thành công");
-                    }
-                    if (t.Result)
-                    {
-                        MessageBox.Show("Sửa thành công");
-                    }
-                    else
-                        MessageBox.Show("Sửa không thành công");
 
-                });
+            if (long.TryParse(input, out soTien))
+            {
+                if (_type == "add")
+                {
+                    Task<bool> thietLapChiChiTiet = chi.ThietLapKhoanChiChiTiet(txtKhoanChi.Text,_maChi,
+                        cmbThanhVien.SelectedValue.ToString(),dtpNgayChi.Value, soTien);
+                    thietLapChiChiTiet.ContinueWith(t =>
+                    {
+                        if (t.IsFaulted)
+                        {
+                            MessageBox.Show("Thêm không thành công");
+                        }
+                        if (t.Result)
+                        {
+                            MessageBox.Show("Thêm thành công");
+                        }
+                        else
+                            MessageBox.Show("Thêm không thành công");
+                        eLoadData?.Invoke(this, e);
+
+                    });
+                }
+                else if (_type == "update")
+                {
+                
+                        Task<bool> suathietLapThu = chi.SuaThietLapKhoanChiChiTiet(txtKhoanChi.Text, cmbThanhVien.SelectedValue.ToString(),
+                        _maChi,dtpNgayChi.Value, soTien, _maGiaoDich);
+                    suathietLapThu.ContinueWith(t =>
+                    {
+                        if (t.IsFaulted)
+                        {
+                            MessageBox.Show("Sửa không thành công");
+                        }
+                        if (t.Result)
+                        {
+                            MessageBox.Show("Sửa thành công");
+                        }
+                        else
+                            MessageBox.Show("Sửa không thành công");
+
+                        eLoadData?.Invoke(this, e);
+                    });
+                }
             }
-            eLoadData?.Invoke(this, e);
+            else
+            {
+                MessageBox.Show("Số Tiền Phải Là Số");
+
+            }
         }
 
         private void ThemSuaKhoanChi_Load(object sender, EventArgs e)

@@ -69,25 +69,36 @@ namespace TodoApp
         {
             if(_type == "add")
             {
-                Task<bool> thuThanhVien = tvThu.DongQuyenGop(cmbThanhVien.SelectedValue.ToString(), cmbQuyenGop.SelectedValue.ToString(), 
-                    dtpNgayThu.Value,txtSoTien.Text,1);
-                thuThanhVien.ContinueWith(t =>
+                string input = txtSoTien.Text;
+                long soTien;
+
+
+                if (long.TryParse(input, out soTien))
                 {
-                    if (t.IsFaulted)
+                    Task<bool> thuThanhVien = tvThu.DongQuyenGop(cmbThanhVien.SelectedValue.ToString(), cmbQuyenGop.SelectedValue.ToString(), 
+                    dtpNgayThu.Value, soTien, 1);
+                    thuThanhVien.ContinueWith(t =>
                     {
-                        MessageBox.Show("Có lỗi gì đó");
-                    }
-                    if (t.Result)
-                    {
-                        MessageBox.Show("Thêm khoản quyên góp thành công");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Thêm khoản quyên góp không thành công");
-                    }
-                });
+                        if (t.IsFaulted)
+                        {
+                            MessageBox.Show("Có lỗi gì đó");
+                        }
+                        if (t.Result)
+                        {
+                            MessageBox.Show("Thêm khoản quyên góp thành công");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Thêm khoản quyên góp không thành công");
+                        }
+                        eLoadData?.Invoke(this, e);
+                    });
+                }
+                else
+                {
+                    MessageBox.Show("Bạn Phải Nhập Số Tiền Là Số");
+                }
             }
-            eLoadData?.Invoke(this, e);
         }
     }
 }

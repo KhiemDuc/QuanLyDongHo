@@ -159,11 +159,11 @@
             // 
             this.nKT.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.nKT.AutoSize = true;
-            this.nKT.Font = new System.Drawing.Font("Microsoft JhengHei", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nKT.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nKT.ForeColor = System.Drawing.Color.Black;
-            this.nKT.Location = new System.Drawing.Point(439, 5);
+            this.nKT.Location = new System.Drawing.Point(439, 6);
             this.nKT.Name = "nKT";
-            this.nKT.Size = new System.Drawing.Size(21, 23);
+            this.nKT.Size = new System.Drawing.Size(20, 21);
             this.nKT.TabIndex = 8;
             this.nKT.Text = "0";
             // 
@@ -171,11 +171,11 @@
             // 
             this.nBD.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.nBD.AutoSize = true;
-            this.nBD.Font = new System.Drawing.Font("Microsoft JhengHei", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nBD.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nBD.ForeColor = System.Drawing.Color.Black;
-            this.nBD.Location = new System.Drawing.Point(193, 5);
+            this.nBD.Location = new System.Drawing.Point(194, 6);
             this.nBD.Name = "nBD";
-            this.nBD.Size = new System.Drawing.Size(21, 23);
+            this.nBD.Size = new System.Drawing.Size(20, 21);
             this.nBD.TabIndex = 6;
             this.nBD.Text = "0";
             // 
@@ -539,7 +539,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1025, 60);
             this.tableLayoutPanel3.TabIndex = 0;
             // 

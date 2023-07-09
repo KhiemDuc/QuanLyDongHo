@@ -149,6 +149,7 @@ namespace TodoApp
             this.btnLogin.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnLogin.BorderRadius = 10;
             this.btnLogin.BorderSize = 0;
+            this.btnLogin.Enabled = false;
             this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));

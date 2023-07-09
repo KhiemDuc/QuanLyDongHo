@@ -101,11 +101,12 @@
             // dtpNgayThu
             // 
             this.dtpNgayThu.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dtpNgayThu.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dtpNgayThu.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayThu.Location = new System.Drawing.Point(415, 350);
+            this.dtpNgayThu.CustomFormat = "  dd/ MM/ yyyy";
+            this.dtpNgayThu.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpNgayThu.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayThu.Location = new System.Drawing.Point(415, 353);
             this.dtpNgayThu.Name = "dtpNgayThu";
-            this.dtpNgayThu.Size = new System.Drawing.Size(274, 37);
+            this.dtpNgayThu.Size = new System.Drawing.Size(183, 28);
             this.dtpNgayThu.TabIndex = 52;
             // 
             // txtTenThanhVien

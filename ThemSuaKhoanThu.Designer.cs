@@ -84,11 +84,12 @@
             // dtpBatDau
             // 
             this.dtpBatDau.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dtpBatDau.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dtpBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpBatDau.CustomFormat = "   dd/ MM/ yyyy";
+            this.dtpBatDau.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpBatDau.Location = new System.Drawing.Point(339, 201);
             this.dtpBatDau.Name = "dtpBatDau";
-            this.dtpBatDau.Size = new System.Drawing.Size(274, 37);
+            this.dtpBatDau.Size = new System.Drawing.Size(183, 27);
             this.dtpBatDau.TabIndex = 4;
             // 
             // label3

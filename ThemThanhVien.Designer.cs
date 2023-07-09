@@ -30,6 +30,7 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnThem1 = new TodoApp.Controls.CustomButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelThem = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -69,7 +70,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.lblHocVan = new System.Windows.Forms.Label();
-            this.btnThem1 = new TodoApp.Controls.CustomButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -103,6 +103,27 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1570, 107);
             this.panel3.TabIndex = 4;
+            // 
+            // btnThem1
+            // 
+            this.btnThem1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnThem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnThem1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnThem1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnThem1.BorderRadius = 0;
+            this.btnThem1.BorderSize = 0;
+            this.btnThem1.FlatAppearance.BorderSize = 0;
+            this.btnThem1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThem1.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThem1.ForeColor = System.Drawing.Color.Transparent;
+            this.btnThem1.Location = new System.Drawing.Point(709, 34);
+            this.btnThem1.Name = "btnThem1";
+            this.btnThem1.Size = new System.Drawing.Size(289, 46);
+            this.btnThem1.TabIndex = 0;
+            this.btnThem1.Text = "Thêm";
+            this.btnThem1.TextColor = System.Drawing.Color.Transparent;
+            this.btnThem1.UseVisualStyleBackColor = false;
+            this.btnThem1.Click += new System.EventHandler(this.btnThem1_Click);
             // 
             // panel1
             // 
@@ -459,8 +480,8 @@
             this.cmbTrangthai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cmbTrangthai.FormattingEnabled = true;
             this.cmbTrangthai.Items.AddRange(new object[] {
-            "Sống ",
-            "Mất"});
+            "Còn Sống ",
+            "Đã Mất"});
             this.cmbTrangthai.Location = new System.Drawing.Point(234, 396);
             this.cmbTrangthai.Name = "cmbTrangthai";
             this.cmbTrangthai.Size = new System.Drawing.Size(212, 28);
@@ -576,27 +597,6 @@
             this.lblHocVan.Size = new System.Drawing.Size(89, 34);
             this.lblHocVan.TabIndex = 44;
             this.lblHocVan.Text = "Học Vấn";
-            // 
-            // btnThem1
-            // 
-            this.btnThem1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnThem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnThem1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnThem1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnThem1.BorderRadius = 0;
-            this.btnThem1.BorderSize = 0;
-            this.btnThem1.FlatAppearance.BorderSize = 0;
-            this.btnThem1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThem1.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnThem1.ForeColor = System.Drawing.Color.Transparent;
-            this.btnThem1.Location = new System.Drawing.Point(709, 34);
-            this.btnThem1.Name = "btnThem1";
-            this.btnThem1.Size = new System.Drawing.Size(289, 46);
-            this.btnThem1.TabIndex = 0;
-            this.btnThem1.Text = "Thêm";
-            this.btnThem1.TextColor = System.Drawing.Color.Transparent;
-            this.btnThem1.UseVisualStyleBackColor = false;
-            this.btnThem1.Click += new System.EventHandler(this.btnThem1_Click);
             // 
             // ThemThanhVien
             // 

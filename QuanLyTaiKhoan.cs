@@ -82,5 +82,38 @@ namespace TodoApp
                 DanhSachTaiKhoan.Rows[rowIndex].Cells["ChucVu"].Value = row["Ten_ChucVu"];
             }
         }
+
+        private void cmbFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedValue = cmbFilter.SelectedItem.ToString() ?? "";
+            if (selectedValue == "Tất cả")
+            {
+                Showdata(dt);
+            }
+            else
+            {
+                var filteredData = dt.Clone();
+                foreach (DataRow row in dt.Rows)
+                {
+                    var value = row["Ten_ChucVu"].ToString();
+                    if (value == selectedValue)
+                    {
+                        filteredData.Rows.Add(row.ItemArray);
+                    }
+                }
+                Showdata(filteredData);
+
+            }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

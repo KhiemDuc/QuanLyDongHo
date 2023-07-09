@@ -49,7 +49,7 @@ namespace TodoApp
         {
             if(_role == "User")
             {
-                btnThietLapChi.Enabled = false;
+                btnThietLapChi.Visible = false;
                 dgvDanhSachChiChiTiet.Columns["Sua"].Visible = false;
                 dgvDanhSachChiChiTiet.Columns["Xoa"].Visible = false;
 

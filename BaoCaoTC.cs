@@ -43,7 +43,7 @@ namespace TodoApp
             lblThuDinhMuc.Text = thuDinhMuc.ToString("N0");
             lblTienTaiTro.Text = thuTaiTro.ToString("N0");
             lblTienDaChi.Text = tienChi.ToString("N0");
-            lblTienConLai.Text = (thuDinhMuc + thuTaiTro - tienChi).ToString("N0");
+            lblTienConLai.Text = (tienDuKiTruoc + thuDinhMuc + thuTaiTro - tienChi).ToString("N0");
             lblDuKiTruoc.Text = tienDuKiTruoc.ToString("N0");
             if (dtpStart.Value > dtpEnd.Value)
             {
@@ -54,12 +54,14 @@ namespace TodoApp
 
         private void linklbChiTietThuDM_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            var ThuChiTiet = new ChiTietKhoanThu("", "User","1", "BaoCao",dtpStart.Value,dtpEnd.Value);
+            ThuChiTiet.ShowDialog();
         }
 
         private void linklbChiTietTaiTro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            var ThuChiTiet = new ChiTietKhoanThu("", "User", "0", "BaoCao", dtpStart.Value, dtpEnd.Value);
+            ThuChiTiet.ShowDialog();
         }
 
         private void linklbChiTietChi_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

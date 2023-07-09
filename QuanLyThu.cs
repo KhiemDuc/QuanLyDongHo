@@ -39,6 +39,17 @@ namespace TodoApp
 
         private void QuanLyThu_Load(object sender, EventArgs e)
         {
+            if (_role == "User")
+            {
+                btnThietLapThu.Visible = false;
+                btnQuyenGop.Visible = false;
+                dgvDanhSachThu.Columns["Sua"].Visible = false;
+                dgvDanhSachThu.Columns["Xoa"].Visible = false;
+            }
+            LoadDanhSachThu();
+        }
+        void LoadDanhSachThu()
+        {
             Task<float> tongThuDm = thu.TongDaThu(dtpNgayBatDau.Value, dtpNgayKetThuc.Value, 1);
             Task<float> tongThuTaiTro = thu.TongDaThu(dtpNgayBatDau.Value, dtpNgayKetThuc.Value, 0);
 
@@ -55,18 +66,6 @@ namespace TodoApp
                     lblTongThu.Text += tongThu.ToString("N0") + " VND";
                 }));
             });
-
-            if (_role == "User")
-            {
-                btnThietLapThu.Visible = false;
-                btnQuyenGop.Visible = false;
-                dgvDanhSachThu.Columns["Sua"].Visible = false;
-                dgvDanhSachThu.Columns["Xoa"].Visible = false;
-            }
-            LoadDanhSachThu();
-        }
-        void LoadDanhSachThu()
-        {
             Task<DataTable> danhsachthu = thu.DanhSachKhoanThu();
             danhsachthu.ContinueWith(t =>
             {

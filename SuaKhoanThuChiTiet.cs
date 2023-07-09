@@ -52,14 +52,14 @@ namespace TodoApp
                     }
                     else
                     {
-                        MessageBox.Show("Cập nhật khoản thu chi tiết không thành công");
+                        MessageBox.Show("Cập nhật khoản thu chi tiết không thành công, vui lòng nhập đầy đủ thông tin");
                     }
                 });
                 eLoadData?.Invoke(this, e);
             }
             else
             {
-                soTien = 0;
+                 MessageBox.Show("Số Tiền Phải Nhập Số");
             }
 
         }

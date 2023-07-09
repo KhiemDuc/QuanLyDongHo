@@ -142,7 +142,17 @@ namespace TodoApp
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
+            string selectedValue = txtSearch.Text;
+            var filteredData = dt.Clone();
+            foreach (DataRow row in dt.Rows)
+            {
 
+                if (row["Ten"].ToString().Contains(selectedValue))
+                {
+                    filteredData.Rows.Add(row.ItemArray);
+                }
+            }
+            ShowData(filteredData);
         }
     }
 }

@@ -16,6 +16,10 @@ namespace TodoApp
         private string _idThu;
         private string _role;
         private string _loaiThu;
+        private string _props;
+        private DateTime _dayEnd;
+        private DateTime _dayStart;
+
 
         public EventHandler eLoadData;
 
@@ -25,26 +29,15 @@ namespace TodoApp
         {
             InitializeComponent();
         }
-        public ChiTietKhoanThu(string idThu, string role = "User",string loaiThu = "Thu Định Mức") :this()
+        public ChiTietKhoanThu(string idThu = "", string role = "User",string loaiThu = "Thu Định Mức",
+            string props = "", DateTime dayStart = new DateTime(), DateTime dayEnd = new DateTime()) :this()
         {
             _idThu = idThu;
             _role = role;
             _loaiThu = loaiThu;
-        }
-
-        private void dgvDanhSachThu_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                string MaGiaoDichThu = dgvDanhSachThuChiTiet.Rows[e.RowIndex].Cells["MaGiaoDichThu"].Value.ToString();
-
-                if (e.ColumnIndex == dgvDanhSachThuChiTiet.Columns["Sua"].Index)
-                {
-                    var sua = new SuaKhoanThuChiTiet(_role, MaGiaoDichThu,_loaiThu);
-                    sua.eLoadData += eLoadThuChiTiet;
-                    sua.ShowDialog();
-                }
-            }
+            _props = props;
+            _dayStart = dayStart;
+            _dayEnd = dayEnd;
         }
 
         private void eLoadThuChiTiet(object sender, EventArgs e)
@@ -67,6 +60,10 @@ namespace TodoApp
                 dgvDanhSachThuChiTiet.Rows[rowIndex].Cells["NgayThu"].Value = (row["NgayThu"] != DBNull.Value) ? ((DateTime)row["NgayThu"]).ToString("dd-MM-yyyy") : "N/A";
             }
             dgvDanhSachThuChiTiet.Columns["MaGiaoDichThu"].Visible = false;
+            if(_props == "BaoCao")
+            {
+                dgvDanhSachThuChiTiet.Columns["TrangThai"].Visible = false;
+            }
         }
 
         private void ChiTietKhoanThu_Load(object sender, EventArgs e)
@@ -79,21 +76,65 @@ namespace TodoApp
         }
         void LoadData()
         {
-            Task<DataTable> danhsachnoptien = thanhvienthu.DanhSachChiTietKhoanThu(_idThu);
-            danhsachnoptien.ContinueWith(t =>
+            if(_props == "" )
             {
-                dt = t.Result;
-                if (InvokeRequired)
-                    Invoke(new Action(() =>
-                    {
-                        ShowDataThu(t.Result);
-                    }));
-            });
+                Task<DataTable> danhsachnoptien = thanhvienthu.DanhSachChiTietKhoanThu(_idThu);
+                danhsachnoptien.ContinueWith(t =>
+                {
+                    dt = t.Result;
+                    long tongTien = dt.AsEnumerable().Sum(row => row.Field<long>("SoTien"));
+
+                    if (InvokeRequired)
+                        Invoke(new Action(() =>
+                        {
+                            ShowDataThu(t.Result);
+
+                            lblTongThu.Text = "Tổng Số Tiền : " + tongTien.ToString("N0");
+                        }));
+                });
+            }    
+            if(_props == "BaoCao")
+            {
+                Task<DataTable> ds = thanhvienthu.DanhSachChiTietKhoanDaThu(_loaiThu,_dayStart,_dayEnd);
+                ds.ContinueWith(t =>
+                {
+                    dt = t.Result;
+                    long tongTien = dt.AsEnumerable().Sum(row => row.Field<long>("SoTien"));
+
+                    if (InvokeRequired)
+                        Invoke(new Action(() =>
+                        {
+                            ShowDataThu(t.Result);
+
+                            lblTongThu.Text = "Tổng Số Tiền : " + tongTien.ToString("N0");
+                        }));
+                });
+            }
         }
 
         private void ChiTietKhoanThu_FormClosed(object sender, FormClosedEventArgs e)
         {
             eLoadData?.Invoke(this, e);
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgvDanhSachThuChiTiet_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                string MaGiaoDichThu = dgvDanhSachThuChiTiet.Rows[e.RowIndex].Cells["MaGiaoDichThu"].Value.ToString();
+
+                if (e.ColumnIndex == dgvDanhSachThuChiTiet.Columns["Sua"].Index)
+                {
+                    var sua = new SuaKhoanThuChiTiet(_role, MaGiaoDichThu, _loaiThu);
+                    sua.eLoadData += eLoadThuChiTiet;
+                    sua.ShowDialog();
+                }
+            }
         }
     }
 }
