@@ -61,9 +61,5 @@ namespace TodoApp
             e.Graphics.DrawImage(memorying, (pagearea.Width/2) - (this.pnlPrint.Width/2), this.pnlPrint.Location.Y);
         }
 
-        private void btnPrint_Click(object sender, EventArgs e)
-        {
-            Print(this.pnlPrint);
-        }
     }
 }

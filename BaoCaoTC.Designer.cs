@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnXuatFilePDF = new TodoApp.Controls.CustomButton();
+            this.btnXuatPDF = new System.Windows.Forms.Button();
             this.grpThoiGian = new System.Windows.Forms.GroupBox();
             this.btnXem = new System.Windows.Forms.Button();
             this.tblThoiGian = new System.Windows.Forms.TableLayoutPanel();
@@ -37,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
+            this.pnlBaoCaoThuChi = new System.Windows.Forms.Panel();
             this.grpBaoCaoThuChi = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.linklbChiTietChi = new System.Windows.Forms.LinkLabel();
@@ -63,37 +64,31 @@
             this.panel2.SuspendLayout();
             this.grpThoiGian.SuspendLayout();
             this.tblThoiGian.SuspendLayout();
+            this.pnlBaoCaoThuChi.SuspendLayout();
             this.grpBaoCaoThuChi.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnXuatFilePDF);
+            this.panel2.Controls.Add(this.btnXuatPDF);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 374);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(800, 76);
             this.panel2.TabIndex = 2;
             // 
-            // btnXuatFilePDF
+            // btnXuatPDF
             // 
-            this.btnXuatFilePDF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXuatFilePDF.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnXuatFilePDF.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnXuatFilePDF.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnXuatFilePDF.BorderRadius = 0;
-            this.btnXuatFilePDF.BorderSize = 0;
-            this.btnXuatFilePDF.FlatAppearance.BorderSize = 0;
-            this.btnXuatFilePDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXuatFilePDF.ForeColor = System.Drawing.Color.White;
-            this.btnXuatFilePDF.Location = new System.Drawing.Point(625, 15);
-            this.btnXuatFilePDF.Name = "btnXuatFilePDF";
-            this.btnXuatFilePDF.Size = new System.Drawing.Size(150, 40);
-            this.btnXuatFilePDF.TabIndex = 0;
-            this.btnXuatFilePDF.Text = "Xuất File PDF";
-            this.btnXuatFilePDF.TextColor = System.Drawing.Color.White;
-            this.btnXuatFilePDF.UseVisualStyleBackColor = false;
+            this.btnXuatPDF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXuatPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXuatPDF.Location = new System.Drawing.Point(626, 11);
+            this.btnXuatPDF.Name = "btnXuatPDF";
+            this.btnXuatPDF.Size = new System.Drawing.Size(131, 53);
+            this.btnXuatPDF.TabIndex = 2;
+            this.btnXuatPDF.Text = "Xuất file pdf";
+            this.btnXuatPDF.UseVisualStyleBackColor = true;
+            this.btnXuatPDF.Click += new System.EventHandler(this.btnXuatPDF_Click);
             // 
             // grpThoiGian
             // 
@@ -179,15 +174,24 @@
             this.dtpStart.Size = new System.Drawing.Size(168, 24);
             this.dtpStart.TabIndex = 2;
             // 
+            // pnlBaoCaoThuChi
+            // 
+            this.pnlBaoCaoThuChi.Controls.Add(this.grpBaoCaoThuChi);
+            this.pnlBaoCaoThuChi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlBaoCaoThuChi.Location = new System.Drawing.Point(0, 100);
+            this.pnlBaoCaoThuChi.Name = "pnlBaoCaoThuChi";
+            this.pnlBaoCaoThuChi.Size = new System.Drawing.Size(800, 274);
+            this.pnlBaoCaoThuChi.TabIndex = 4;
+            // 
             // grpBaoCaoThuChi
             // 
             this.grpBaoCaoThuChi.Controls.Add(this.tableLayoutPanel1);
             this.grpBaoCaoThuChi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpBaoCaoThuChi.Font = new System.Drawing.Font("Microsoft JhengHei UI", 7.8F, System.Drawing.FontStyle.Bold);
-            this.grpBaoCaoThuChi.Location = new System.Drawing.Point(0, 100);
+            this.grpBaoCaoThuChi.Location = new System.Drawing.Point(0, 0);
             this.grpBaoCaoThuChi.Name = "grpBaoCaoThuChi";
             this.grpBaoCaoThuChi.Size = new System.Drawing.Size(800, 274);
-            this.grpBaoCaoThuChi.TabIndex = 4;
+            this.grpBaoCaoThuChi.TabIndex = 5;
             this.grpBaoCaoThuChi.TabStop = false;
             this.grpBaoCaoThuChi.Text = "Báo Cáo Thu Chi";
             // 
@@ -243,7 +247,6 @@
             this.linklbChiTietChi.TabIndex = 27;
             this.linklbChiTietChi.TabStop = true;
             this.linklbChiTietChi.Text = "Chi Tiết";
-            this.linklbChiTietChi.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklbChiTietChi_LinkClicked);
             // 
             // linklbChiTietTaiTro
             // 
@@ -255,7 +258,6 @@
             this.linklbChiTietTaiTro.TabIndex = 26;
             this.linklbChiTietTaiTro.TabStop = true;
             this.linklbChiTietTaiTro.Text = "Chi Tiết";
-            this.linklbChiTietTaiTro.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklbChiTietTaiTro_LinkClicked);
             // 
             // linklbChiTietThuDM
             // 
@@ -267,7 +269,6 @@
             this.linklbChiTietThuDM.TabIndex = 25;
             this.linklbChiTietThuDM.TabStop = true;
             this.linklbChiTietThuDM.Text = "Chi Tiết";
-            this.linklbChiTietThuDM.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklbChiTietThuDM_LinkClicked);
             // 
             // label3
             // 
@@ -454,7 +455,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.grpBaoCaoThuChi);
+            this.Controls.Add(this.pnlBaoCaoThuChi);
             this.Controls.Add(this.grpThoiGian);
             this.Controls.Add(this.panel2);
             this.Name = "BaoCaoTC";
@@ -464,6 +465,7 @@
             this.grpThoiGian.ResumeLayout(false);
             this.tblThoiGian.ResumeLayout(false);
             this.tblThoiGian.PerformLayout();
+            this.pnlBaoCaoThuChi.ResumeLayout(false);
             this.grpBaoCaoThuChi.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -480,8 +482,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpStart;
+        private System.Windows.Forms.Button btnXem;
+        private System.Windows.Forms.Panel pnlBaoCaoThuChi;
         private System.Windows.Forms.GroupBox grpBaoCaoThuChi;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.LinkLabel linklbChiTietChi;
+        private System.Windows.Forms.LinkLabel linklbChiTietTaiTro;
+        private System.Windows.Forms.LinkLabel linklbChiTietThuDM;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label8;
@@ -500,9 +507,6 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.LinkLabel linklbChiTietChi;
-        private System.Windows.Forms.LinkLabel linklbChiTietTaiTro;
-        private System.Windows.Forms.LinkLabel linklbChiTietThuDM;
-        private System.Windows.Forms.Button btnXem;
+        private System.Windows.Forms.Button btnXuatPDF;
     }
 }
