@@ -78,5 +78,10 @@ namespace TodoApp
             baoCao_PDF.DuKiTruoc = lblDuKiTruoc.Text;
             baoCao_PDF.ShowDialog();
         }
+
+        private void btnXuatFilePDF_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -97,6 +97,7 @@
             this.btnXuatFilePDF.Text = "Xuất File PDF";
             this.btnXuatFilePDF.TextColor = System.Drawing.Color.White;
             this.btnXuatFilePDF.UseVisualStyleBackColor = false;
+            this.btnXuatFilePDF.Click += new System.EventHandler(this.btnXuatFilePDF_Click);
             // 
             // grpThoiGian
             // 
