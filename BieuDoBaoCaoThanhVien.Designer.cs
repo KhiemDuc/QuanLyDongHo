@@ -56,7 +56,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(716, 300);
+            this.chart1.Size = new System.Drawing.Size(677, 300);
             this.chart1.TabIndex = 2;
             this.chart1.Text = "chart1";
             this.chart1.Click += new System.EventHandler(this.chart1_Click);
@@ -112,7 +112,7 @@
             this.chart2.Text = "chart2";
             this.chart2.Click += new System.EventHandler(this.chart2_Click);
             // 
-            // BaoCaoThanhVien
+            // BieuDoBaoCaoThanhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -122,7 +122,7 @@
             this.Controls.Add(this.lblBangCap);
             this.Controls.Add(this.lblTongSoNguoi);
             this.Controls.Add(this.chart1);
-            this.Name = "BaoCaoThanhVien";
+            this.Name = "BieuDoBaoCaoThanhVien";
             this.Text = "BaoCaoThanhVien";
             this.Load += new System.EventHandler(this.BaoCaoThanhVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();

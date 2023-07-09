@@ -17,6 +17,11 @@ namespace TodoApp
     {
         private string _maChi;
         private string _role;
+        private string _props;
+        DateTime _dateStart;
+        DateTime _dateEnd;
+
+
 
         public delegate void eLoadData();
         public eLoadData LoadDataCallback;
@@ -27,10 +32,13 @@ namespace TodoApp
         {
             InitializeComponent();
         }
-        public ChiTietKhoanChi(string maChi,string role): this()
+        public ChiTietKhoanChi(string maChi,string role, string props = "",DateTime dayStart = new DateTime(),DateTime dayEnd = new DateTime()) : this()
         {
             _maChi = maChi;
             _role = role;
+            _dateStart = dayStart;
+            _dateEnd = dayEnd;
+            _props = props;
         }
 
         private void btnThietLapChi_Click(object sender, EventArgs e)
@@ -58,26 +66,53 @@ namespace TodoApp
         }
         void LoadData()
         {
-            Task<SqlDataReader> thongtin = chi.DanhSachKhoanChiChiTiet(_maChi);
-            thongtin.ContinueWith(t =>
+            if(_props == "")
             {
-                if (t.IsFaulted)
+                Task<SqlDataReader> thongtin = chi.DanhSachKhoanChiChiTiet(_maChi);
+                thongtin.ContinueWith(t =>
                 {
-
-                }
-                else if (t.Result != null)
-                {
-                    SqlDataReader reader = t.Result;
-                    if (reader != null && reader.HasRows)
+                    if (t.IsFaulted)
                     {
-                        Invoke(new Action(() =>
-                        {
-                            ShowData(reader);
-                        }));
+                        return;
                     }
-                }
+                    else if (t.Result != null)
+                    {
+                        SqlDataReader reader = t.Result;
+                        if (reader != null && reader.HasRows)
+                        {
+                            Invoke(new Action(() =>
+                            {
+                                ShowData(reader);
+                            }));
+                        }
+                    }
 
-            });
+                });
+            }
+            if(_props == "BaoCao")
+            {
+                Task<SqlDataReader> thongtin = chi.DanhSachKhoanDaChi(_dateStart, _dateEnd);
+                thongtin.ContinueWith(t =>
+                {
+                    if (t.IsFaulted)
+                    {
+                        return;
+
+                    }
+                    else if (t.Result != null)
+                    {
+                        SqlDataReader reader = t.Result;
+                        if (reader != null && reader.HasRows)
+                        {
+                            Invoke(new Action(() =>
+                            {
+                                ShowData(reader);
+                            }));
+                        }
+                    }
+
+                });
+            }
         }
         void ShowData(SqlDataReader reader)
         {

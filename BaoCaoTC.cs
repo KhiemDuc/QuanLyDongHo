@@ -66,7 +66,8 @@ namespace TodoApp
 
         private void linklbChiTietChi_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            var ChiChiTiet = new ChiTietKhoanChi("", "User", "BaoCao", dtpStart.Value, dtpEnd.Value);
+            ChiChiTiet.ShowDialog();
         }
         private void btnXuatFIle_Click(object sender, EventArgs e)
         {
@@ -79,6 +80,11 @@ namespace TodoApp
             baoCao_PDF.ThuDinhMuc = lblThuDinhMuc.Text;
             baoCao_PDF.DuKiTruoc = lblDuKiTruoc.Text;
             baoCao_PDF.ShowDialog();
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -19,7 +19,7 @@ namespace TodoApp
 
             //Form1.create();
 
-            Application.Run(new BaoCaoTC());
+            Application.Run(new BieuDoBaoCaoThanhVien());
         }
     }
 }
