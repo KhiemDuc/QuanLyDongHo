@@ -27,8 +27,14 @@ namespace TodoApp
 
         private void btnThietLapChi_Click(object sender, EventArgs e)
         {
-            var f = new ThemKhoaChiTongQuat("add",_role);
+            var f = new ThemSuaKhoanChiTongQuat("add",_role);
+            f._eLoadData += eLoadDanhSachChi;
             f.ShowDialog();
+        }
+
+        private void eLoadDanhSachChi(object sender, EventArgs e)
+        {
+            LoadDanhSachChi();
         }
 
         private void dgvDanhSachThu_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -38,20 +44,51 @@ namespace TodoApp
                 string MaChi = dgvDanhSachChiTieu.Rows[e.RowIndex].Cells["MaChi"].Value.ToString();
                 if (e.ColumnIndex == dgvDanhSachChiTieu.Columns["Sua"].Index)
                 {
-                    var sua = new ThemKhoaChiTongQuat("update", _role, MaChi);
+                    var sua = new ThemSuaKhoanChiTongQuat("update", _role, MaChi);
+                    sua._eLoadData += eLoadDanhSachChi;
                     sua.ShowDialog();
                 }
                 if (e.ColumnIndex == dgvDanhSachChiTieu.Columns["Xoa"].Index)
                 {
+                    DialogResult result = ShowYesNoDialog("Bạn có muốn xóa khoản chi này không?");
 
+                    if (result == DialogResult.Yes)
+                    {
+                        Task<bool> xoaThu = chi.XoaKhoanChi(MaChi);
+                        xoaThu.ContinueWith(x =>
+                        {
+                            if (x.IsFaulted)
+                                MessageBox.Show("Có Lỗi");
+                            if (x.Result)
+                            {
+                                MessageBox.Show("Xóa Khoản Chi Thành Công");
+                                LoadDanhSachChi();
+                            }    
+                            else
+                                MessageBox.Show("Xóa Khoản Chi Không Thành Công");
+                        });
+                    }
+                    
                 }
                 if (e.ColumnIndex == dgvDanhSachChiTieu.Columns["ChiTiet"].Index)
                 {
-                    var chitiet = new ChiTietKhoanChi(MaChi);
+                    var chitiet = new ChiTietKhoanChi(MaChi,_role);
+                    chitiet.LoadDataCallback += eLoadData;
                     chitiet.ShowDialog();
                 }
             }    
         }
+
+        private void eLoadData()
+        {
+            LoadDanhSachChi();
+        }
+
+        static DialogResult ShowYesNoDialog(string message)
+        {
+            return MessageBox.Show(message, "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        }
+
 
         private void QuanLyChiTieu_Load(object sender, EventArgs e)
         {
@@ -67,14 +104,19 @@ namespace TodoApp
         }
         void LoadDanhSachChi()
         {
+            Task<float> tienChi = chi.TongDaChi(dtpNgayBatDau.Value, dtpNgayKetThuc.Value);
+
             Task<DataTable> danhsachchi = chi.DanhSachKhoanChi();
-            danhsachchi.ContinueWith(t =>
+
+            Task.WhenAll(tienChi, danhsachchi).ContinueWith(t =>
             {
-                dt = t.Result;
+                dt = danhsachchi.Result;
                 if (InvokeRequired)
                     Invoke(new Action(() =>
                     {
-                        Showdata(t.Result);
+                        Showdata(danhsachchi.Result);
+                        lblTongChiTieu.Text = "Tổng Chi Tiêu Là: "+ tienChi.Result.ToString("N0") + " VND";
+                        
                     }));
             });
         }
@@ -85,7 +127,7 @@ namespace TodoApp
             {
                 int rowIndex = dgvDanhSachChiTieu.Rows.Add();
                 dgvDanhSachChiTieu.Rows[rowIndex].Cells["MaChi"].Value = row["MaChiTieu"];
-                dgvDanhSachChiTieu.Rows[rowIndex].Cells["TenKhoanChi"].Value = row["TenKhoanChi"];
+                dgvDanhSachChiTieu.Rows[rowIndex].Cells["TenKhoanChi"].Value = row["TenChiTieu"];
 
                 object ngayBatDauValue = row["NgayBatDau"];
                 string ngayBatDauString = (ngayBatDauValue != DBNull.Value) ? ((DateTime)ngayBatDauValue).ToString("dd-MM-yyyy") : string.Empty;
@@ -96,8 +138,13 @@ namespace TodoApp
                 dgvDanhSachChiTieu.Rows[rowIndex].Cells["NgayKetThuc"].Value = ngayKetThucString;
 
                 object tongSoTienValue = row["TongSoTien"];
-                string tongSoTienString = (tongSoTienValue != DBNull.Value) ? Convert.ToString(tongSoTienValue) : "";
-                dgvDanhSachChiTieu.Rows[rowIndex].Cells["SoTien"].Value = tongSoTienString;
+               
+                int tongTienInt = (tongSoTienValue != DBNull.Value) ? (int)tongSoTienValue : 0;
+                dgvDanhSachChiTieu.Rows[rowIndex].Cells["SoTien"].Value = tongTienInt.ToString("N0");
+
+                object mota = row["MoTa"];
+                string motaString = (mota != DBNull.Value) ? Convert.ToString(mota) : "";
+                dgvDanhSachChiTieu.Rows[rowIndex].Cells["MoTa"].Value = motaString;
 
             }
             dgvDanhSachChiTieu.Columns["MaChi"].Visible = false;
@@ -110,7 +157,38 @@ namespace TodoApp
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            DateTime fromDate = dtpNgayBatDau.Value; // Lấy giá trị từ control NgayBatDau
+            DateTime toDate = dtpNgayKetThuc.Value; // Lấy giá trị từ control NgayKetThuc
 
+            var filteredData = dt.Clone(); // Tạo bản sao của DataTable dt
+
+            // Kiểm tra nếu DataTable dt chứa dữ liệu
+            if (dt.Rows.Count > 0)
+            {
+                var rows = dt.AsEnumerable().Where(row =>
+                {
+                    DateTime? ngayBatDau = row["NgayBatDau"] as DateTime?;
+                    DateTime ngayChi;
+
+                    if (ngayBatDau != null)
+                    {
+                        ngayChi = ngayBatDau.Value;
+                        // Tiếp tục xử lý với ngayChi đã được gán giá trị
+                        // ...
+                        return ngayChi >= fromDate && ngayChi <= toDate;
+                    }
+                    return false;
+
+                });
+
+                // Kiểm tra nếu có bản ghi thỏa mãn điều kiện
+                if (rows.Any())
+                {
+                    filteredData = rows.CopyToDataTable();
+                }
+            }
+
+            Showdata(filteredData);
         }
     }
 }

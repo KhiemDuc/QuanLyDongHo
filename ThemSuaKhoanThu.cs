@@ -16,6 +16,7 @@ namespace TodoApp
         ThuDAL thu = new ThuDAL();
         private string _type;
         private string _maThu;
+        public EventHandler eLoadData;
         public ThemSuaKhoanThu()
         {
             InitializeComponent();
@@ -27,7 +28,7 @@ namespace TodoApp
         }
         private void ThuChi_Load(object sender, EventArgs e)
         {
-            
+
             if (_type == "update")
             {
                 btnThem.Text = "Lưu";
@@ -103,6 +104,7 @@ namespace TodoApp
 
                 });
             }
+            eLoadData?.Invoke(this,e);
         }
 
         private void cmbLoaiThu_SelectedIndexChanged(object sender, EventArgs e)

@@ -180,7 +180,7 @@
             this.Controls.Add(this.txtDinhMuc);
             this.Controls.Add(this.txtTenKhoanThu);
             this.Name = "ThemSuaKhoanThu";
-            this.Text = "ThuChi";
+            this.Text = "Thêm Khoản Thu";
             this.Load += new System.EventHandler(this.ThuChi_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

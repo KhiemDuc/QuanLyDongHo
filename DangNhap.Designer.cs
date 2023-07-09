@@ -31,7 +31,6 @@ namespace TodoApp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangNhap));
             this.panel3 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
@@ -92,7 +91,7 @@ namespace TodoApp
             // pictureBoxLogo
             // 
             this.pictureBoxLogo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.Image")));
+            this.pictureBoxLogo.Image = global::TodoApp.Properties.Resources.AnhDongHo;
             this.pictureBoxLogo.Location = new System.Drawing.Point(3, 2);
             this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
@@ -145,8 +144,8 @@ namespace TodoApp
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.Tomato;
-            this.btnLogin.BackgroundColor = System.Drawing.Color.Tomato;
+            this.btnLogin.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.btnLogin.BackgroundColor = System.Drawing.Color.DarkTurquoise;
             this.btnLogin.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnLogin.BorderRadius = 10;
             this.btnLogin.BorderSize = 0;
@@ -265,7 +264,7 @@ namespace TodoApp
             this.lblChangePass.Location = new System.Drawing.Point(437, 259);
             this.lblChangePass.Name = "lblChangePass";
             this.lblChangePass.Size = new System.Drawing.Size(116, 20);
-            this.lblChangePass.TabIndex = 13;
+            this.lblChangePass.TabIndex = 4;
             this.lblChangePass.TabStop = true;
             this.lblChangePass.Text = "Đổi mật khẩu?";
             this.lblChangePass.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblChangePass_LinkClicked);
@@ -329,7 +328,7 @@ namespace TodoApp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblheader.AutoSize = true;
             this.lblheader.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblheader.ForeColor = System.Drawing.Color.Tomato;
+            this.lblheader.ForeColor = System.Drawing.Color.DarkTurquoise;
             this.lblheader.Location = new System.Drawing.Point(3, 0);
             this.lblheader.Name = "lblheader";
             this.lblheader.Size = new System.Drawing.Size(628, 153);
@@ -337,7 +336,7 @@ namespace TodoApp
             this.lblheader.Text = "Đăng Nhập";
             this.lblheader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // LoginForm
+            // DangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -347,7 +346,7 @@ namespace TodoApp
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MinimumSize = new System.Drawing.Size(1400, 700);
-            this.Name = "LoginForm";
+            this.Name = "DangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng Nhập";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginForm_FormClosed);

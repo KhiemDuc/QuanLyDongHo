@@ -68,11 +68,12 @@
             // dtpNgayChi
             // 
             this.dtpNgayChi.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dtpNgayChi.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dtpNgayChi.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayChi.CustomFormat = "   dd/ MM/ yyyy";
+            this.dtpNgayChi.Font = new System.Drawing.Font("Yu Gothic UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgayChi.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayChi.Location = new System.Drawing.Point(427, 308);
             this.dtpNgayChi.Name = "dtpNgayChi";
-            this.dtpNgayChi.Size = new System.Drawing.Size(274, 37);
+            this.dtpNgayChi.Size = new System.Drawing.Size(274, 30);
             this.dtpNgayChi.TabIndex = 15;
             // 
             // label2

@@ -181,17 +181,17 @@
     <Compile Include="QuanLyThu.Designer.cs">
       <DependentUpon>QuanLyThu.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThemKhoaChiTongQuat.cs">
+    <Compile Include="ThemSuaKhoanChiTongQuat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ThemKhoaChiTongQuat.Designer.cs">
-      <DependentUpon>ThemKhoaChiTongQuat.cs</DependentUpon>
+    <Compile Include="ThemSuaKhoanChiTongQuat.Designer.cs">
+      <DependentUpon>ThemSuaKhoanChiTongQuat.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThemSuaKhoanThuChiTiet.cs">
+    <Compile Include="SuaKhoanThuChiTiet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ThemSuaKhoanThuChiTiet.Designer.cs">
-      <DependentUpon>ThemSuaKhoanThuChiTiet.cs</DependentUpon>
+    <Compile Include="SuaKhoanThuChiTiet.Designer.cs">
+      <DependentUpon>SuaKhoanThuChiTiet.cs</DependentUpon>
     </Compile>
     <Compile Include="ThemSuaSuKien.cs">
       <SubType>Form</SubType>
@@ -299,11 +299,11 @@
     <EmbeddedResource Include="QuanLyThu.resx">
       <DependentUpon>QuanLyThu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThemKhoaChiTongQuat.resx">
-      <DependentUpon>ThemKhoaChiTongQuat.cs</DependentUpon>
+    <EmbeddedResource Include="ThemSuaKhoanChiTongQuat.resx">
+      <DependentUpon>ThemSuaKhoanChiTongQuat.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThemSuaKhoanThuChiTiet.resx">
-      <DependentUpon>ThemSuaKhoanThuChiTiet.cs</DependentUpon>
+    <EmbeddedResource Include="SuaKhoanThuChiTiet.resx">
+      <DependentUpon>SuaKhoanThuChiTiet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThemSuaSuKien.resx">
       <DependentUpon>ThemSuaSuKien.cs</DependentUpon>
@@ -465,6 +465,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\menu-4-xxl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-dropdown-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AnhDongHo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

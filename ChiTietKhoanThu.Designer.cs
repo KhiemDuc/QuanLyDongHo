@@ -47,13 +47,13 @@
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDanhSachThuChiTiet.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvDanhSachThuChiTiet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDanhSachThuChiTiet.ColumnHeadersHeight = 100;
             this.dgvDanhSachThuChiTiet.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TenThanhVien,
             this.NgayThu,
@@ -75,13 +75,14 @@
             this.dgvDanhSachThuChiTiet.Name = "dgvDanhSachThuChiTiet";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDanhSachThuChiTiet.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDanhSachThuChiTiet.RowHeadersWidth = 51;
+            this.dgvDanhSachThuChiTiet.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dgvDanhSachThuChiTiet.RowTemplate.Height = 24;
             this.dgvDanhSachThuChiTiet.Size = new System.Drawing.Size(1375, 529);
             this.dgvDanhSachThuChiTiet.TabIndex = 1;
@@ -89,12 +90,12 @@
             // 
             // TenThanhVien
             // 
+            this.TenThanhVien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.TenThanhVien.DefaultCellStyle = dataGridViewCellStyle2;
             this.TenThanhVien.HeaderText = "Tên Thành Viên";
             this.TenThanhVien.MinimumWidth = 6;
             this.TenThanhVien.Name = "TenThanhVien";
-            this.TenThanhVien.Width = 250;
             // 
             // NgayThu
             // 
@@ -105,7 +106,7 @@
             // 
             // SoTien
             // 
-            this.SoTien.HeaderText = "Số Tiền";
+            this.SoTien.HeaderText = "Số Tiền (VND)";
             this.SoTien.MinimumWidth = 6;
             this.SoTien.Name = "SoTien";
             this.SoTien.Width = 125;
@@ -119,10 +120,10 @@
             // 
             // TenThu
             // 
+            this.TenThu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.TenThu.HeaderText = "Tên Thu";
             this.TenThu.MinimumWidth = 6;
             this.TenThu.Name = "TenThu";
-            this.TenThu.Width = 200;
             // 
             // Sua
             // 
@@ -148,6 +149,7 @@
             this.Controls.Add(this.dgvDanhSachThuChiTiet);
             this.Name = "ChiTietKhoanThu";
             this.Text = "Chi Tiết Khoản Thu";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ChiTietKhoanThu_FormClosed);
             this.Load += new System.EventHandler(this.ChiTietKhoanThu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachThuChiTiet)).EndInit();
             this.ResumeLayout(false);

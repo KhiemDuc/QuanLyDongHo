@@ -11,17 +11,16 @@ using DAL;
 
 namespace TodoApp
 {
-    public partial class QuanLyThu : Form
+    public partial class FormQuanLyThu : Form
     {
         ThuDAL thu = new ThuDAL();
         DataTable dt = new DataTable(); 
-        ThanhVien_ThuDAL thanhvienthu = new ThanhVien_ThuDAL();
         private string _role;
-        public QuanLyThu()
+        public FormQuanLyThu()
         {
             InitializeComponent();
         }
-        public QuanLyThu(string role):this()
+        public FormQuanLyThu(string role):this()
         {
             _role = role;
         }
@@ -29,19 +28,34 @@ namespace TodoApp
         private void btnThietLapThu_Click(object sender, EventArgs e)
         {
             var thieplapthu = new ThemSuaKhoanThu("add");
+            thieplapthu.eLoadData += eLoadDanhSachThu; 
             thieplapthu.ShowDialog();
+        }
+
+        private void eLoadDanhSachThu(object sender, EventArgs e)
+        {
+            LoadDanhSachThu();
         }
 
         private void QuanLyThu_Load(object sender, EventArgs e)
         {
             Task<float> tongThuDm = thu.TongDaThu(dtpNgayBatDau.Value, dtpNgayKetThuc.Value, 1);
-            tongThuDm.ContinueWith(t =>
+            Task<float> tongThuTaiTro = thu.TongDaThu(dtpNgayBatDau.Value, dtpNgayKetThuc.Value, 0);
+
+            Task.WhenAll(tongThuDm, tongThuTaiTro).ContinueWith(t =>
             {
+                float tongThuDmResult = tongThuDm.Result;
+                float tongThuTaiTroResult = tongThuTaiTro.Result;
+                float tongThu = tongThuDmResult + tongThuTaiTroResult;
+
                 Invoke(new Action(() =>
                 {
-                    lblThuDinhMuc.Text += t.Result.ToString() + " VND";
+                    lblTongQuyenGop.Text += tongThuTaiTroResult.ToString("N0") + " VND";
+                    lblThuDinhMuc.Text += tongThuDmResult.ToString("N0") + " VND";
+                    lblTongThu.Text += tongThu.ToString("N0") + " VND";
                 }));
             });
+
             if (_role == "User")
             {
                 btnThietLapThu.Visible = false;
@@ -74,7 +88,9 @@ namespace TodoApp
                 dgvDanhSachThu.Rows[rowIndex].Cells["TenKhoanThu"].Value = row["TenThu"];
                 dgvDanhSachThu.Rows[rowIndex].Cells["NgayBatDauThu"].Value = ((DateTime)row["NgayBatDauThu"]).ToString("dd-MM-yyyy");
                 dgvDanhSachThu.Rows[rowIndex].Cells["DanhMuc"].Value = (bool)row["LoaiThu"] ? "Thu Định Mức" : "Quyên Góp";
-                dgvDanhSachThu.Rows[rowIndex].Cells["DinhMuc"].Value = row["DinhMuc"];
+                object DinhMucBbj = row["DinhMuc"];
+                int DinhMuc = (DinhMucBbj != DBNull.Value) ? (int)DinhMucBbj: 0;
+                dgvDanhSachThu.Rows[rowIndex].Cells["DinhMuc"].Value = DinhMuc.ToString("N0");
                 dgvDanhSachThu.Rows[rowIndex].Cells["MoTa"].Value = row["MoTa"];
 
 
@@ -89,12 +105,16 @@ namespace TodoApp
             {
                 string MaThu = dgvDanhSachThu.Rows[e.RowIndex].Cells["MaThu"].Value.ToString();
                 var sua = new ThemSuaKhoanThu("update", MaThu);
+                sua.eLoadData += eLoadDanhSachThu;
                 sua.ShowDialog();
             }
             if (e.ColumnIndex == dgvDanhSachThu.Columns["DongTien"].Index && e.RowIndex >= 0)
             {
                 string MaThu = dgvDanhSachThu.Rows[e.RowIndex].Cells["MaThu"].Value.ToString();
-                var f = new ChiTietKhoanThu(MaThu,_role);
+                string DanhMuc = dgvDanhSachThu.Rows[e.RowIndex].Cells["DanhMuc"].Value.ToString();
+
+                var f = new ChiTietKhoanThu(MaThu,_role,DanhMuc);
+                f.eLoadData += eLoadDanhSachThu;
                 f.ShowDialog();
             }
             if (e.ColumnIndex == dgvDanhSachThu.Columns["Xoa"].Index && e.RowIndex >= 0)
@@ -110,13 +130,19 @@ namespace TodoApp
                         if (x.IsFaulted)
                             MessageBox.Show("Có Lỗi");
                         if(x.Result)
+                        {
                             MessageBox.Show("Xóa Thành Công");
+                        }    
+                        if (x.Result)
+                            MessageBox.Show("Xóa Không Thành Công");
                     });
+                    LoadDanhSachThu();
                 }
                 else if (result == DialogResult.No)
                 {
                     Console.WriteLine("Bạn đã chọn 'Không'");
                 }
+
             }
         }
         static DialogResult ShowYesNoDialog(string message)
@@ -127,6 +153,7 @@ namespace TodoApp
         private void btnQuyenGop_Click(object sender, EventArgs e)
         {
             var quyenGop = new DongQuyenGop("add",_role);
+            quyenGop.eLoadData += eLoadDanhSachThu;
             quyenGop.ShowDialog();
         }
 
@@ -177,16 +204,6 @@ namespace TodoApp
             }
 
             Showdata(filteredData);
-        }
-
-        private void dtpNgayBatDau_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

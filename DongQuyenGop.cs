@@ -17,6 +17,7 @@ namespace TodoApp
         ThanhVienDAL thanhVien = new ThanhVienDAL();
         ThuDAL thu = new ThuDAL();
         ThanhVien_ThuDAL tvThu = new ThanhVien_ThuDAL();
+        public EventHandler eLoadData;
         private string _type;
         private string _role;
         public DongQuyenGop()
@@ -86,6 +87,7 @@ namespace TodoApp
                     }
                 });
             }
+            eLoadData?.Invoke(this, e);
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace TodoApp
 {
-    partial class QuanLyThu
+    partial class FormQuanLyThu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvDanhSachThu = new System.Windows.Forms.DataGridView();
             this.TenKhoanThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,9 +56,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblTongQuyenGop = new System.Windows.Forms.Label();
             this.lblThuDinhMuc = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTongThu = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachThu)).BeginInit();
             this.panel1.SuspendLayout();
@@ -84,15 +84,15 @@
             // 
             // dgvDanhSachThu
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDanhSachThu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvDanhSachThu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDanhSachThu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDanhSachThu.ColumnHeadersHeight = 100;
             this.dgvDanhSachThu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TenKhoanThu,
             this.NgayBatDauThu,
@@ -103,25 +103,25 @@
             this.Sua,
             this.Xoa,
             this.MaThu});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDanhSachThu.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDanhSachThu.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDanhSachThu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDanhSachThu.Location = new System.Drawing.Point(3, 126);
             this.dgvDanhSachThu.Name = "dgvDanhSachThu";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDanhSachThu.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDanhSachThu.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDanhSachThu.RowHeadersWidth = 51;
             this.dgvDanhSachThu.RowTemplate.Height = 24;
             this.dgvDanhSachThu.Size = new System.Drawing.Size(1484, 432);
@@ -130,8 +130,8 @@
             // 
             // TenKhoanThu
             // 
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.TenKhoanThu.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.TenKhoanThu.DefaultCellStyle = dataGridViewCellStyle2;
             this.TenKhoanThu.HeaderText = "Tên Khoản Thu";
             this.TenKhoanThu.MinimumWidth = 6;
             this.TenKhoanThu.Name = "TenKhoanThu";
@@ -211,11 +211,11 @@
             this.panel1.Controls.Add(this.btnQuyenGop);
             this.panel1.Controls.Add(this.btnThietLapThu);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1484, 117);
             this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnTimKiem
             // 
@@ -232,23 +232,24 @@
             // dtpNgayBatDau
             // 
             this.dtpNgayBatDau.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpNgayBatDau.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dtpNgayBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayBatDau.Location = new System.Drawing.Point(992, 48);
+            this.dtpNgayBatDau.CustomFormat = "  dd/ MM/ yyyy";
+            this.dtpNgayBatDau.Font = new System.Drawing.Font("Yu Gothic UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgayBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayBatDau.Location = new System.Drawing.Point(966, 49);
             this.dtpNgayBatDau.Name = "dtpNgayBatDau";
-            this.dtpNgayBatDau.Size = new System.Drawing.Size(165, 37);
+            this.dtpNgayBatDau.Size = new System.Drawing.Size(171, 30);
             this.dtpNgayBatDau.TabIndex = 48;
             this.dtpNgayBatDau.Value = new System.DateTime(2000, 1, 1, 0, 2, 0, 0);
-            this.dtpNgayBatDau.ValueChanged += new System.EventHandler(this.dtpNgayBatDau_ValueChanged);
             // 
             // dtpNgayKetThuc
             // 
             this.dtpNgayKetThuc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpNgayKetThuc.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dtpNgayKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayKetThuc.Location = new System.Drawing.Point(1256, 48);
+            this.dtpNgayKetThuc.CustomFormat = "  dd/ MM/ yyyy";
+            this.dtpNgayKetThuc.Font = new System.Drawing.Font("Yu Gothic UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgayKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayKetThuc.Location = new System.Drawing.Point(1256, 49);
             this.dtpNgayKetThuc.Name = "dtpNgayKetThuc";
-            this.dtpNgayKetThuc.Size = new System.Drawing.Size(159, 37);
+            this.dtpNgayKetThuc.Size = new System.Drawing.Size(171, 30);
             this.dtpNgayKetThuc.TabIndex = 47;
             // 
             // label5
@@ -256,7 +257,7 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(627, 54);
+            this.label5.Location = new System.Drawing.Point(576, 52);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 29);
             this.label5.TabIndex = 46;
@@ -271,7 +272,7 @@
             "Tất Cả",
             "Quyên Góp",
             "Thu Định Mức"});
-            this.cmbDanhMuc.Location = new System.Drawing.Point(724, 49);
+            this.cmbDanhMuc.Location = new System.Drawing.Point(673, 47);
             this.cmbDanhMuc.Name = "cmbDanhMuc";
             this.cmbDanhMuc.Size = new System.Drawing.Size(160, 37);
             this.cmbDanhMuc.TabIndex = 45;
@@ -282,7 +283,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(1163, 52);
+            this.label4.Location = new System.Drawing.Point(1163, 50);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 29);
             this.label4.TabIndex = 43;
@@ -293,7 +294,7 @@
             this.lblUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblUser.Location = new System.Drawing.Point(910, 52);
+            this.lblUser.Location = new System.Drawing.Point(884, 49);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(76, 29);
             this.lblUser.TabIndex = 41;
@@ -325,9 +326,9 @@
             // 
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.lblTongQuyenGop);
             this.panel2.Controls.Add(this.lblThuDinhMuc);
-            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.lblTongThu);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 564);
             this.panel2.Name = "panel2";
@@ -354,15 +355,15 @@
             this.label6.TabIndex = 3;
             this.label6.Text = "+";
             // 
-            // label3
+            // lblTongQuyenGop
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(621, 34);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(313, 34);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Tổng Quyên Góp Là: 200000VND";
+            this.lblTongQuyenGop.AutoSize = true;
+            this.lblTongQuyenGop.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblTongQuyenGop.Location = new System.Drawing.Point(621, 34);
+            this.lblTongQuyenGop.Name = "lblTongQuyenGop";
+            this.lblTongQuyenGop.Size = new System.Drawing.Size(198, 34);
+            this.lblTongQuyenGop.TabIndex = 2;
+            this.lblTongQuyenGop.Text = "Tổng Quyên Góp Là: ";
             // 
             // lblThuDinhMuc
             // 
@@ -374,23 +375,23 @@
             this.lblThuDinhMuc.TabIndex = 1;
             this.lblThuDinhMuc.Text = "Tổng Thu Định Mức Là: ";
             // 
-            // label1
+            // lblTongThu
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(1167, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(248, 34);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tổng Thu Là: 200000VND";
+            this.lblTongThu.AutoSize = true;
+            this.lblTongThu.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblTongThu.Location = new System.Drawing.Point(1167, 34);
+            this.lblTongThu.Name = "lblTongThu";
+            this.lblTongThu.Size = new System.Drawing.Size(133, 34);
+            this.lblTongThu.TabIndex = 0;
+            this.lblTongThu.Text = "Tổng Thu Là: ";
             // 
-            // QuanLyThu
+            // FormQuanLyThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1490, 667);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "QuanLyThu";
+            this.Name = "FormQuanLyThu";
             this.Text = "QuanLyThu";
             this.Load += new System.EventHandler(this.QuanLyThu_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -419,9 +420,9 @@
         private System.Windows.Forms.DateTimePicker dtpNgayKetThuc;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblTongQuyenGop;
         private System.Windows.Forms.Label lblThuDinhMuc;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTongThu;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenKhoanThu;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayBatDauThu;

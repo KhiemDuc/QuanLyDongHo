@@ -31,18 +31,25 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvDanhSachSuKien = new System.Windows.Forms.DataGridView();
             this.MaSuKien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenSuKien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayToChuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ChiTiet = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.MaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaDiem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenChiTieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChiTietChiTieu = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Sua = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Xoa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnTimKiem = new System.Windows.Forms.Button();
+            this.dtpNgayBatDau = new System.Windows.Forms.DateTimePicker();
+            this.dtpNgayKetThuc = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblUser = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnThietLapChi = new System.Windows.Forms.Button();
@@ -75,28 +82,28 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1392, 567);
             this.tableLayoutPanel1.TabIndex = 1;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // dgvDanhSachSuKien
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dgvDanhSachSuKien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDanhSachSuKien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvDanhSachSuKien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDanhSachSuKien.ColumnHeadersHeight = 100;
             this.dgvDanhSachSuKien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaSuKien,
             this.TenSuKien,
             this.NgayToChuc,
-            this.SoTien,
-            this.MoTa,
-            this.ChiTiet,
+            this.MaChi,
+            this.DiaDiem,
+            this.TenChiTieu,
+            this.ChiTietChiTieu,
             this.Sua,
             this.Xoa});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -110,12 +117,21 @@
             this.dgvDanhSachSuKien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDanhSachSuKien.Location = new System.Drawing.Point(3, 144);
             this.dgvDanhSachSuKien.Name = "dgvDanhSachSuKien";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDanhSachSuKien.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDanhSachSuKien.RowHeadersWidth = 60;
-            this.dgvDanhSachSuKien.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dgvDanhSachSuKien.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dgvDanhSachSuKien.RowTemplate.Height = 30;
             this.dgvDanhSachSuKien.Size = new System.Drawing.Size(1386, 420);
             this.dgvDanhSachSuKien.TabIndex = 1;
-            this.dgvDanhSachSuKien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachThu_CellContentClick);
+            this.dgvDanhSachSuKien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachSuKien_CellContentClick);
+            this.dgvDanhSachSuKien.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDanhSachSuKien_CellFormatting);
             // 
             // MaSuKien
             // 
@@ -133,45 +149,53 @@
             // 
             // NgayToChuc
             // 
-            this.NgayToChuc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.NgayToChuc.HeaderText = "Ngày Tổ Chức";
             this.NgayToChuc.MinimumWidth = 6;
             this.NgayToChuc.Name = "NgayToChuc";
+            this.NgayToChuc.Width = 160;
             // 
-            // SoTien
+            // MaChi
             // 
-            this.SoTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SoTien.HeaderText = "Chi Tiêu";
-            this.SoTien.MinimumWidth = 6;
-            this.SoTien.Name = "SoTien";
+            this.MaChi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MaChi.HeaderText = "Mã Chi";
+            this.MaChi.MinimumWidth = 6;
+            this.MaChi.Name = "MaChi";
+            this.MaChi.Visible = false;
             // 
-            // MoTa
+            // DiaDiem
             // 
-            this.MoTa.HeaderText = "Mô tả";
-            this.MoTa.MinimumWidth = 6;
-            this.MoTa.Name = "MoTa";
-            this.MoTa.Width = 250;
+            this.DiaDiem.HeaderText = "Địa Điểm";
+            this.DiaDiem.MinimumWidth = 6;
+            this.DiaDiem.Name = "DiaDiem";
+            this.DiaDiem.Width = 200;
             // 
-            // ChiTiet
+            // TenChiTieu
             // 
-            this.ChiTiet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ChiTiet.HeaderText = "Chi Tiết";
-            this.ChiTiet.MinimumWidth = 6;
-            this.ChiTiet.Name = "ChiTiet";
-            this.ChiTiet.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ChiTiet.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ChiTiet.Text = "Chi Tiết";
-            this.ChiTiet.UseColumnTextForButtonValue = true;
+            this.TenChiTieu.HeaderText = "Tên Chi Tiêu";
+            this.TenChiTieu.MinimumWidth = 6;
+            this.TenChiTieu.Name = "TenChiTieu";
+            this.TenChiTieu.Width = 200;
+            // 
+            // ChiTietChiTieu
+            // 
+            this.ChiTietChiTieu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ChiTietChiTieu.HeaderText = "Chi Tiết Chi Tiêu";
+            this.ChiTietChiTieu.MinimumWidth = 6;
+            this.ChiTietChiTieu.Name = "ChiTietChiTieu";
+            this.ChiTietChiTieu.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ChiTietChiTieu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ChiTietChiTieu.Text = "Chi Tiết";
+            this.ChiTietChiTieu.UseColumnTextForButtonValue = true;
             // 
             // Sua
             // 
             this.Sua.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Sua.HeaderText = "Sửa";
+            this.Sua.HeaderText = "Chi Tiết Sự Kiện";
             this.Sua.MinimumWidth = 6;
             this.Sua.Name = "Sua";
             this.Sua.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Sua.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Sua.Text = "Sửa";
+            this.Sua.Text = "Chi Tiết";
             this.Sua.UseColumnTextForButtonValue = true;
             // 
             // Xoa
@@ -187,6 +211,11 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnTimKiem);
+            this.panel2.Controls.Add(this.dtpNgayBatDau);
+            this.panel2.Controls.Add(this.dtpNgayKetThuc);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.lblUser);
             this.panel2.Controls.Add(this.btnSearch);
             this.panel2.Controls.Add(this.txtSearch);
             this.panel2.Controls.Add(this.btnThietLapChi);
@@ -196,12 +225,69 @@
             this.panel2.Size = new System.Drawing.Size(1386, 135);
             this.panel2.TabIndex = 0;
             // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnTimKiem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnTimKiem.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnTimKiem.Location = new System.Drawing.Point(913, 59);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(70, 38);
+            this.btnTimKiem.TabIndex = 54;
+            this.btnTimKiem.Text = "Xem";
+            this.btnTimKiem.UseVisualStyleBackColor = true;
+            // 
+            // dtpNgayBatDau
+            // 
+            this.dtpNgayBatDau.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dtpNgayBatDau.CustomFormat = "  dd/ MM/ yyyy";
+            this.dtpNgayBatDau.Font = new System.Drawing.Font("Yu Gothic UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgayBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayBatDau.Location = new System.Drawing.Point(435, 63);
+            this.dtpNgayBatDau.Name = "dtpNgayBatDau";
+            this.dtpNgayBatDau.Size = new System.Drawing.Size(171, 30);
+            this.dtpNgayBatDau.TabIndex = 53;
+            this.dtpNgayBatDau.Value = new System.DateTime(2000, 1, 1, 0, 2, 0, 0);
+            // 
+            // dtpNgayKetThuc
+            // 
+            this.dtpNgayKetThuc.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dtpNgayKetThuc.CustomFormat = "  dd/ MM/ yyyy";
+            this.dtpNgayKetThuc.Font = new System.Drawing.Font("Yu Gothic UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgayKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayKetThuc.Location = new System.Drawing.Point(725, 64);
+            this.dtpNgayKetThuc.Name = "dtpNgayKetThuc";
+            this.dtpNgayKetThuc.Size = new System.Drawing.Size(171, 30);
+            this.dtpNgayKetThuc.TabIndex = 52;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label4.Location = new System.Drawing.Point(632, 65);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(87, 29);
+            this.label4.TabIndex = 51;
+            this.label4.Text = "Đến Ngày";
+            // 
+            // lblUser
+            // 
+            this.lblUser.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblUser.AutoSize = true;
+            this.lblUser.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblUser.Location = new System.Drawing.Point(353, 64);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(76, 29);
+            this.lblUser.TabIndex = 50;
+            this.lblUser.Text = "Từ Ngày";
+            // 
             // btnSearch
             // 
-            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSearch.BackgroundImage = global::TodoApp.Properties.Resources.icons8_search_641;
             this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSearch.Location = new System.Drawing.Point(1290, 54);
+            this.btnSearch.Location = new System.Drawing.Point(1321, 57);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(42, 39);
             this.btnSearch.TabIndex = 37;
@@ -209,19 +295,18 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(985, 59);
+            this.txtSearch.Location = new System.Drawing.Point(1046, 61);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(284, 34);
+            this.txtSearch.Size = new System.Drawing.Size(255, 34);
             this.txtSearch.TabIndex = 36;
             // 
             // btnThietLapChi
             // 
-            this.btnThietLapChi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnThietLapChi.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnThietLapChi.Location = new System.Drawing.Point(23, 55);
+            this.btnThietLapChi.Location = new System.Drawing.Point(9, 59);
             this.btnThietLapChi.Name = "btnThietLapChi";
             this.btnThietLapChi.Size = new System.Drawing.Size(297, 38);
             this.btnThietLapChi.TabIndex = 33;
@@ -253,15 +338,21 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridView dgvDanhSachSuKien;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnThietLapChi;
+        private System.Windows.Forms.Button btnTimKiem;
+        private System.Windows.Forms.DateTimePicker dtpNgayBatDau;
+        private System.Windows.Forms.DateTimePicker dtpNgayKetThuc;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Button btnThietLapChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSuKien;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenSuKien;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayToChuc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoTien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MoTa;
-        private System.Windows.Forms.DataGridViewButtonColumn ChiTiet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaChi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiaDiem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenChiTieu;
+        private System.Windows.Forms.DataGridViewButtonColumn ChiTietChiTieu;
         private System.Windows.Forms.DataGridViewButtonColumn Sua;
         private System.Windows.Forms.DataGridViewButtonColumn Xoa;
     }

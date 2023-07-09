@@ -1,6 +1,6 @@
 ﻿namespace TodoApp
 {
-    partial class ThemKhoaChiTongQuat
+    partial class ThemSuaKhoanChiTongQuat
     {
         /// <summary>
         /// Required designer variable.
@@ -109,20 +109,20 @@
             // 
             // cmbSuKien
             // 
-            this.cmbSuKien.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cmbSuKien.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cmbSuKien.FormattingEnabled = true;
             this.cmbSuKien.Location = new System.Drawing.Point(309, 32);
             this.cmbSuKien.Name = "cmbSuKien";
-            this.cmbSuKien.Size = new System.Drawing.Size(211, 30);
+            this.cmbSuKien.Size = new System.Drawing.Size(211, 37);
             this.cmbSuKien.TabIndex = 30;
             // 
             // cbCheckSK
             // 
             this.cbCheckSK.AutoSize = true;
-            this.cbCheckSK.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.cbCheckSK.Location = new System.Drawing.Point(389, 129);
+            this.cbCheckSK.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbCheckSK.Location = new System.Drawing.Point(389, 126);
             this.cbCheckSK.Name = "cbCheckSK";
-            this.cbCheckSK.Size = new System.Drawing.Size(170, 30);
+            this.cbCheckSK.Size = new System.Drawing.Size(193, 33);
             this.cbCheckSK.TabIndex = 31;
             this.cbCheckSK.Text = "Chi Tiêu Cho Sự Kiện";
             this.cbCheckSK.UseVisualStyleBackColor = true;
@@ -132,6 +132,7 @@
             // 
             this.panelSuKien.Controls.Add(this.cmbSuKien);
             this.panelSuKien.Controls.Add(this.label1);
+            this.panelSuKien.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.panelSuKien.Location = new System.Drawing.Point(80, 165);
             this.panelSuKien.Name = "panelSuKien";
             this.panelSuKien.Size = new System.Drawing.Size(559, 100);
@@ -151,7 +152,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTenKhoanChi);
             this.Name = "ThemKhoaChiTongQuat";
-            this.Text = "ThemLoaiChi";
+            this.Text = "Thêm Khoản Chi Tổng Quát";
             this.Load += new System.EventHandler(this.ThemLoaiChi_Load);
             this.panelSuKien.ResumeLayout(false);
             this.panelSuKien.PerformLayout();

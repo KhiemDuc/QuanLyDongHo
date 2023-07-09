@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,6 +46,7 @@ namespace TodoApp
             {
                 btnThem1.Text = "Thêm";
                 panelUpdate.Visible = false;
+                panelThem.Dock = DockStyle.Fill;
 
 
             }
@@ -89,6 +91,25 @@ namespace TodoApp
                                             cmbHoTenBo.SelectedItem = "Không Rõ";
                                         }
                                         txtHoTenMe.Text = reader.GetString(reader.GetOrdinal("HoTenMe"));
+                                        int anhSuKienSize = 0;
+                                        object anhSuKienSizeObj = reader.GetValue(reader.GetOrdinal("AnhThanhVien"));
+                                        if (anhSuKienSizeObj != DBNull.Value)
+                                        {
+                                            anhSuKienSize = (int)reader.GetBytes(reader.GetOrdinal("AnhThanhVien"), 0, null, 0, int.MaxValue);
+                                        }
+
+                                        if (anhSuKienSize > 0)
+                                        {
+                                            byte[] anhSuKien = new byte[anhSuKienSize];
+                                            reader.GetBytes(reader.GetOrdinal("AnhThanhVien"), 0, anhSuKien, 0, anhSuKienSize);
+                                            pbAnhDaiDien.Image = ByteArrayToImage(anhSuKien);
+                                        }
+                                        else
+                                        {
+                                            pbAnhDaiDien.Image = null;
+                                        }
+
+
                                         txtDiaChi.Text = reader.GetString(reader.GetOrdinal("DiaChi"));
                                         cmbTrangthai.SelectedIndex = reader.GetBoolean(reader.GetOrdinal("TrangThai")) ? 0 : 1;
                                         cmbHonNhan.SelectedIndex = reader.GetBoolean(reader.GetOrdinal("TinhTrang_HonNhan")) ? 1 : 0;
@@ -138,17 +159,43 @@ namespace TodoApp
                 cmbDoi.Enabled = false;
                 cmbGioiTinh.SelectedIndex = 0;
                 cmbGioiTinh.Enabled = false;
+                lblSDT.Visible = false;
+                txtSDT.Visible = false;
             }
             
 
         }
+        byte[] ImageToByte(Image img)
+        {
+            using (MemoryStream m = new MemoryStream())
+            {
+                img.Save(m, System.Drawing.Imaging.ImageFormat.Png);
+                return m.ToArray();
+            }
+        }
+
+        Image ByteArrayToImage(byte[] img)
+        {
+            if (img == null)
+            {
+                return null;
+            }
+            using (MemoryStream ms = new MemoryStream(img))
+            {
+                ImageConverter imageConverter = new ImageConverter();
+                Image image = (Image)imageConverter.ConvertFrom(img);
+                return image;
+            }
+        }
+
 
         private void btnThem1_Click(object sender, EventArgs e)
         {
-            if(_type == "add")
+            byte[] anhThanhVien = ImageToByte(pbAnhDaiDien.Image);
+            if (_type == "add")
             {
-                Task<bool> themthanhvien = thanhvien.ThemThanhVien(txtHoten.Text, dtpNgaySinh.Value, cmbHoTenBo.SelectedValue.ToString(), 
-                    txtHoTenMe.Text, cmbDoi.SelectedItem.ToString(), (byte)cmbGioiTinh.SelectedIndex, txtDiaChi.Text);
+                Task<bool> themthanhvien = thanhvien.ThemThanhVien(txtHoten.Text, dtpNgaySinh.Value, cmbHoTenBo.SelectedValue.ToString(),
+                    txtHoTenMe.Text, cmbDoi.SelectedItem.ToString(), (byte)cmbGioiTinh.SelectedIndex, txtDiaChi.Text, anhThanhVien);
                 themthanhvien.ContinueWith(t =>
                 {
                     if (t.IsFaulted)
@@ -165,18 +212,19 @@ namespace TodoApp
                     }
                 });
             }
-            if(_type == "update")
+            if (_type == "update")
             {
-                if(cmbDoi.SelectedItem.ToString() == "1")
+                if (cmbDoi.SelectedItem.ToString() == "1")
                 {
                     lblSDT.Visible = false;
                     txtSDT.Visible = false;
                 }
                 string value = cmbHoTenBo.SelectedValue != null ? cmbHoTenBo.SelectedValue.ToString() : "Không Rõ";
-                Task<bool> suathanhvien = thanhvien.SuaThanhVien(_updateforID,txtHoten.Text, dtpNgaySinh.Value, value,
+                Task<bool> suathanhvien = thanhvien.SuaThanhVien(_updateforID, txtHoten.Text, dtpNgaySinh.Value, value,
                     txtHoTenMe.Text, cmbDoi.SelectedItem.ToString(), (byte)cmbGioiTinh.SelectedIndex, txtDiaChi.Text,
-                    (byte)cmbHonNhan.SelectedIndex,txtVoChong.Text,txtSDT.Text,txtHocvan.Text, 
-                    (byte)cmbTrangthai.SelectedIndex,txtNoiAnTang.Text, dtpNgayMat.Value,txtNgheNghiep.Text,txtThanhTuu.Text);
+                    (byte)cmbHonNhan.SelectedIndex, txtVoChong.Text, txtSDT.Text, txtHocvan.Text,
+                    (byte)cmbTrangthai.SelectedIndex, txtNoiAnTang.Text, dtpNgayMat.Value, txtNgheNghiep.Text, 
+                    txtThanhTuu.Text, anhThanhVien);
                 suathanhvien.ContinueWith(t =>
                 {
                     if (t.IsFaulted)
@@ -195,16 +243,16 @@ namespace TodoApp
             if (_type == "old")
             {
                 Task<bool> themcuto = thanhvien.ThemCuTo(txtHoten.Text, dtpNgaySinh.Value, "Không Rõ",
-                    "Không Rõ","1", (byte)cmbGioiTinh.SelectedIndex, txtDiaChi.Text,
-                    (byte)cmbHonNhan.SelectedIndex, txtVoChong.Text,txtHocvan.Text,
-                    (byte)cmbTrangthai.SelectedIndex, txtNoiAnTang.Text, dtpNgayMat.Value,txtNgheNghiep.Text,txtThanhTuu.Text);
+                    "Không Rõ", "1", (byte)cmbGioiTinh.SelectedIndex, txtDiaChi.Text,
+                    (byte)cmbHonNhan.SelectedIndex, txtVoChong.Text, txtHocvan.Text,
+                    (byte)cmbTrangthai.SelectedIndex, txtNoiAnTang.Text, dtpNgayMat.Value, txtNgheNghiep.Text, txtThanhTuu.Text,anhThanhVien);
                 themcuto.ContinueWith(t =>
                 {
                     if (t.IsFaulted)
                     {
                         MessageBox.Show("Thêm mới không thành công");
 
-                    } 
+                    }
                     else
                     {
                         if (t.Result)
@@ -214,6 +262,7 @@ namespace TodoApp
                     }
                 });
             }
+
         }
 
         private void cmbHonNhan_SelectedIndexChanged(object sender, EventArgs e)
@@ -243,6 +292,24 @@ namespace TodoApp
             }
         }
 
+        
+
+        private void btnChonFile_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openImg = new OpenFileDialog();
+            openImg.Filter = "Image Files (*.bmp, *.jpg, *.png, *.gif)|*.bmp;*.jpg;*.png;*.gif";
+
+            if (openImg.ShowDialog() == DialogResult.OK)
+            {
+                pbAnhDaiDien.Image = Image.FromFile(openImg.FileName);
+            }
+        }
+
+        private void cmbHoTenBo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void cmbDoi_SelectedIndexChanged(object sender, EventArgs e)
         {
             int currentValue;
@@ -260,16 +327,6 @@ namespace TodoApp
                     }));
                 });
             }
-
-        }
-
-        private void panelUpdate_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void cmbHoTenBo_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
         }
     }

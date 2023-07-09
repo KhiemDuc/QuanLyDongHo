@@ -82,13 +82,13 @@
             this.DanhSachTaiKhoan.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DanhSachTaiKhoan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.DanhSachTaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DanhSachTaiKhoan.ColumnHeadersHeight = 100;
             this.DanhSachTaiKhoan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.HoTen,
@@ -230,13 +230,9 @@
             this.cmbFilter.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cmbFilter.FormattingEnabled = true;
             this.cmbFilter.Items.AddRange(new object[] {
-            "Tất cả",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6"});
+            "Tất Cả",
+            "Hội Đồng",
+            "Thành Viên"});
             this.cmbFilter.Location = new System.Drawing.Point(322, 65);
             this.cmbFilter.Name = "cmbFilter";
             this.cmbFilter.Size = new System.Drawing.Size(232, 30);

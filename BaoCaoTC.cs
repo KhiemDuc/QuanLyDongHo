@@ -31,12 +31,16 @@ namespace TodoApp
             float thuDinhMuc = await thuDAL.TongDaThu(dtpStart.Value, dtpEnd.Value, 1);
             float thuTaiTro = await thuDAL.TongDaThu(dtpStart.Value, dtpEnd.Value, 0);
             float tienChi = await chiDAL.TongDaChi(dtpStart.Value, dtpEnd.Value);
-            float tienDuKiTruoc = await thuDAL.TongDaThu(dtpStart.MinDate, dtpStart.Value, 1) + await  thuDAL.TongDaThu(dtpStart.MinDate, dtpStart.Value, 0) - await chiDAL.TongDaChi(dtpStart.MinDate, dtpStart.Value);
-            lblThuDinhMuc.Text = thuDinhMuc.ToString();
-            lblTienTaiTro.Text = thuTaiTro.ToString();
-            lblTienDaChi.Text = tienChi.ToString();
-            lblTienConLai.Text = (thuDinhMuc + thuTaiTro - tienChi).ToString();
-            lblDuKiTruoc.Text = tienDuKiTruoc.ToString();
+
+            float tienDuKiTruoc = await thuDAL.TongDaThu(dtpStart.MinDate, dtpStart.Value, 1) 
+                + await  thuDAL.TongDaThu(dtpStart.MinDate, dtpStart.Value, 0) 
+                - await chiDAL.TongDaChi(dtpStart.MinDate, dtpStart.Value);
+
+            lblThuDinhMuc.Text = thuDinhMuc.ToString("N0");
+            lblTienTaiTro.Text = thuTaiTro.ToString("N0");
+            lblTienDaChi.Text = tienChi.ToString("N0");
+            lblTienConLai.Text = (thuDinhMuc + thuTaiTro - tienChi).ToString("N0");
+            lblDuKiTruoc.Text = tienDuKiTruoc.ToString("N0");
             if (dtpStart.Value > dtpEnd.Value)
             {
                 dtpEnd.Value = dtpStart.Value;

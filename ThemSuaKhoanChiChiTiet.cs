@@ -16,24 +16,32 @@ namespace TodoApp
     {
         ChiDAL chi = new ChiDAL();
         ThanhVienDAL thanhvien = new ThanhVienDAL();
+        public event EventHandler eLoadData;
+
+
         private string _type;
         private string _maGiaoDich;
+        private string _maChi;
+
+
         public ThemSuaKhoanChiChiTiet()
         {
             InitializeComponent();
         }
-        public ThemSuaKhoanChiChiTiet(string type = "add", string maGiaoDich = ""):this()
+        public ThemSuaKhoanChiChiTiet(string type = "add", string maGiaoDich = "",string maChi = ""):this()
         {
             _type = type; ;
             _maGiaoDich = maGiaoDich;
+            _maChi = maChi;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
             if (_type == "add")
             {
-               /* Task<bool> thietLapThu = chi.ThietLapKhoanChi(cmbThanhVien.Text, dtpNgayChi.Value, txtSoTien.Text, "");
-                thietLapThu.ContinueWith(t =>
+                Task<bool> thietLapChiChiTiet = chi.ThietLapKhoanChiChiTiet(txtKhoanChi.Text,_maChi,
+                    cmbThanhVien.SelectedValue.ToString(),dtpNgayChi.Value, txtSoTien.Text);
+                thietLapChiChiTiet.ContinueWith(t =>
                 {
                     if (t.IsFaulted)
                     {
@@ -46,12 +54,12 @@ namespace TodoApp
                     else
                         MessageBox.Show("Thêm không thành công");
 
-                });*/
+                });
             }
             else if (_type == "update")
             {
-                /*Task<bool> suathietLapThu = chi.SuaThietLapKhoanChi(_maChi, cmbThanhVien.Text, dtpBatDau.Value, txtSoTien.Text,
-                    txtMota.Text);
+                Task<bool> suathietLapThu = chi.SuaThietLapKhoanChiChiTiet(txtKhoanChi.Text, cmbThanhVien.SelectedValue.ToString(),
+                    _maChi,dtpNgayChi.Value, txtSoTien.Text,_maGiaoDich);
                 suathietLapThu.ContinueWith(t =>
                 {
                     if (t.IsFaulted)
@@ -65,8 +73,9 @@ namespace TodoApp
                     else
                         MessageBox.Show("Sửa không thành công");
 
-                });*/
+                });
             }
+            eLoadData?.Invoke(this, e);
         }
 
         private void ThemSuaKhoanChi_Load(object sender, EventArgs e)
@@ -81,12 +90,10 @@ namespace TodoApp
                     cmbThanhVien.DataSource = t.Result;
                 }));
             });
-
-            Task<DataTable> tenChi = chi.DanhSachKhoanChi();
             if(_type== "update")
             {
                 btnThem.Text = "Lưu";
-                Task<SqlDataReader> thongtin = chi.LayThongTinKhoanChi(_maChi);
+                Task<SqlDataReader> thongtin = chi.XemThongTinKhoanChiChiTiet(_maGiaoDich);
                 thongtin.ContinueWith(t =>
                 {
                     if (t.IsFaulted)
@@ -104,11 +111,9 @@ namespace TodoApp
                                 {
                                     txtKhoanChi.Text = reader.GetString(reader.GetOrdinal("TenKhoanChi"));
                                     txtSoTien.Text = reader.GetInt32(reader.GetOrdinal("SoTien")).ToString();
-                                    /*txtMota.Text = reader.IsDBNull(reader.GetOrdinal("MoTa")) ? "" :
-                                                                        reader.GetString(reader.GetOrdinal("MoTa")).ToString(); ;*/
                                     dtpNgayChi.Value = reader.GetDateTime(reader.GetOrdinal("NgayChi"));
                                     cmbThanhVien.SelectedValue = reader.GetInt32(reader.GetOrdinal("MaThanhVien")).ToString();
-                                    /*cmbLoaiChi.SelectedValue = reader.GetInt32(reader.GetOrdinal("MaChi")).ToString();*/
+                                    
                                 }));
                             }
                         }

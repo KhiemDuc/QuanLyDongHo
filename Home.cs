@@ -21,6 +21,8 @@ namespace TodoApp
             InitializeComponent();
             flowLayoutPanel1.Size = flowLayoutPanel1.MinimumSize;
             flowLayoutPanel2.Size = flowLayoutPanel1.MinimumSize;
+            panelThuChi.Size = panelThuChi.MinimumSize;
+
         }
         public Home(string role = "",string id = "",string name = "") : this()
         {
@@ -107,15 +109,21 @@ namespace TodoApp
 
         private void customButton1_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new QuanLyThu(_role));
+            OpenChildForm(new FormQuanLyThu(_role));
             lblHeader.Text = btnThu.Text;
 
         }
 
         private void btnThongke_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new BaoCaoTC());
-            lblHeader.Text = btnThongke.Text;
+            if (panelThuChi.Size == panelThuChi.MinimumSize)
+            {
+                panelThuChi.Size = new Size(panelThuChi.MaximumSize.Width, panelThuChi.MaximumSize.Height);
+            }
+            else
+            {
+                panelThuChi.Size = panelThuChi.MinimumSize;
+            }
 
         }
 
@@ -178,6 +186,20 @@ namespace TodoApp
             f.ShowDialog();
         }
 
-        
+        private void btnBaoCaoThuChi_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new BaoCaoTC());
+            lblHeader.Text = btnBaoCaoThuChi.Text;
+        }
+
+        private void btnBieuDoThuChi_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThongKeSoBo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

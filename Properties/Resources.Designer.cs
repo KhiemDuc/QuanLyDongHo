@@ -63,6 +63,16 @@ namespace TodoApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AnhDongHo {
+            get {
+                object obj = ResourceManager.GetObject("AnhDongHo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_add_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-add-30", resourceCulture);
@@ -76,26 +86,6 @@ namespace TodoApp.Properties {
         internal static System.Drawing.Bitmap icons8_analytics_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-analytics-30", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_baby_calendar_32 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-baby-calendar-32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_bullet_list_32 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-bullet-list-32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,6 +116,16 @@ namespace TodoApp.Properties {
         internal static System.Drawing.Bitmap icons8_dollar_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-dollar-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_dropdown_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-dropdown-32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,16 +203,6 @@ namespace TodoApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_logout_rounded_48 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-logout-rounded-48", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap icons8_money_box_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-money-box-24", resourceCulture);
@@ -273,16 +263,6 @@ namespace TodoApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_task_32__1_ {
-            get {
-                object obj = ResourceManager.GetObject("icons8-task-32 (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap icons8_task_32__2_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-task-32 (2)", resourceCulture);
@@ -323,29 +303,9 @@ namespace TodoApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap logo {
-            get {
-                object obj = ResourceManager.GetObject("logo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap menu_4_xxl {
             get {
                 object obj = ResourceManager.GetObject("menu-4-xxl", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap NguyenDuc {
-            get {
-                object obj = ResourceManager.GetObject("NguyenDuc", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

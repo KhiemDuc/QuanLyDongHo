@@ -118,10 +118,10 @@
             this.btnXem.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnXem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXem.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnXem.Location = new System.Drawing.Point(863, 45);
+            this.btnXem.Location = new System.Drawing.Point(872, 47);
             this.btnXem.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnXem.Name = "btnXem";
-            this.btnXem.Size = new System.Drawing.Size(98, 33);
+            this.btnXem.Size = new System.Drawing.Size(76, 33);
             this.btnXem.TabIndex = 1;
             this.btnXem.Text = "Xem";
             this.btnXem.UseVisualStyleBackColor = true;
@@ -152,7 +152,7 @@
             // 
             this.dtpEnd.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtpEnd.CustomFormat = "      dd/MM/yyyy";
-            this.dtpEnd.Font = new System.Drawing.Font("Yu Gothic UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpEnd.Font = new System.Drawing.Font("Yu Gothic UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpEnd.Location = new System.Drawing.Point(460, 21);
             this.dtpEnd.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -187,7 +187,7 @@
             this.dtpStart.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtpStart.CalendarFont = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dtpStart.CustomFormat = "        dd/MM/yyyy";
-            this.dtpStart.Font = new System.Drawing.Font("Yu Gothic UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpStart.Font = new System.Drawing.Font("Yu Gothic UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpStart.Location = new System.Drawing.Point(136, 21);
             this.dtpStart.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);

@@ -27,6 +27,10 @@ namespace TodoApp
         }
         private void Danhsach_Load(object sender, EventArgs e)
         {
+            if(_role == "User")
+            {
+                DanhSachThanhVien.Columns["Delete"].Visible = false;
+            }
             LoadData();
         }
         void LoadData()
@@ -115,7 +119,7 @@ namespace TodoApp
 
         private void cmbFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedValue = cmbFilter.SelectedItem.ToString();
+            string selectedValue = cmbFilter.SelectedItem.ToString() ?? "";
             if (selectedValue == "Tất cả")
             {
                 ShowData(dt);

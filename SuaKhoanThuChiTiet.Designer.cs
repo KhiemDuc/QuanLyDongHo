@@ -1,6 +1,6 @@
 ﻿namespace TodoApp
 {
-    partial class ThemSuaKhoanThuChiTiet
+    partial class SuaKhoanThuChiTiet
     {
         /// <summary>
         /// Required designer variable.
@@ -34,11 +34,11 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.dtpNgayThu = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtSoTien = new System.Windows.Forms.TextBox();
             this.txtTenThanhVien = new System.Windows.Forms.TextBox();
             this.cmbTrangThai = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtSoTien = new System.Windows.Forms.TextBox();
+            this.lblSoTien = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label6
@@ -79,11 +79,11 @@
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.Location = new System.Drawing.Point(237, 448);
+            this.btnThem.Location = new System.Drawing.Point(261, 444);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(302, 49);
             this.btnThem.TabIndex = 54;
-            this.btnThem.Text = "Thêm";
+            this.btnThem.Text = "Lưu";
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -107,26 +107,6 @@
             this.dtpNgayThu.Name = "dtpNgayThu";
             this.dtpNgayThu.Size = new System.Drawing.Size(274, 37);
             this.dtpNgayThu.TabIndex = 52;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(135, 270);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 34);
-            this.label2.TabIndex = 51;
-            this.label2.Text = "Số Tiền";
-            // 
-            // txtSoTien
-            // 
-            this.txtSoTien.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtSoTien.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtSoTien.Location = new System.Drawing.Point(415, 270);
-            this.txtSoTien.Name = "txtSoTien";
-            this.txtSoTien.Size = new System.Drawing.Size(274, 37);
-            this.txtSoTien.TabIndex = 50;
             // 
             // txtTenThanhVien
             // 
@@ -161,7 +141,27 @@
             this.label1.TabIndex = 60;
             this.label1.Text = "Trạng Thái";
             // 
-            // ThemSuaKhoanThuChiTiet
+            // txtSoTien
+            // 
+            this.txtSoTien.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtSoTien.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtSoTien.Location = new System.Drawing.Point(415, 270);
+            this.txtSoTien.Name = "txtSoTien";
+            this.txtSoTien.Size = new System.Drawing.Size(274, 37);
+            this.txtSoTien.TabIndex = 50;
+            // 
+            // lblSoTien
+            // 
+            this.lblSoTien.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblSoTien.AutoSize = true;
+            this.lblSoTien.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblSoTien.Location = new System.Drawing.Point(135, 270);
+            this.lblSoTien.Name = "lblSoTien";
+            this.lblSoTien.Size = new System.Drawing.Size(80, 34);
+            this.lblSoTien.TabIndex = 51;
+            this.lblSoTien.Text = "Số Tiền";
+            // 
+            // SuaKhoanThuChiTiet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -175,10 +175,11 @@
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dtpNgayThu);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblSoTien);
             this.Controls.Add(this.txtSoTien);
-            this.Name = "ThemSuaKhoanThuChiTiet";
-            this.Text = "ThemSuaKhoanThuChiTiet";
+            this.Name = "SuaKhoanThuChiTiet";
+            this.Text = "Sửa Khoản Thu Chi Tiết";
+            this.Load += new System.EventHandler(this.SuaKhoanThuChiTiet_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,10 +193,10 @@
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtpNgayThu;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtSoTien;
         private System.Windows.Forms.TextBox txtTenThanhVien;
         private System.Windows.Forms.ComboBox cmbTrangThai;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtSoTien;
+        private System.Windows.Forms.Label lblSoTien;
     }
 }

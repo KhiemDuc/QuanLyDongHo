@@ -15,6 +15,9 @@ namespace TodoApp
     {
         private string _idThu;
         private string _role;
+        private string _loaiThu;
+
+        public EventHandler eLoadData;
 
         ThanhVien_ThuDAL thanhvienthu = new ThanhVien_ThuDAL();
         DataTable dt = new DataTable();
@@ -22,24 +25,33 @@ namespace TodoApp
         {
             InitializeComponent();
         }
-        public ChiTietKhoanThu(string idThu, string role = "User"):this()
+        public ChiTietKhoanThu(string idThu, string role = "User",string loaiThu = "Thu Định Mức") :this()
         {
             _idThu = idThu;
             _role = role;
+            _loaiThu = loaiThu;
         }
 
         private void dgvDanhSachThu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                string MaGiaoDich = dgvDanhSachThuChiTiet.Rows[e.RowIndex].Cells["MaGiaoDich"].Value.ToString();
+                string MaGiaoDichThu = dgvDanhSachThuChiTiet.Rows[e.RowIndex].Cells["MaGiaoDichThu"].Value.ToString();
+
                 if (e.ColumnIndex == dgvDanhSachThuChiTiet.Columns["Sua"].Index)
                 {
-                    var sua = new ThemSuaKhoanThuChiTiet(_role, MaGiaoDich,"update");
+                    var sua = new SuaKhoanThuChiTiet(_role, MaGiaoDichThu,_loaiThu);
+                    sua.eLoadData += eLoadThuChiTiet;
                     sua.ShowDialog();
                 }
             }
         }
+
+        private void eLoadThuChiTiet(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
         void ShowDataThu(DataTable dt)
         {
             dgvDanhSachThuChiTiet.Rows.Clear();
@@ -49,7 +61,8 @@ namespace TodoApp
                 dgvDanhSachThuChiTiet.Rows[rowIndex].Cells["MaGiaoDichThu"].Value = row["MaGiaoDichThu"];
                 dgvDanhSachThuChiTiet.Rows[rowIndex].Cells["TenThanhVien"].Value = row["Ten"];
                 dgvDanhSachThuChiTiet.Rows[rowIndex].Cells["TrangThai"].Value = (bool)row["TrangThai"] ? "Đã nộp" : "Chưa nộp";
-                dgvDanhSachThuChiTiet.Rows[rowIndex].Cells["SoTien"].Value = row["SoTien"];
+                long SoTien = (long)row["SoTien"];
+                dgvDanhSachThuChiTiet.Rows[rowIndex].Cells["SoTien"].Value = SoTien.ToString("N0");
                 dgvDanhSachThuChiTiet.Rows[rowIndex].Cells["TenThu"].Value = row["TenThu"];
                 dgvDanhSachThuChiTiet.Rows[rowIndex].Cells["NgayThu"].Value = (row["NgayThu"] != DBNull.Value) ? ((DateTime)row["NgayThu"]).ToString("dd-MM-yyyy") : "N/A";
             }
@@ -57,6 +70,14 @@ namespace TodoApp
         }
 
         private void ChiTietKhoanThu_Load(object sender, EventArgs e)
+        {
+            if(_role == "User")
+            {
+                dgvDanhSachThuChiTiet.Columns["Sua"].Visible = false;
+            }
+            LoadData();
+        }
+        void LoadData()
         {
             Task<DataTable> danhsachnoptien = thanhvienthu.DanhSachChiTietKhoanThu(_idThu);
             danhsachnoptien.ContinueWith(t =>
@@ -68,6 +89,11 @@ namespace TodoApp
                         ShowDataThu(t.Result);
                     }));
             });
+        }
+
+        private void ChiTietKhoanThu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            eLoadData?.Invoke(this, e);
         }
     }
 }
