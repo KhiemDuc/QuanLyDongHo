@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TodoApp
 {
@@ -19,6 +20,13 @@ namespace TodoApp
             InitializeComponent();
         }
 
+        private void txtTieuDe_TextChanged(object sender, EventArgs e)
+        {
+            Size textSize = TextRenderer.MeasureText(txtTieuDe.Text, txtTieuDe.Font);
+            txtTieuDe.Width = textSize.Width;
+            txtTieuDe.Height = textSize.Height;
+        }
+
         private void btnPr_Click(object sender, EventArgs e)
         {
             Print(this.pnlPrint);
@@ -26,6 +34,8 @@ namespace TodoApp
 
         private void BaoCao_PDF_Load(object sender, EventArgs e)
         {
+            txtTieuDe.Focus();
+            
             lbngayht.Text = DateTime.Now.Day.ToString();
             lbthanght.Text = DateTime.Now.Month.ToString();
             lbnamht.Text = DateTime.Now.Year.ToString();
