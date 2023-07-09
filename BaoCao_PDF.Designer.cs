@@ -546,11 +546,11 @@
             // txtTieuDe
             // 
             this.txtTieuDe.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtTieuDe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTieuDe.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTieuDe.Font = new System.Drawing.Font("Times New Roman", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtTieuDe.Location = new System.Drawing.Point(284, 3);
             this.txtTieuDe.Name = "txtTieuDe";
-            this.txtTieuDe.Size = new System.Drawing.Size(457, 50);
+            this.txtTieuDe.Size = new System.Drawing.Size(457, 43);
             this.txtTieuDe.TabIndex = 0;
             this.txtTieuDe.Text = "Báo Cáo";
             this.txtTieuDe.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

@@ -319,5 +319,14 @@ namespace TodoApp.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dòng Họ Nhà Nguyễn Đức.
+        /// </summary>
+        internal static string TenDongHo {
+            get {
+                return ResourceManager.GetString("TenDongHo", resourceCulture);
+            }
+        }
     }
 }

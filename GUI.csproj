@@ -96,12 +96,6 @@
     <Compile Include="BaoCao_PDF.Designer.cs">
       <DependentUpon>BaoCao_PDF.cs</DependentUpon>
     </Compile>
-    <Compile Include="BieuDoBaoCaoChi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BieuDoBaoCaoChi.Designer.cs">
-      <DependentUpon>BieuDoBaoCaoChi.cs</DependentUpon>
-    </Compile>
     <Compile Include="BieuDoBaoCaoTaiChinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,9 +257,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao_PDF.resx">
       <DependentUpon>BaoCao_PDF.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BieuDoBaoCaoChi.resx">
-      <DependentUpon>BieuDoBaoCaoChi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BieuDoBaoCaoThanhVien.resx">
       <DependentUpon>BieuDoBaoCaoThanhVien.cs</DependentUpon>
@@ -472,9 +463,6 @@
     <None Include="Resources\icons8-grandfather-50.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\NguyenDuc.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\nha_tho1.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -497,6 +485,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AnhDongHo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SlideShow\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TodoApp.Properties;
 
 namespace TodoApp
 {
@@ -64,6 +67,7 @@ namespace TodoApp
 
         private void Homead_Load(object sender, EventArgs e)
         {
+            lblHeader.Text = Properties.Resources.TenDongHo;
             lblUserName.Text = _name;
             if(_role == "User")
             {
@@ -71,8 +75,8 @@ namespace TodoApp
                 btnTaoCuTo.Enabled = false;
                 btnQLTK.Visible = false;
             }
-            OpenChildForm(new AnhDongHo());
-            
+            OpenChildForm(new AnhDongHo(_role));
+
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -103,7 +107,7 @@ namespace TodoApp
 
         private void panel1_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new AnhDongHo());
+            OpenChildForm(new AnhDongHo(_role));
 
         }
 
@@ -161,7 +165,7 @@ namespace TodoApp
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new AnhDongHo());
+            OpenChildForm(new AnhDongHo(_role));
             lblHeader.Text = "Dòng Họ Nhà Nguyễn Đức";
 
         }
@@ -194,10 +198,17 @@ namespace TodoApp
 
         private void btnBieuDoThuChi_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new BieuDoBaoCaoTaiChinh());
+            lblHeader.Text = btnBieuDoThuChi.Text;
         }
 
         private void btnThongKeSoBo_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new BieuDoBaoCaoThanhVien());
+            lblHeader.Text = btnThongKeSoBo.Text;
+        }
+
+        private void lblHeader_Click(object sender, EventArgs e)
         {
 
         }

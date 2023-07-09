@@ -34,10 +34,7 @@
             this.panelFilter = new System.Windows.Forms.Panel();
             this.lblHeader = new System.Windows.Forms.Label();
             this.panelUser = new System.Windows.Forms.Panel();
-            this.btnSetting = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblUserName = new System.Windows.Forms.Label();
-            this.btnLogout = new TodoApp.Controls.CustomButton();
             this.panelContent = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
@@ -58,15 +55,19 @@
             this.btnChi = new TodoApp.Controls.CustomButton();
             this.btnThu = new TodoApp.Controls.CustomButton();
             this.btnQuanLySuKien = new TodoApp.Controls.CustomButton();
+            this.btnSetting = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnLogout = new TodoApp.Controls.CustomButton();
+            this.btnRename = new System.Windows.Forms.Button();
             this.panelQuanLy.SuspendLayout();
             this.panelFilter.SuspendLayout();
             this.panelUser.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.panelThuChi.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelQuanLy
@@ -120,6 +121,7 @@
             this.panelFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panelFilter.Controls.Add(this.lblHeader);
             this.panelFilter.Controls.Add(this.panelUser);
+            this.panelFilter.Controls.Add(this.btnRename);
             this.panelFilter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelFilter.Location = new System.Drawing.Point(357, 3);
             this.panelFilter.Name = "panelFilter";
@@ -132,9 +134,9 @@
             this.lblHeader.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblHeader.Location = new System.Drawing.Point(16, 16);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(489, 66);
+            this.lblHeader.Size = new System.Drawing.Size(0, 66);
             this.lblHeader.TabIndex = 16;
-            this.lblHeader.Text = "Dòng Họ Nhà Nguyễn Đức";
+            this.lblHeader.Click += new System.EventHandler(this.lblHeader_Click);
             // 
             // panelUser
             // 
@@ -143,30 +145,10 @@
             this.panelUser.Controls.Add(this.btnSetting);
             this.panelUser.Controls.Add(this.pictureBox2);
             this.panelUser.Controls.Add(this.lblUserName);
-            this.panelUser.Location = new System.Drawing.Point(817, 9);
+            this.panelUser.Location = new System.Drawing.Point(825, 16);
             this.panelUser.Name = "panelUser";
             this.panelUser.Size = new System.Drawing.Size(272, 56);
             this.panelUser.TabIndex = 8;
-            // 
-            // btnSetting
-            // 
-            this.btnSetting.Image = global::TodoApp.Properties.Resources.icons8_info_24;
-            this.btnSetting.Location = new System.Drawing.Point(231, 8);
-            this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Size = new System.Drawing.Size(40, 35);
-            this.btnSetting.TabIndex = 22;
-            this.btnSetting.UseVisualStyleBackColor = true;
-            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(0, 10);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(39, 31);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 6;
-            this.pictureBox2.TabStop = false;
             // 
             // lblUserName
             // 
@@ -180,30 +162,6 @@
             this.lblUserName.Text = "UserName";
             this.lblUserName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblUserName.Click += new System.EventHandler(this.lblUserName_Click);
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.BackColor = System.Drawing.Color.White;
-            this.btnLogout.BackgroundColor = System.Drawing.Color.White;
-            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnLogout.BorderColor = System.Drawing.Color.OrangeRed;
-            this.btnLogout.BorderRadius = 0;
-            this.btnLogout.BorderSize = 0;
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnLogout.ForeColor = System.Drawing.Color.Black;
-            this.btnLogout.Image = global::TodoApp.Properties.Resources.icons8_logout_rounded_32;
-            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(3, 691);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnLogout.Size = new System.Drawing.Size(344, 59);
-            this.btnLogout.TabIndex = 13;
-            this.btnLogout.Text = "Đăng Xuất";
-            this.btnLogout.TextColor = System.Drawing.Color.Black;
-            this.btnLogout.UseVisualStyleBackColor = false;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // panelContent
             // 
@@ -618,6 +576,60 @@
             this.btnQuanLySuKien.UseVisualStyleBackColor = false;
             this.btnQuanLySuKien.Click += new System.EventHandler(this.btnQuanLySuKien_Click);
             // 
+            // btnSetting
+            // 
+            this.btnSetting.Image = global::TodoApp.Properties.Resources.icons8_info_24;
+            this.btnSetting.Location = new System.Drawing.Point(231, 8);
+            this.btnSetting.Name = "btnSetting";
+            this.btnSetting.Size = new System.Drawing.Size(40, 35);
+            this.btnSetting.TabIndex = 22;
+            this.btnSetting.UseVisualStyleBackColor = true;
+            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(0, 10);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(39, 31);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 6;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.White;
+            this.btnLogout.BackgroundColor = System.Drawing.Color.White;
+            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnLogout.BorderColor = System.Drawing.Color.OrangeRed;
+            this.btnLogout.BorderRadius = 0;
+            this.btnLogout.BorderSize = 0;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnLogout.ForeColor = System.Drawing.Color.Black;
+            this.btnLogout.Image = global::TodoApp.Properties.Resources.icons8_logout_rounded_32;
+            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.Location = new System.Drawing.Point(3, 691);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.btnLogout.Size = new System.Drawing.Size(344, 59);
+            this.btnLogout.TabIndex = 13;
+            this.btnLogout.Text = "Đăng Xuất";
+            this.btnLogout.TextColor = System.Drawing.Color.Black;
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // btnRename
+            // 
+            this.btnRename.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRename.Location = new System.Drawing.Point(693, 25);
+            this.btnRename.Name = "btnRename";
+            this.btnRename.Size = new System.Drawing.Size(108, 37);
+            this.btnRename.TabIndex = 20;
+            this.btnRename.Text = "Thay tên";
+            this.btnRename.UseVisualStyleBackColor = true;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -636,12 +648,12 @@
             this.panelFilter.ResumeLayout(false);
             this.panelFilter.PerformLayout();
             this.panelUser.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.flowLayoutPanel3.ResumeLayout(false);
             this.panelThuChi.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -676,5 +688,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnRename;
     }
 }
