@@ -39,7 +39,7 @@ namespace TodoApp
         }
         private void Print(Panel pnl)
         {
-            PrinterSettings ps  = new PrinterSettings();
+            PrinterSettings ps = new PrinterSettings();
             pnlPrint = pnl;
             getprintArea(pnl);
             printPreviewDialog1.Document = printDocument1;
@@ -51,19 +51,15 @@ namespace TodoApp
         private void getprintArea(Panel pnl)
         {
             memorying = new Bitmap(pnl.Width, pnl.Height);
-            pnl.DrawToBitmap(memorying, new Rectangle(0,0, pnl.Width, pnl.Height));
+            pnl.DrawToBitmap(memorying, new Rectangle(0, 0, pnl.Width, pnl.Height));
 
         }
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
             Rectangle pagearea = e.PageBounds;
-            e.Graphics.DrawImage(memorying, (pagearea.Width/2) - (this.pnlPrint.Width/2), this.pnlPrint.Location.Y);
+            e.Graphics.DrawImage(memorying, (pagearea.Width / 2) - (this.pnlPrint.Width / 2), this.pnlPrint.Location.Y);
         }
 
-        private void btnPrint_Click(object sender, EventArgs e)
-        {
-            Print(this.pnlPrint);
-        }
     }
 }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnXuatFilePDF = new TodoApp.Controls.CustomButton();
             this.grpThoiGian = new System.Windows.Forms.GroupBox();
             this.btnXem = new System.Windows.Forms.Button();
             this.tblThoiGian = new System.Windows.Forms.TableLayoutPanel();
@@ -60,6 +59,7 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.btnXuatFIle = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.grpThoiGian.SuspendLayout();
             this.tblThoiGian.SuspendLayout();
@@ -69,35 +69,13 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnXuatFilePDF);
+            this.panel2.Controls.Add(this.btnXuatFIle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 489);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1048, 85);
             this.panel2.TabIndex = 2;
-            // 
-            // btnXuatFilePDF
-            // 
-            this.btnXuatFilePDF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXuatFilePDF.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnXuatFilePDF.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnXuatFilePDF.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnXuatFilePDF.BorderRadius = 0;
-            this.btnXuatFilePDF.BorderSize = 0;
-            this.btnXuatFilePDF.FlatAppearance.BorderSize = 0;
-            this.btnXuatFilePDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXuatFilePDF.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnXuatFilePDF.ForeColor = System.Drawing.Color.White;
-            this.btnXuatFilePDF.Location = new System.Drawing.Point(872, 20);
-            this.btnXuatFilePDF.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnXuatFilePDF.Name = "btnXuatFilePDF";
-            this.btnXuatFilePDF.Size = new System.Drawing.Size(146, 44);
-            this.btnXuatFilePDF.TabIndex = 0;
-            this.btnXuatFilePDF.Text = "Xuất File PDF";
-            this.btnXuatFilePDF.TextColor = System.Drawing.Color.White;
-            this.btnXuatFilePDF.UseVisualStyleBackColor = false;
-            this.btnXuatFilePDF.Click += new System.EventHandler(this.btnXuatFilePDF_Click);
             // 
             // grpThoiGian
             // 
@@ -492,6 +470,20 @@
             this.label20.TabIndex = 18;
             this.label20.Text = "Chi Tiết";
             // 
+            // btnXuatFIle
+            // 
+            this.btnXuatFIle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnXuatFIle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXuatFIle.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnXuatFIle.ForeColor = System.Drawing.Color.White;
+            this.btnXuatFIle.Location = new System.Drawing.Point(851, 24);
+            this.btnXuatFIle.Name = "btnXuatFIle";
+            this.btnXuatFIle.Size = new System.Drawing.Size(126, 39);
+            this.btnXuatFIle.TabIndex = 0;
+            this.btnXuatFIle.Text = "Xuất File PDF";
+            this.btnXuatFIle.UseVisualStyleBackColor = false;
+            this.btnXuatFIle.Click += new System.EventHandler(this.btnXuatFIle_Click);
+            // 
             // BaoCaoTC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -518,7 +510,6 @@
 
         #endregion
         private System.Windows.Forms.Panel panel2;
-        private Controls.CustomButton btnXuatFilePDF;
         private System.Windows.Forms.GroupBox grpThoiGian;
         private System.Windows.Forms.TableLayoutPanel tblThoiGian;
         private System.Windows.Forms.DateTimePicker dtpEnd;
@@ -549,5 +540,6 @@
         private System.Windows.Forms.LinkLabel linklbChiTietTaiTro;
         private System.Windows.Forms.LinkLabel linklbChiTietThuDM;
         private System.Windows.Forms.Button btnXem;
+        private System.Windows.Forms.Button btnXuatFIle;
     }
 }

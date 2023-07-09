@@ -66,7 +66,7 @@ namespace TodoApp
         {
 
         }
-        private void btnXuatPDF_Click(object sender, EventArgs e)
+        private void btnXuatFIle_Click(object sender, EventArgs e)
         {
             BaoCao_PDF baoCao_PDF = new BaoCao_PDF();
             baoCao_PDF.ngayBDau = dtpStart.Value.ToString("dd/MM/yyyy");
@@ -77,11 +77,6 @@ namespace TodoApp
             baoCao_PDF.ThuDinhMuc = lblThuDinhMuc.Text;
             baoCao_PDF.DuKiTruoc = lblDuKiTruoc.Text;
             baoCao_PDF.ShowDialog();
-        }
-
-        private void btnXuatFilePDF_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
