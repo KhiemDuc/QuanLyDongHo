@@ -76,6 +76,12 @@
     <Compile Include="BaoCaoTC.Designer.cs">
       <DependentUpon>BaoCaoTC.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaoCao_PDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao_PDF.Designer.cs">
+      <DependentUpon>BaoCao_PDF.cs</DependentUpon>
+    </Compile>
     <Compile Include="BieuDoBaoCaoChi.cs">
       <SubType>Form</SubType>
     </Compile>
