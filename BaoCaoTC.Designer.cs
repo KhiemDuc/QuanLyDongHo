@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnXuatFIle = new System.Windows.Forms.Button();
             this.grpThoiGian = new System.Windows.Forms.GroupBox();
             this.btnXem = new System.Windows.Forms.Button();
             this.tblThoiGian = new System.Windows.Forms.TableLayoutPanel();
@@ -59,7 +60,6 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.btnXuatFIle = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.grpThoiGian.SuspendLayout();
             this.tblThoiGian.SuspendLayout();
@@ -76,6 +76,21 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1048, 85);
             this.panel2.TabIndex = 2;
+            // 
+            // btnXuatFIle
+            // 
+            this.btnXuatFIle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXuatFIle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnXuatFIle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXuatFIle.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnXuatFIle.ForeColor = System.Drawing.Color.White;
+            this.btnXuatFIle.Location = new System.Drawing.Point(851, 24);
+            this.btnXuatFIle.Name = "btnXuatFIle";
+            this.btnXuatFIle.Size = new System.Drawing.Size(126, 39);
+            this.btnXuatFIle.TabIndex = 0;
+            this.btnXuatFIle.Text = "Xuất File PDF";
+            this.btnXuatFIle.UseVisualStyleBackColor = false;
+            this.btnXuatFIle.Click += new System.EventHandler(this.btnXuatFIle_Click);
             // 
             // grpThoiGian
             // 
@@ -469,20 +484,6 @@
             this.label20.Size = new System.Drawing.Size(71, 29);
             this.label20.TabIndex = 18;
             this.label20.Text = "Chi Tiết";
-            // 
-            // btnXuatFIle
-            // 
-            this.btnXuatFIle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnXuatFIle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXuatFIle.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnXuatFIle.ForeColor = System.Drawing.Color.White;
-            this.btnXuatFIle.Location = new System.Drawing.Point(851, 24);
-            this.btnXuatFIle.Name = "btnXuatFIle";
-            this.btnXuatFIle.Size = new System.Drawing.Size(126, 39);
-            this.btnXuatFIle.TabIndex = 0;
-            this.btnXuatFIle.Text = "Xuất File PDF";
-            this.btnXuatFIle.UseVisualStyleBackColor = false;
-            this.btnXuatFIle.Click += new System.EventHandler(this.btnXuatFIle_Click);
             // 
             // BaoCaoTC
             // 

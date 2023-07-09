@@ -91,7 +91,7 @@ namespace TodoApp
                     string MaChi = dgvDanhSachSuKien.Rows[e.RowIndex].Cells["MaChi"].Value.ToString();
                     if (e.ColumnIndex == dgvDanhSachSuKien.Columns["ChiTietChiTieu"].Index)
                     {
-                        var sua = new ChiTietKhoanChi(MaChi,_role);
+                        var sua = new ChiTietKhoanChi(MaChi,"User");
                         sua.ShowDialog();
                     }
                 }    

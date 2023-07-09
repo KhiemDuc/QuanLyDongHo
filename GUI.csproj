@@ -247,6 +247,9 @@
     <EmbeddedResource Include="BaoCaoTC.resx">
       <DependentUpon>BaoCaoTC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao_PDF.resx">
+      <DependentUpon>BaoCao_PDF.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BieuDoBaoCaoChi.resx">
       <DependentUpon>BieuDoBaoCaoChi.cs</DependentUpon>
     </EmbeddedResource>
